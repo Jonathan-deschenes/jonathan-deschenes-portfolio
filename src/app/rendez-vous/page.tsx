@@ -19,24 +19,24 @@ export default function RendezVousPage() {
     <>
       <SiteHeader />
       <main>
-        <section className="container-x pt-16 pb-6">
-          <div className="max-w-[760px]">
-            <div className="eyebrow mb-4">RENCONTRE GRATUITE · 30 MIN</div>
-            <h1 className="font-bold text-[clamp(30px,4.5vw,46px)] leading-[1.1] tracking-[-.02em] mb-[18px]">
+        <section className="container-x pt-10 sm:pt-16 pb-4 sm:pb-6">
+          <div className="max-w-full">
+            <div className="eyebrow mb-3 sm:mb-4">RENCONTRE GRATUITE · 30 MIN</div>
+            <h1 className="font-bold text-[clamp(24px,6vw,46px)] leading-[1.15] tracking-[-.02em] mb-3 sm:mb-[18px]">
               Discutons de votre projet — sans engagement.
             </h1>
-            <p className="text-[17px] text-muted leading-[1.6] mb-7">
+            <p className="text-[15px] sm:text-[17px] text-muted leading-[1.6] mb-5 sm:mb-7">
               30 minutes pour cerner votre besoin, répondre à vos questions et
               voir si on peut travailler ensemble. Virtuel, partout au Québec.
             </p>
           </div>
         </section>
 
-        <section className="container-x pb-20">
-          <div className="border border-border rounded-[18px] overflow-hidden bg-white max-w-[980px] min-h-[760px]">
+        <section className="container-x pb-12 sm:pb-20">
+          <div className="border border-border rounded-[16px] sm:rounded-[18px] overflow-hidden bg-white max-w-full min-h-fit">
             <CalEmbed url={site.bookingUrl} />
           </div>
-          <p className="mt-5 text-muted-soft text-[14px]">
+          <p className="mt-4 sm:mt-5 text-muted-soft text-[13px] sm:text-[14px]">
             Le calendrier ne charge pas ?{" "}
             <a
               href={site.bookingUrl}
@@ -51,13 +51,13 @@ export default function RendezVousPage() {
         </section>
 
         <section className="bg-cream">
-          <div className="container-x py-[72px] text-center">
-            <h2 className="font-bold text-[clamp(24px,3vw,32px)] mb-[14px]">
+          <div className="container-x py-12 sm:py-[72px] text-center">
+            <h2 className="font-bold text-[clamp(22px,5vw,32px)] mb-3 sm:mb-[14px]">
               Pas prêt à réserver ?
             </h2>
-            <p className="text-muted mb-6 text-[16px]">
-              Décrivez votre projet par écrit, je vous reviens avec une
-              première idée.
+            <p className="text-muted mb-5 sm:mb-6 text-[15px] sm:text-[16px]">
+              Décrivez votre projet par écrit, je vous reviens avec une première
+              idée.
             </p>
             <Link href="/soumission" className="btn-primary">
               Demander une soumission <ArrowRight />

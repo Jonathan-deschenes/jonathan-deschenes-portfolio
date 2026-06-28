@@ -44,21 +44,23 @@ export default function Modal({
       aria-modal="true"
       aria-label={title}
       onClick={onClose}
-      className="fixed inset-0 z-[100] bg-[rgba(14,19,32,.55)] backdrop-blur-[4px] flex items-start justify-center px-4 py-[5vh] overflow-y-auto animate-[modal-fade_180ms_ease]"
+      className="fixed inset-0 z-[100] bg-[rgba(14,19,32,.55)] backdrop-blur-[4px] flex items-start sm:items-start justify-center px-2 sm:px-4 py-2 sm:py-[5vh] overflow-y-auto overscroll-contain animate-[modal-fade_180ms_ease]"
     >
       <div
         ref={dialogRef}
         tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
-        className={`bg-white rounded-[18px] w-full ${widths[size]} shadow-card outline-none animate-[modal-rise_220ms_cubic-bezier(.2,.7,.2,1)]`}
+        className={`bg-white rounded-[14px] sm:rounded-[18px] w-full ${widths[size]} shadow-card outline-none animate-[modal-rise_220ms_cubic-bezier(.2,.7,.2,1)] my-auto`}
       >
-        <div className="flex items-center justify-between px-6 py-5 border-b border-border">
-          <h2 className="font-bold text-[18px] tracking-[-.01em]">{title}</h2>
+        <div className="flex items-center justify-between gap-3 px-4 sm:px-6 py-4 sm:py-5 border-b border-border sticky top-0 bg-white rounded-t-[14px] sm:rounded-t-[18px] z-10">
+          <h2 className="font-bold text-[16px] sm:text-[18px] tracking-[-.01em] min-w-0 truncate">
+            {title}
+          </h2>
           <button
             type="button"
             onClick={onClose}
             aria-label="Fermer"
-            className="border-0 bg-transparent cursor-pointer p-1.5 rounded-lg text-muted text-[0px] hover:bg-cream"
+            className="border-0 bg-transparent cursor-pointer p-2 -mr-2 rounded-lg text-muted text-[0px] hover:bg-cream flex-none"
           >
             <svg
               width="22"
@@ -75,7 +77,7 @@ export default function Modal({
             </svg>
           </button>
         </div>
-        <div className="p-6">{children}</div>
+        <div className="p-4 sm:p-6">{children}</div>
       </div>
     </div>
   );

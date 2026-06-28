@@ -50,22 +50,22 @@ export default function Home() {
 
       <main>
         {/* ===== HERO ===== */}
-        <section className="container-x grid items-center gap-12 pt-[72px] pb-24 min-[960px]:gap-16 min-[960px]:pt-24 min-[960px]:pb-[120px] min-[960px]:grid-cols-[1.02fr_.98fr]">
+        <section className="container-x grid items-center gap-10 pt-10 pb-14 sm:pt-[72px] sm:pb-24 min-[960px]:gap-16 min-[960px]:pt-24 min-[960px]:pb-[120px] min-[960px]:grid-cols-[1.02fr_.98fr]">
           <div className="anim-in">
-            <div className="font-medium text-[12px] tracking-[.2em] text-faint mb-[26px] uppercase">
+            <div className="font-medium text-[11px] sm:text-[12px] tracking-[.18em] sm:tracking-[.2em] text-faint mb-5 sm:mb-[26px] uppercase">
               NOUS / ACCOMPAGNEMENT / X / VOUS PRENEZ CONTACT
             </div>
-            <h1 className="font-bold text-[clamp(36px,5vw,60px)] leading-[1.05] tracking-[-.02em] mb-7">
+            <h1 className="font-bold text-[clamp(32px,7vw,60px)] leading-[1.05] tracking-[-.02em] mb-5 sm:mb-7">
               Modernisez votre{" "}
               <span className="text-brand">cabinet comptable</span>, sans la
               lourdeur d&apos;une agence.
             </h1>
-            <p className="text-[18px] leading-[1.6] text-muted max-w-[520px] mb-[38px]">
+            <p className="text-[16px] sm:text-[18px] leading-[1.6] text-muted max-w-[520px] mb-7 sm:mb-[38px]">
               Sites web professionnels, automatisation des tâches répétitives et
               intégration de l&apos;IA. Votre entreprise, votre image — enfin à
               la hauteur de votre expertise.
             </p>
-            <div className="flex gap-[14px] flex-wrap">
+            <div className="flex gap-3 sm:gap-[14px] flex-wrap">
               <ModalLink modal="booking" className="btn-primary">
                 Réserver une rencontre gratuite <ArrowRight />
               </ModalLink>
@@ -75,28 +75,28 @@ export default function Home() {
             </div>
           </div>
           <div
-            className="anim-in justify-self-stretch w-full max-w-[460px] ml-auto"
+            className="anim-in justify-self-stretch w-full max-w-[460px] mx-auto min-[960px]:ml-auto min-[960px]:mr-0"
             style={{ animationDelay: "130ms" }}
           >
-            <div className="bg-white border border-border rounded-[22px] overflow-hidden shadow-[0_40px_80px_-28px_rgba(14,19,32,.25)]">
-              <div className="px-5 pt-4 pb-3 border-b border-[#f1f1ef] flex items-center justify-between gap-3">
-                <div>
-                  <div className="font-semibold text-[12px] tracking-[.14em] text-brand">
+            <div className="bg-white border border-border rounded-[18px] sm:rounded-[22px] overflow-hidden shadow-[0_40px_80px_-28px_rgba(14,19,32,.25)]">
+              <div className="px-4 sm:px-5 pt-3 sm:pt-4 pb-2.5 sm:pb-3 border-b border-[#f1f1ef] flex items-center justify-between gap-2 flex-wrap">
+                <div className="min-w-0">
+                  <div className="font-semibold text-[11px] sm:text-[12px] tracking-[.14em] text-brand">
                     RENCONTRE GRATUITE · 30 MIN
                   </div>
-                  <div className="text-[13px] text-muted mt-0.5">
+                  <div className="text-[12px] sm:text-[13px] text-muted mt-0.5">
                     Choisissez une plage qui vous convient.
                   </div>
                 </div>
                 <ModalLink
                   modal="booking"
                   ariaLabel="Ouvrir le calendrier en grand"
-                  className="text-[12px] text-brand font-semibold no-underline whitespace-nowrap hover:underline"
+                  className="text-[12px] text-brand font-semibold no-underline whitespace-nowrap hover:underline flex-none"
                 >
                   Plein écran →
                 </ModalLink>
               </div>
-              <div className="h-[560px] overflow-y-auto overflow-x-hidden">
+              <div className="h-[460px] sm:h-[560px] overflow-y-auto overflow-x-hidden">
                 <CalEmbed
                   url={site.bookingUrl}
                   namespace="hero"
@@ -109,40 +109,42 @@ export default function Home() {
 
         {/* ===== STATS + PROBLEMS (navy) ===== */}
         <section className="bg-navy text-white">
-          <div className="container-x py-[70px] border-b border-white/[.07] flex items-center justify-center gap-[30px] flex-wrap">
-            <div className="font-bold text-[clamp(56px,8vw,78px)] leading-[.9] text-brand tracking-[-.03em]">
+          <div className="container-x py-12 sm:py-[70px] border-b border-white/[.07] flex items-center justify-center gap-6 sm:gap-[30px] flex-wrap">
+            <div className="font-bold text-[clamp(48px,12vw,78px)] leading-[.9] text-brand tracking-[-.03em]">
               20+
             </div>
-            <p className="text-[18px] leading-[1.5] text-[#cfd3da] max-w-[330px]">
+            <p className="text-[16px] sm:text-[18px] leading-[1.5] text-[#cfd3da] max-w-[330px]">
               organisations accompagnées dans leur présence web et leurs
               automatisations.
             </p>
           </div>
 
-          <div id="problemes" className="container-x pt-24 pb-[120px]">
-            <div className="max-w-[760px] mx-auto mb-14">
-              <div className="eyebrow mb-[22px]">
+          <div id="problemes" className="container-x pt-14 pb-16 sm:pt-24 sm:pb-[120px]">
+            <div className="max-w-[760px] mx-auto mb-10 sm:mb-14">
+              <div className="eyebrow mb-4 sm:mb-[22px]">
                 CE QUE JE RÈGLE POUR VOTRE CABINET
               </div>
-              <h2 className="font-bold text-[clamp(28px,4vw,40px)] leading-[1.13] tracking-[-.02em]">
+              <h2 className="font-bold text-[clamp(24px,5.5vw,40px)] leading-[1.15] tracking-[-.02em]">
                 Si vous vous reconnaissez dans l&apos;un de ces irritants, on a
                 des choses à se dire.
               </h2>
             </div>
-            <div className="max-w-[1080px] mx-auto grid gap-[22px] grid-cols-1 min-[720px]:grid-cols-2">
+            <div className="max-w-[1080px] mx-auto grid gap-4 sm:gap-[22px] grid-cols-1 min-[720px]:grid-cols-2">
               {problems.map((p, i) => (
                 <div
                   key={i}
-                  className="bg-navy-card border border-white/[.06] rounded-[18px] px-8 py-[30px]"
+                  className="bg-navy-card border border-white/[.06] rounded-[16px] sm:rounded-[18px] px-6 py-6 sm:px-8 sm:py-[30px]"
                 >
                   <div
-                    className="w-11 h-11 rounded-[11px] bg-[rgba(26,96,245,.14)] flex items-center justify-center mb-[42px] text-brand"
+                    className="w-11 h-11 rounded-[11px] bg-[rgba(26,96,245,.14)] flex items-center justify-center mb-7 sm:mb-[42px] text-brand"
                     aria-hidden
                   >
                     {problemIcons[i]}
                   </div>
-                  <h3 className="font-semibold text-[19px] mb-3">{p.title}</h3>
-                  <p className="text-[15px] leading-[1.6] text-[#8b93a1]">
+                  <h3 className="font-semibold text-[17px] sm:text-[19px] mb-2.5 sm:mb-3">
+                    {p.title}
+                  </h3>
+                  <p className="text-[14px] sm:text-[15px] leading-[1.6] text-[#8b93a1]">
                     {p.desc}
                   </p>
                 </div>
@@ -154,18 +156,18 @@ export default function Home() {
         {/* ===== PROJECTS ===== */}
         <section
           id="realisations"
-          className="container-x py-[110px] scroll-mt-20"
+          className="container-x py-16 sm:py-[110px] scroll-mt-20"
         >
-          <div className="max-w-[1080px] mx-auto mb-[60px]">
-            <div className="eyebrow mb-[22px]">
+          <div className="max-w-[1080px] mx-auto mb-10 sm:mb-[60px]">
+            <div className="eyebrow mb-4 sm:mb-[22px]">
               RÉALISATIONS À IMPACT MESURABLE
             </div>
-            <h2 className="font-bold text-[clamp(28px,4vw,40px)] leading-[1.15] tracking-[-.02em] mb-[26px]">
+            <h2 className="font-bold text-[clamp(24px,5.5vw,40px)] leading-[1.15] tracking-[-.02em] mb-4 sm:mb-[26px]">
               Des projets livrés.
               <br />
               Des compétences démontrées.
             </h2>
-            <p className="text-[17px] leading-[1.6] text-muted max-w-[610px]">
+            <p className="text-[15px] sm:text-[17px] leading-[1.6] text-muted max-w-[610px]">
               J&apos;ai accompagné des organismes et des PME dans leur présence
               web et leurs automatisations. J&apos;applique aujourd&apos;hui
               cette expérience aux besoins précis des cabinets comptables —
@@ -174,7 +176,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="max-w-[1080px] mx-auto grid gap-6 grid-cols-1 min-[720px]:grid-cols-2 min-[960px]:grid-cols-3">
+          <div className="max-w-[1080px] mx-auto grid gap-4 sm:gap-6 grid-cols-1 min-[720px]:grid-cols-2 min-[960px]:grid-cols-3">
             {projects.map((p) => (
               <article
                 key={p.slug}
@@ -246,34 +248,34 @@ export default function Home() {
 
         {/* ===== SERVICES (cream) ===== */}
         <section id="services" className="bg-cream scroll-mt-20">
-          <div className="max-w-[1080px] mx-auto pt-24 pb-[104px] px-6">
-            <div className="eyebrow mb-12">
+          <div className="max-w-[1080px] mx-auto pt-14 pb-16 sm:pt-24 sm:pb-[104px] px-6 md:px-10">
+            <div className="eyebrow mb-8 sm:mb-12">
               MES SERVICES TAILLÉS POUR VOTRE CABINET
             </div>
             <div>
               {services.map((s, i) => (
                 <div
                   key={s.title}
-                  className="flex gap-6 py-8 border-t border-cream-border"
+                  className="flex gap-4 sm:gap-6 py-6 sm:py-8 border-t border-cream-border"
                 >
                   <div
-                    className="flex-none w-[46px] h-[46px] rounded-xl bg-ink flex items-center justify-center text-white"
+                    className="flex-none w-10 h-10 sm:w-[46px] sm:h-[46px] rounded-xl bg-ink flex items-center justify-center text-white"
                     aria-hidden
                   >
                     {serviceIcons[i]}
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-[20px] mb-2.5">
+                  <div className="min-w-0">
+                    <h3 className="font-semibold text-[17px] sm:text-[20px] mb-2 sm:mb-2.5 leading-snug">
                       <span className="text-brand">{s.title}</span> {s.tail}
                     </h3>
-                    <p className="text-[15.5px] leading-[1.6] text-muted max-w-[920px]">
+                    <p className="text-[14px] sm:text-[15.5px] leading-[1.6] text-muted max-w-[920px]">
                       {s.desc}
                     </p>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="flex justify-center mt-12">
+            <div className="flex justify-center mt-10 sm:mt-12">
               <ModalLink modal="booking" className="btn-primary">
                 Réserver une rencontre <ArrowRight />
               </ModalLink>
@@ -284,20 +286,20 @@ export default function Home() {
         {/* ===== PROCESS ===== */}
         <section
           id="processus"
-          className="container-x pt-[104px] pb-[110px] scroll-mt-20"
+          className="container-x pt-14 pb-16 sm:pt-[104px] sm:pb-[110px] scroll-mt-20"
         >
           <div className="max-w-[1080px] mx-auto">
-            <div className="eyebrow mb-[54px]">COMMENT JE TRAVAILLE</div>
-            <div className="grid gap-[34px] grid-cols-1 sm:grid-cols-2 min-[960px]:grid-cols-4">
+            <div className="eyebrow mb-8 sm:mb-[54px]">COMMENT JE TRAVAILLE</div>
+            <div className="grid gap-8 sm:gap-[34px] grid-cols-1 sm:grid-cols-2 min-[960px]:grid-cols-4">
               {steps.map((st) => (
                 <div key={st.num}>
-                  <div className="font-bold text-[46px] text-brand tracking-[-.02em] mb-5">
+                  <div className="font-bold text-[38px] sm:text-[46px] text-brand tracking-[-.02em] mb-4 sm:mb-5">
                     {st.num}
                   </div>
-                  <h3 className="font-semibold text-[18px] mb-[13px]">
+                  <h3 className="font-semibold text-[17px] sm:text-[18px] mb-3 sm:mb-[13px]">
                     {st.title}
                   </h3>
-                  <p className="text-[14.5px] leading-[1.62] text-muted">
+                  <p className="text-[14px] sm:text-[14.5px] leading-[1.62] text-muted">
                     {st.desc}
                   </p>
                 </div>
@@ -311,35 +313,35 @@ export default function Home() {
           id="a-propos"
           className="bg-navy text-white scroll-mt-20"
         >
-          <div className="container-x py-[104px] grid items-center gap-14 min-[960px]:gap-[72px] min-[960px]:grid-cols-[.82fr_1.18fr]">
+          <div className="container-x py-14 sm:py-[104px] grid items-center gap-10 sm:gap-14 min-[960px]:gap-[72px] min-[960px]:grid-cols-[.82fr_1.18fr]">
             <div
-              className="bg-navy-card border border-white/[.06] rounded-[18px] aspect-[4/5] flex flex-col items-center justify-center text-center text-muted-soft max-w-[420px]"
+              className="bg-navy-card border border-white/[.06] rounded-[16px] sm:rounded-[18px] aspect-[4/5] flex flex-col items-center justify-center text-center text-muted-soft max-w-[300px] sm:max-w-[420px] w-full mx-auto min-[960px]:mx-0"
               role="img"
               aria-label="Photo professionnelle de Jonathan Deschênes"
             >
-              <div className="mb-4" aria-hidden>
+              <div className="mb-3 sm:mb-4" aria-hidden>
                 <ImagePlaceholder />
               </div>
-              <div className="text-[14px] leading-[1.5]">
+              <div className="text-[13px] sm:text-[14px] leading-[1.5]">
                 Photo professionnelle de
                 <br />
                 Jonathan Deschênes
               </div>
             </div>
             <div>
-              <div className="eyebrow mb-6">QUI RÉALISE VOTRE PROJET</div>
-              <h2 className="font-bold text-[clamp(26px,3.5vw,37px)] leading-[1.15] tracking-[-.02em] mb-[30px]">
+              <div className="eyebrow mb-4 sm:mb-6">QUI RÉALISE VOTRE PROJET</div>
+              <h2 className="font-bold text-[clamp(22px,5vw,37px)] leading-[1.15] tracking-[-.02em] mb-5 sm:mb-[30px]">
                 Vous parlez directement à la personne qui conçoit et livre votre
                 projet — pas à un intermédiaire.
               </h2>
-              <p className="text-[16.5px] leading-[1.68] text-[#aab0bb] mb-[22px]">
+              <p className="text-[15px] sm:text-[16.5px] leading-[1.68] text-[#aab0bb] mb-5 sm:mb-[22px]">
                 Je suis Jonathan Deschênes, étudiant en Techniques de
                 l&apos;informatique avec l&apos;intention de poursuivre au
                 baccalauréat en génie logiciel. J&apos;ai déjà livré des sites
                 web réellement utilisés et des applications fonctionnelles en
                 production.
               </p>
-              <p className="text-[16.5px] leading-[1.68] text-[#aab0bb] mb-[34px]">
+              <p className="text-[15px] sm:text-[16.5px] leading-[1.68] text-[#aab0bb] mb-7 sm:mb-[34px]">
                 Être étudiant, c&apos;est maîtriser les technologies les plus
                 récentes — dont l&apos;IA — à des tarifs accessibles, avec un
                 contact direct et une imputabilité totale. Votre projet ne sera
@@ -355,11 +357,11 @@ export default function Home() {
         {/* ===== FAQ ===== */}
         <section
           id="faq"
-          className="container-x pt-[104px] pb-[110px] scroll-mt-20"
+          className="container-x pt-14 pb-16 sm:pt-[104px] sm:pb-[110px] scroll-mt-20"
         >
-          <div className="max-w-[840px] mx-auto mb-16 text-center">
-            <div className="eyebrow mb-5">QUESTIONS FRÉQUENTES</div>
-            <h2 className="font-bold text-[clamp(28px,4.5vw,42px)] leading-[1.1] tracking-[-.02em]">
+          <div className="max-w-[840px] mx-auto mb-10 sm:mb-16 text-center">
+            <div className="eyebrow mb-4 sm:mb-5">QUESTIONS FRÉQUENTES</div>
+            <h2 className="font-bold text-[clamp(24px,6vw,42px)] leading-[1.15] tracking-[-.02em]">
               Ce que vous voudrez savoir avant d&apos;appeler
             </h2>
           </div>
@@ -368,15 +370,15 @@ export default function Home() {
 
         {/* ===== FINAL CTA (cream) ===== */}
         <section id="contact" className="bg-cream scroll-mt-20">
-          <div className="container-x py-[110px] text-center">
-            <h2 className="font-bold text-[clamp(30px,5vw,46px)] leading-[1.12] tracking-[-.02em] max-w-[720px] mx-auto mb-6">
+          <div className="container-x py-14 sm:py-[110px] text-center">
+            <h2 className="font-bold text-[clamp(24px,6vw,46px)] leading-[1.15] tracking-[-.02em] max-w-[720px] mx-auto mb-5 sm:mb-6">
               Pas encore décidé ? Présentez-moi votre projet en 3 minutes.
             </h2>
-            <p className="text-[17px] text-muted mb-[38px]">
+            <p className="text-[15px] sm:text-[17px] text-muted mb-7 sm:mb-[38px]">
               Décrivez votre besoin en deux phrases. Je vous dis si on peut
               travailler ensemble.
             </p>
-            <div className="flex gap-[14px] justify-center flex-wrap">
+            <div className="flex gap-3 sm:gap-[14px] justify-center flex-wrap">
               <ModalLink modal="quote" className="btn-outline">
                 Demander une soumission rapide <ArrowRight />
               </ModalLink>

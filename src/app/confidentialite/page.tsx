@@ -18,13 +18,13 @@ export default function ConfidentialitePage() {
     <>
       <SiteHeader />
       <main>
-        <section className="container-x pt-16 pb-20">
+        <section className="container-x pt-10 sm:pt-16 pb-14 sm:pb-20">
           <div className="max-w-[760px]">
-            <div className="eyebrow mb-4">CONFIDENTIALITÉ</div>
-            <h1 className="font-bold text-[clamp(28px,4vw,40px)] leading-[1.15] tracking-[-.02em] mb-[14px]">
+            <div className="eyebrow mb-3 sm:mb-4">CONFIDENTIALITÉ</div>
+            <h1 className="font-bold text-[clamp(24px,5.5vw,40px)] leading-[1.15] tracking-[-.02em] mb-3 sm:mb-[14px]">
               Politique de confidentialité
             </h1>
-            <p className="text-muted-soft mb-8 text-[14px]">
+            <p className="text-muted-soft mb-6 sm:mb-8 text-[13px] sm:text-[14px]">
               Dernière mise à jour : {updated}
             </p>
 

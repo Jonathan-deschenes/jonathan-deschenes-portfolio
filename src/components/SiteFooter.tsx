@@ -4,8 +4,8 @@ import { site } from "@/lib/site";
 export default function SiteFooter() {
   return (
     <footer className="bg-navy-deep text-white">
-      <div className="container-x pt-[72px] pb-10">
-        <div className="grid gap-10 pb-14 grid-cols-1 sm:grid-cols-2 min-[900px]:grid-cols-[1.4fr_1fr_1fr_1fr]">
+      <div className="container-x pt-12 sm:pt-[72px] pb-8 sm:pb-10">
+        <div className="grid gap-8 sm:gap-10 pb-10 sm:pb-14 grid-cols-1 sm:grid-cols-2 min-[900px]:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3 mb-[22px]">
               <div

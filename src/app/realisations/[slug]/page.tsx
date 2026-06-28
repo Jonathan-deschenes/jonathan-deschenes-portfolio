@@ -60,18 +60,18 @@ export default async function CaseStudyPage({
     <>
       <SiteHeader />
       <main>
-        <section className="container-x pt-16 pb-8">
+        <section className="container-x pt-10 sm:pt-16 pb-6 sm:pb-8">
           <Link
             href="/#realisations"
-            className="text-[14px] text-brand no-underline mb-6 inline-block"
+            className="text-[14px] text-brand no-underline mb-4 sm:mb-6 inline-block"
           >
             ← Toutes les réalisations
           </Link>
-          <div className="eyebrow mb-[14px]">{cs.tag}</div>
-          <h1 className="font-bold text-[clamp(30px,5vw,50px)] leading-[1.08] tracking-[-.02em] mb-[14px] max-w-[880px]">
-            {cs.title}
+          <div className="eyebrow mb-3 sm:mb-[14px]">{cs.tag}</div>
+          <h1 className="font-bold text-[clamp(24px,6vw,50px)] leading-[1.12] sm:leading-[1.08] tracking-[-.02em] mb-3 sm:mb-[14px] max-w-[880px]">
+            <span>{cs.title}</span>
             {cs.concept && (
-              <span className="bg-[#f3a019] text-[#3a2700] font-bold text-[12px] tracking-[.1em] px-3 py-1.5 rounded-lg ml-[14px] align-middle">
+              <span className="inline-block bg-[#f3a019] text-[#3a2700] font-bold text-[10px] sm:text-[12px] tracking-[.1em] px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg ml-2 sm:ml-[14px] align-middle whitespace-nowrap">
                 CONCEPT
               </span>
             )}
@@ -92,7 +92,7 @@ export default async function CaseStudyPage({
               <div className="flex-1 h-[9px] rounded-[5px] bg-[#d4d4cd]" />
             </div>
             <div
-              className="bg-[#e3e3de] border-[1.5px] border-dashed border-[#c4c4bd] m-[14px] rounded-[12px] min-h-[320px] flex flex-col items-center justify-center text-center text-[#7c7c74]"
+              className="bg-[#e3e3de] border-[1.5px] border-dashed border-[#c4c4bd] m-2 sm:m-[14px] rounded-[10px] sm:rounded-[12px] min-h-[200px] sm:min-h-[320px] flex flex-col items-center justify-center text-center text-[#7c7c74] p-4"
               role="img"
               aria-label={`Capture du projet ${cs.title}`}
             >
@@ -104,15 +104,15 @@ export default async function CaseStudyPage({
           </div>
         </section>
 
-        <section className="container-x pt-8 pb-[60px]">
-          <div className="grid gap-10 max-w-[1080px] grid-cols-1 md:grid-cols-3">
+        <section className="container-x pt-8 pb-12 sm:pb-[60px]">
+          <div className="grid gap-5 sm:gap-10 max-w-[1080px] grid-cols-1 md:grid-cols-3">
             <Card title="Le défi">{cs.challenge}</Card>
             <Card title="La solution">{cs.solution}</Card>
             <Card title="Le résultat">{cs.result}</Card>
           </div>
 
-          <div className="mt-10 max-w-[1080px]">
-            <div className="eyebrow mb-[14px]">TECHNOLOGIES UTILISÉES</div>
+          <div className="mt-8 sm:mt-10 max-w-[1080px]">
+            <div className="eyebrow mb-3 sm:mb-[14px]">TECHNOLOGIES UTILISÉES</div>
             <div className="flex flex-wrap gap-2">
               {cs.tech.map((t) => (
                 <span
@@ -127,7 +127,7 @@ export default async function CaseStudyPage({
         </section>
 
         <section className="bg-cream">
-          <div className="container-x py-[72px] text-center">
+          <div className="container-x py-12 sm:py-[72px] text-center">
             <h2 className="font-bold text-[clamp(26px,4vw,40px)] leading-[1.15] tracking-[-.02em] mb-[18px]">
               Un projet similaire ?
             </h2>

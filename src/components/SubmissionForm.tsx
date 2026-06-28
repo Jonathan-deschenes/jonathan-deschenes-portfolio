@@ -343,14 +343,14 @@ function Stepper({
 }) {
   return (
     <div>
-      <div className="flex items-center gap-2 mb-2">
+      <div className="flex items-center gap-1.5 sm:gap-2 mb-2">
         {steps.map((s, i) => {
           const done = i < current;
           const active = i === current;
           return (
-            <div key={s.key} className="flex items-center gap-2 flex-1">
+            <div key={s.key} className="flex items-center gap-1.5 sm:gap-2 flex-1">
               <div
-                className={`flex items-center justify-center w-7 h-7 rounded-full text-[12px] font-bold flex-none transition-colors ${
+                className={`flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-full text-[11px] sm:text-[12px] font-bold flex-none transition-colors ${
                   done
                     ? "bg-brand text-white"
                     : active
