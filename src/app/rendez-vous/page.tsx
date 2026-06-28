@@ -60,7 +60,7 @@ export default function RendezVousPage() {
           >
             <iframe
               title="Calendrier de réservation"
-              src={site.bookingUrl}
+              src={site.bookingEmbedUrl}
               loading="lazy"
               style={{
                 width: "100%",
