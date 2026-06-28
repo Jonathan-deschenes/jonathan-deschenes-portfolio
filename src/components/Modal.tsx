@@ -44,15 +44,15 @@ export default function Modal({
       aria-modal="true"
       aria-label={title}
       onClick={onClose}
-      className="fixed inset-0 z-[100] bg-[rgba(14,19,32,.55)] backdrop-blur-[4px] flex items-start sm:items-start justify-center px-2 sm:px-4 py-2 sm:py-[5vh] overflow-y-auto overscroll-contain animate-[modal-fade_180ms_ease]"
+      className="fixed inset-0 z-[100] bg-[rgba(14,19,32,.55)] backdrop-blur-[4px] flex items-start sm:items-center justify-center px-2 sm:px-4 py-2 sm:py-[5vh] overscroll-contain animate-[modal-fade_180ms_ease]"
     >
       <div
         ref={dialogRef}
         tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
-        className={`bg-white rounded-[14px] sm:rounded-[18px] w-full ${widths[size]} shadow-card outline-none animate-[modal-rise_220ms_cubic-bezier(.2,.7,.2,1)] my-auto`}
+        className={`bg-white rounded-[14px] sm:rounded-[18px] w-full ${widths[size]} max-h-full shadow-card outline-none animate-[modal-rise_220ms_cubic-bezier(.2,.7,.2,1)] flex flex-col overflow-hidden`}
       >
-        <div className="flex items-center justify-between gap-3 px-4 sm:px-6 py-4 sm:py-5 border-b border-border sticky top-0 bg-white rounded-t-[14px] sm:rounded-t-[18px] z-10">
+        <div className="flex-none flex items-center justify-between gap-3 px-4 sm:px-6 py-4 sm:py-5 border-b border-border bg-white rounded-t-[14px] sm:rounded-t-[18px]">
           <h2 className="font-bold text-[16px] sm:text-[18px] tracking-[-.01em] min-w-0 truncate">
             {title}
           </h2>
@@ -77,7 +77,9 @@ export default function Modal({
             </svg>
           </button>
         </div>
-        <div className="p-4 sm:p-6">{children}</div>
+        <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain p-4 sm:p-6">
+          {children}
+        </div>
       </div>
     </div>
   );
