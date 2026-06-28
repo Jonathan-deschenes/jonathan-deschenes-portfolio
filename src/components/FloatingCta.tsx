@@ -1,12 +1,12 @@
-import Link from "next/link";
 import { ArrowRight } from "./Icons";
+import ModalLink from "./ModalLink";
 
 export default function FloatingCta() {
   return (
-    <Link
-      href="/rendez-vous"
+    <ModalLink
+      modal="booking"
+      ariaLabel="Réserver une rencontre gratuite"
       className="floating-cta"
-      aria-label="Réserver une rencontre gratuite"
       style={{
         position: "fixed",
         right: 28,
@@ -26,6 +26,6 @@ export default function FloatingCta() {
       }}
     >
       Réserver une rencontre gratuite <ArrowRight />
-    </Link>
+    </ModalLink>
   );
 }

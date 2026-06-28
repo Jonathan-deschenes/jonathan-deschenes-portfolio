@@ -4,6 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import FloatingCta from "@/components/FloatingCta";
 import { ArrowRight } from "@/components/Icons";
+import CalEmbed from "@/components/CalEmbed";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -56,19 +57,10 @@ export default function RendezVousPage() {
               overflow: "hidden",
               background: "#fff",
               maxWidth: 980,
+              minHeight: 760,
             }}
           >
-            <iframe
-              title="Calendrier de réservation"
-              src={site.bookingEmbedUrl}
-              loading="lazy"
-              style={{
-                width: "100%",
-                height: 760,
-                border: 0,
-                display: "block",
-              }}
-            />
+            <CalEmbed url={site.bookingUrl} />
           </div>
           <p style={{ marginTop: 20, color: "#6a727f", fontSize: 14 }}>
             Le calendrier ne charge pas ?{" "}

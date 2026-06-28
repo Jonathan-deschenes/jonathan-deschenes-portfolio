@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { ArrowRight } from "./Icons";
+import ModalLink from "./ModalLink";
 
 const links = [
   { href: "/#realisations", label: "Réalisations" },
@@ -91,8 +92,8 @@ export default function SiteHeader() {
           ))}
         </div>
 
-        <Link
-          href="/rendez-vous"
+        <ModalLink
+          modal="booking"
           style={{
             display: "inline-flex",
             alignItems: "center",
@@ -109,7 +110,7 @@ export default function SiteHeader() {
           }}
         >
           Réserver une rencontre <ArrowRight />
-        </Link>
+        </ModalLink>
       </nav>
       <span className="sr-only">{site.name}</span>
     </header>

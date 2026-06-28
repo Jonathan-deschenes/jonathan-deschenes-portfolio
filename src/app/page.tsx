@@ -3,7 +3,8 @@ import Script from "next/script";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import FloatingCta from "@/components/FloatingCta";
-import CalendarCard from "@/components/CalendarCard";
+import CalEmbed from "@/components/CalEmbed";
+import ModalLink from "@/components/ModalLink";
 import Faq from "@/components/Faq";
 import {
   ArrowRight,
@@ -98,16 +99,64 @@ export default function Home() {
               la hauteur de votre expertise.
             </p>
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Link href="/rendez-vous" className="btn-primary">
+              <ModalLink modal="booking" className="btn-primary">
                 Réserver une rencontre gratuite <ArrowRight />
-              </Link>
-              <Link href="/soumission" className="btn-outline">
+              </ModalLink>
+              <ModalLink modal="quote" className="btn-outline">
                 Demander une soumission
-              </Link>
+              </ModalLink>
             </div>
           </div>
-          <div className="anim-in" style={{ animationDelay: "130ms" }}>
-            <CalendarCard />
+          <div
+            className="anim-in"
+            style={{
+              animationDelay: "130ms",
+              justifySelf: "stretch",
+              width: "100%",
+              maxWidth: 460,
+              marginLeft: "auto",
+            }}
+          >
+            <div
+              style={{
+                background: "#fff",
+                border: "1px solid #ececed",
+                borderRadius: 22,
+                padding: 6,
+                boxShadow: "0 40px 80px -28px rgba(14,19,32,.25)",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  padding: "14px 16px 8px",
+                  borderBottom: "1px solid #f1f1ef",
+                }}
+              >
+                <div
+                  style={{
+                    fontWeight: 600,
+                    fontSize: 12,
+                    letterSpacing: ".14em",
+                    color: "#1a60f5",
+                  }}
+                >
+                  RENCONTRE GRATUITE · 30 MIN
+                </div>
+                <div
+                  style={{
+                    fontSize: 13,
+                    color: "#5b626e",
+                    marginTop: 4,
+                  }}
+                >
+                  Choisissez une plage qui vous convient.
+                </div>
+              </div>
+              <div style={{ minHeight: 520 }}>
+                <CalEmbed url={site.bookingUrl} />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -520,9 +569,9 @@ export default function Home() {
                 marginTop: 48,
               }}
             >
-              <Link href="/rendez-vous" className="btn-primary">
+              <ModalLink modal="booking" className="btn-primary">
                 Réserver une rencontre <ArrowRight />
-              </Link>
+              </ModalLink>
             </div>
           </div>
         </section>
@@ -667,9 +716,9 @@ export default function Home() {
                 contact direct et une imputabilité totale. Votre projet ne sera
                 jamais confié à quelqu&apos;un d&apos;autre.
               </p>
-              <Link href="/rendez-vous" className="btn-primary">
+              <ModalLink modal="booking" className="btn-primary">
                 Réserver une rencontre <ArrowRight />
-              </Link>
+              </ModalLink>
             </div>
           </div>
         </section>
@@ -740,12 +789,12 @@ export default function Home() {
                 flexWrap: "wrap",
               }}
             >
-              <Link href="/soumission" className="btn-outline">
+              <ModalLink modal="quote" className="btn-outline">
                 Demander une soumission rapide <ArrowRight />
-              </Link>
-              <Link href="/rendez-vous" className="btn-primary">
+              </ModalLink>
+              <ModalLink modal="booking" className="btn-primary">
                 Réserver une rencontre gratuite <ArrowRight />
-              </Link>
+              </ModalLink>
             </div>
           </div>
         </section>

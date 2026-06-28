@@ -6,6 +6,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import FloatingCta from "@/components/FloatingCta";
 import { ArrowRight, ImagePlaceholder } from "@/components/Icons";
+import ModalLink from "@/components/ModalLink";
 import { caseStudies, projects } from "@/lib/data";
 import { site } from "@/lib/site";
 
@@ -259,12 +260,12 @@ export default async function CaseStudyPage({
                 flexWrap: "wrap",
               }}
             >
-              <Link href="/rendez-vous" className="btn-primary">
+              <ModalLink modal="booking" className="btn-primary">
                 Réserver une rencontre <ArrowRight />
-              </Link>
-              <Link href="/soumission" className="btn-outline">
+              </ModalLink>
+              <ModalLink modal="quote" className="btn-outline">
                 Demander une soumission
-              </Link>
+              </ModalLink>
             </div>
           </div>
         </section>
