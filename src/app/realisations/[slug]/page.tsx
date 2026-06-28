@@ -7,7 +7,7 @@ import SiteFooter from "@/components/SiteFooter";
 import FloatingCta from "@/components/FloatingCta";
 import { ArrowRight, ImagePlaceholder } from "@/components/Icons";
 import ModalLink from "@/components/ModalLink";
-import { caseStudies, projects } from "@/lib/data";
+import { caseStudies } from "@/lib/data";
 import { site } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -44,7 +44,6 @@ export default async function CaseStudyPage({
 }) {
   const { slug } = await params;
   const cs = caseStudies.find((c) => c.slug === slug);
-  const project = projects.find((p) => p.slug === slug);
   if (!cs) notFound();
 
   const ld = {
@@ -61,164 +60,64 @@ export default async function CaseStudyPage({
     <>
       <SiteHeader />
       <main>
-        <section className="container-x" style={{ padding: "64px 24px 32px" }}>
+        <section className="container-x pt-16 pb-8">
           <Link
             href="/#realisations"
-            style={{
-              fontSize: 14,
-              color: "#1a60f5",
-              textDecoration: "none",
-              marginBottom: 24,
-              display: "inline-block",
-            }}
+            className="text-[14px] text-brand no-underline mb-6 inline-block"
           >
             ← Toutes les réalisations
           </Link>
-          <div className="eyebrow" style={{ marginBottom: 14 }}>
-            {cs.tag}
-          </div>
-          <h1
-            style={{
-              fontWeight: 700,
-              fontSize: "clamp(30px, 5vw, 50px)",
-              lineHeight: 1.08,
-              letterSpacing: "-.02em",
-              marginBottom: 14,
-              maxWidth: 880,
-            }}
-          >
+          <div className="eyebrow mb-[14px]">{cs.tag}</div>
+          <h1 className="font-bold text-[clamp(30px,5vw,50px)] leading-[1.08] tracking-[-.02em] mb-[14px] max-w-[880px]">
             {cs.title}
             {cs.concept && (
-              <span
-                style={{
-                  background: "#f3a019",
-                  color: "#3a2700",
-                  fontWeight: 700,
-                  fontSize: 12,
-                  letterSpacing: ".1em",
-                  padding: "6px 12px",
-                  borderRadius: 8,
-                  marginLeft: 14,
-                  verticalAlign: "middle",
-                }}
-              >
+              <span className="bg-[#f3a019] text-[#3a2700] font-bold text-[12px] tracking-[.1em] px-3 py-1.5 rounded-lg ml-[14px] align-middle">
                 CONCEPT
               </span>
             )}
           </h1>
         </section>
 
-        <section className="container-x" style={{ paddingBottom: 24 }}>
-          <div
-            style={{
-              border: "1px solid #ebebe9",
-              borderRadius: 18,
-              background: "#fff",
-              overflow: "hidden",
-              maxWidth: 1080,
-            }}
-          >
+        <section className="container-x pb-6">
+          <div className="border border-[#ebebe9] rounded-[18px] bg-white overflow-hidden max-w-[1080px]">
             <div
-              style={{
-                background: "#e9e9e4",
-                padding: "11px 14px",
-                display: "flex",
-                alignItems: "center",
-                gap: 13,
-              }}
+              className="bg-[#e9e9e4] px-[14px] py-[11px] flex items-center gap-[13px]"
               aria-hidden
             >
-              <div style={{ display: "flex", gap: 6 }}>
-                <span
-                  style={{
-                    width: 11,
-                    height: 11,
-                    borderRadius: "50%",
-                    background: "#f25f57",
-                  }}
-                />
-                <span
-                  style={{
-                    width: 11,
-                    height: 11,
-                    borderRadius: "50%",
-                    background: "#fbbe2e",
-                  }}
-                />
-                <span
-                  style={{
-                    width: 11,
-                    height: 11,
-                    borderRadius: "50%",
-                    background: "#28c93f",
-                  }}
-                />
+              <div className="flex gap-1.5">
+                <span className="w-[11px] h-[11px] rounded-full bg-[#f25f57]" />
+                <span className="w-[11px] h-[11px] rounded-full bg-[#fbbe2e]" />
+                <span className="w-[11px] h-[11px] rounded-full bg-[#28c93f]" />
               </div>
-              <div
-                style={{
-                  flex: 1,
-                  height: 9,
-                  borderRadius: 5,
-                  background: "#d4d4cd",
-                }}
-              />
+              <div className="flex-1 h-[9px] rounded-[5px] bg-[#d4d4cd]" />
             </div>
             <div
-              style={{
-                background: "#e3e3de",
-                border: "1.5px dashed #c4c4bd",
-                margin: 14,
-                borderRadius: 12,
-                minHeight: 320,
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                textAlign: "center",
-                color: "#7c7c74",
-              }}
+              className="bg-[#e3e3de] border-[1.5px] border-dashed border-[#c4c4bd] m-[14px] rounded-[12px] min-h-[320px] flex flex-col items-center justify-center text-center text-[#7c7c74]"
               role="img"
               aria-label={`Capture du projet ${cs.title}`}
             >
-              <div style={{ color: "#a3a39c", marginBottom: 14 }} aria-hidden>
+              <div className="text-[#a3a39c] mb-[14px]" aria-hidden>
                 <ImagePlaceholder size={42} />
               </div>
-              <div style={{ fontSize: 14 }}>
-                Capture du projet à intégrer
-              </div>
+              <div className="text-[14px]">Capture du projet à intégrer</div>
             </div>
           </div>
         </section>
 
-        <section className="container-x" style={{ padding: "32px 24px 60px" }}>
-          <div
-            className="case-grid"
-            style={{
-              display: "grid",
-              gap: 40,
-              maxWidth: 1080,
-            }}
-          >
+        <section className="container-x pt-8 pb-[60px]">
+          <div className="grid gap-10 max-w-[1080px] grid-cols-1 md:grid-cols-3">
             <Card title="Le défi">{cs.challenge}</Card>
             <Card title="La solution">{cs.solution}</Card>
             <Card title="Le résultat">{cs.result}</Card>
           </div>
 
-          <div style={{ marginTop: 40, maxWidth: 1080 }}>
-            <div className="eyebrow" style={{ marginBottom: 14 }}>
-              TECHNOLOGIES UTILISÉES
-            </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+          <div className="mt-10 max-w-[1080px]">
+            <div className="eyebrow mb-[14px]">TECHNOLOGIES UTILISÉES</div>
+            <div className="flex flex-wrap gap-2">
               {cs.tech.map((t) => (
                 <span
                   key={t}
-                  style={{
-                    fontSize: 13,
-                    color: "#5d6470",
-                    background: "#f0f0ed",
-                    padding: "6px 12px",
-                    borderRadius: 20,
-                  }}
+                  className="text-[13px] text-[#5d6470] bg-[#f0f0ed] px-3 py-1.5 rounded-[20px]"
                 >
                   {t}
                 </span>
@@ -227,39 +126,15 @@ export default async function CaseStudyPage({
           </div>
         </section>
 
-        <section style={{ background: "#f6f6f2" }}>
-          <div
-            className="container-x"
-            style={{ padding: "72px 24px", textAlign: "center" }}
-          >
-            <h2
-              style={{
-                fontWeight: 700,
-                fontSize: "clamp(26px, 4vw, 40px)",
-                lineHeight: 1.15,
-                letterSpacing: "-.02em",
-                marginBottom: 18,
-              }}
-            >
+        <section className="bg-cream">
+          <div className="container-x py-[72px] text-center">
+            <h2 className="font-bold text-[clamp(26px,4vw,40px)] leading-[1.15] tracking-[-.02em] mb-[18px]">
               Un projet similaire ?
             </h2>
-            <p
-              style={{
-                fontSize: 16,
-                color: "#5b626e",
-                marginBottom: 28,
-              }}
-            >
+            <p className="text-[16px] text-muted mb-7">
               Discutons-en pendant 30 minutes, sans engagement.
             </p>
-            <div
-              style={{
-                display: "flex",
-                gap: 14,
-                justifyContent: "center",
-                flexWrap: "wrap",
-              }}
-            >
+            <div className="flex gap-[14px] justify-center flex-wrap">
               <ModalLink modal="booking" className="btn-primary">
                 Réserver une rencontre <ArrowRight />
               </ModalLink>
@@ -269,17 +144,9 @@ export default async function CaseStudyPage({
             </div>
           </div>
         </section>
-
-        {project && null}
       </main>
       <SiteFooter />
       <FloatingCta />
-      <style>{`
-        .case-grid { grid-template-columns: 1fr; }
-        @media (min-width: 768px) {
-          .case-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-      `}</style>
       <Script
         id="ld-case-study"
         type="application/ld+json"
@@ -292,33 +159,9 @@ export default async function CaseStudyPage({
 
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div
-      style={{
-        background: "#fff",
-        border: "1px solid #ececed",
-        borderRadius: 16,
-        padding: 28,
-      }}
-    >
-      <h2
-        style={{
-          fontWeight: 600,
-          fontSize: 18,
-          marginBottom: 12,
-          color: "#1a60f5",
-        }}
-      >
-        {title}
-      </h2>
-      <p
-        style={{
-          fontSize: 15.5,
-          lineHeight: 1.65,
-          color: "#3a414d",
-        }}
-      >
-        {children}
-      </p>
+    <div className="bg-white border border-border rounded-[16px] p-7">
+      <h2 className="font-semibold text-[18px] mb-3 text-brand">{title}</h2>
+      <p className="text-[15.5px] leading-[1.65] text-ink-soft">{children}</p>
     </div>
   );
 }

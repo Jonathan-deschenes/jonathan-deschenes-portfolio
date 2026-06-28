@@ -1,7 +1,5 @@
 "use client";
 
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-
 type Props = {
   modal: "booking" | "quote" | "contact";
   className?: string;
@@ -17,19 +15,17 @@ export default function ModalLink({
   children,
   ariaLabel,
 }: Props) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const params = useSearchParams();
-
   const onClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    const next = new URLSearchParams(params.toString());
-    next.set("modal", modal);
-    router.push(`${pathname}?${next.toString()}`, { scroll: false });
+    if (typeof window === "undefined") return;
+    const url = new URL(window.location.href);
+    url.searchParams.set("modal", modal);
+    window.history.pushState(null, "", url);
+    // Notify ModalRoot via popstate-equivalent
+    window.dispatchEvent(new PopStateEvent("popstate"));
   };
 
   const href = (() => {
-    // SEO-friendly fallback link in case JS is disabled
     if (modal === "booking") return "/rendez-vous";
     if (modal === "quote") return "/soumission";
     return "/contact";

@@ -40,52 +40,42 @@ export default function ContactForm() {
 
   if (state.status === "success") {
     return (
-      <div
-        style={{
-          background: "#f0f7ff",
-          border: "1px solid #cfe2ff",
-          borderRadius: 14,
-          padding: 24,
-          color: "#0e1320",
-        }}
-      >
+      <div className="bg-[#f0f7ff] border border-[#cfe2ff] rounded-[14px] p-6 text-ink">
         <strong>Message envoyé.</strong>
-        <p style={{ marginTop: 6, color: "#3a414d", lineHeight: 1.6 }}>
-          {state.message}
-        </p>
+        <p className="mt-1.5 text-ink-soft leading-relaxed">{state.message}</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate style={{ display: "grid", gap: 18 }}>
-      <label style={{ display: "grid", gap: 8 }}>
-        <span style={{ fontSize: 14, fontWeight: 600 }}>
-          Nom <span style={{ color: "#1a60f5" }}>*</span>
+    <form onSubmit={onSubmit} noValidate className="grid gap-[18px]">
+      <label className="grid gap-2">
+        <span className="text-[14px] font-semibold">
+          Nom <span className="text-brand">*</span>
         </span>
-        <input name="name" required style={inputStyle} />
+        <input name="name" required className="input-base" />
       </label>
-      <label style={{ display: "grid", gap: 8 }}>
-        <span style={{ fontSize: 14, fontWeight: 600 }}>
-          Courriel <span style={{ color: "#1a60f5" }}>*</span>
+      <label className="grid gap-2">
+        <span className="text-[14px] font-semibold">
+          Courriel <span className="text-brand">*</span>
         </span>
-        <input name="email" type="email" required style={inputStyle} />
+        <input name="email" type="email" required className="input-base" />
       </label>
-      <label style={{ display: "grid", gap: 8 }}>
-        <span style={{ fontSize: 14, fontWeight: 600 }}>
-          Sujet <span style={{ color: "#1a60f5" }}>*</span>
+      <label className="grid gap-2">
+        <span className="text-[14px] font-semibold">
+          Sujet <span className="text-brand">*</span>
         </span>
-        <input name="subject" required style={inputStyle} />
+        <input name="subject" required className="input-base" />
       </label>
-      <label style={{ display: "grid", gap: 8 }}>
-        <span style={{ fontSize: 14, fontWeight: 600 }}>
-          Message <span style={{ color: "#1a60f5" }}>*</span>
+      <label className="grid gap-2">
+        <span className="text-[14px] font-semibold">
+          Message <span className="text-brand">*</span>
         </span>
         <textarea
           name="message"
           required
           rows={5}
-          style={{ ...inputStyle, fontFamily: "inherit", resize: "vertical" }}
+          className="input-base resize-y"
         />
       </label>
 
@@ -96,26 +86,13 @@ export default function ContactForm() {
         tabIndex={-1}
         autoComplete="off"
         aria-hidden
-        style={{
-          position: "absolute",
-          left: "-9999px",
-          width: 1,
-          height: 1,
-          opacity: 0,
-        }}
+        className="absolute left-[-9999px] w-px h-px opacity-0"
       />
 
       {state.status === "error" && (
         <div
           role="alert"
-          style={{
-            background: "#fff0f0",
-            color: "#a40000",
-            border: "1px solid #f5c0c0",
-            padding: 12,
-            borderRadius: 10,
-            fontSize: 14,
-          }}
+          className="bg-[#fff0f0] text-[#a40000] border border-[#f5c0c0] p-3 rounded-[10px] text-[14px]"
         >
           {state.message}
         </div>
@@ -123,9 +100,8 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="btn-primary"
+        className="btn-primary justify-center"
         disabled={state.status === "submitting"}
-        style={{ justifyContent: "center" }}
       >
         {state.status === "submitting" ? "Envoi en cours…" : "Envoyer"}
         <ArrowRight />
@@ -133,14 +109,3 @@ export default function ContactForm() {
     </form>
   );
 }
-
-const inputStyle: React.CSSProperties = {
-  border: "1px solid #e2e3e6",
-  borderRadius: 11,
-  padding: "12px 14px",
-  fontSize: 15,
-  color: "#0e1320",
-  background: "#fff",
-  outline: "none",
-  fontFamily: "inherit",
-};

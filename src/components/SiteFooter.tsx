@@ -3,60 +3,22 @@ import { site } from "@/lib/site";
 
 export default function SiteFooter() {
   return (
-    <footer style={{ background: "#0d1422", color: "#fff" }}>
-      <div className="container-x" style={{ padding: "72px 24px 40px" }}>
-        <div
-          className="footer-grid"
-          style={{
-            display: "grid",
-            gap: 40,
-            paddingBottom: 56,
-          }}
-        >
+    <footer className="bg-navy-deep text-white">
+      <div className="container-x pt-[72px] pb-10">
+        <div className="grid gap-10 pb-14 grid-cols-1 sm:grid-cols-2 min-[900px]:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 12,
-                marginBottom: 22,
-              }}
-            >
+            <div className="flex items-center gap-3 mb-[22px]">
               <div
-                style={{
-                  width: 36,
-                  height: 36,
-                  borderRadius: 9,
-                  background: "#fff",
-                  color: "#0e1320",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontWeight: 700,
-                  fontSize: 14,
-                }}
+                className="w-9 h-9 rounded-[9px] bg-white text-ink flex items-center justify-center font-bold text-[14px]"
                 aria-hidden
               >
                 JD
               </div>
-              <span
-                style={{
-                  fontWeight: 700,
-                  fontSize: 14,
-                  letterSpacing: ".13em",
-                }}
-              >
+              <span className="font-bold text-[14px] tracking-[.13em]">
                 JONATHAN DESCHÊNES
               </span>
             </div>
-            <p
-              style={{
-                fontSize: 14.5,
-                lineHeight: 1.6,
-                color: "#7e8694",
-                maxWidth: 300,
-              }}
-            >
+            <p className="text-[14.5px] leading-[1.6] text-[#7e8694] max-w-[300px]">
               Sites web, automatisation et IA pour les cabinets comptables et
               tenue de livres — sans la lourdeur d&apos;une agence.
             </p>
@@ -84,55 +46,26 @@ export default function SiteFooter() {
             </FooterLink>
           </FooterCol>
         </div>
-        <div
-          style={{
-            borderTop: "1px solid rgba(255,255,255,.08)",
-            paddingTop: 26,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: 14,
-          }}
-        >
-          <span style={{ fontSize: 13.5, color: "#6a727f" }}>
+        <div className="border-t border-white/[.08] pt-[26px] flex items-center justify-between flex-wrap gap-[14px]">
+          <span className="text-[13.5px] text-muted-soft">
             © {new Date().getFullYear()} {site.name}. Tous droits réservés.
           </span>
-          <div style={{ display: "flex", gap: 30, flexWrap: "wrap" }}>
+          <div className="flex gap-[30px] flex-wrap">
             <Link
               href="/confidentialite"
-              style={{
-                fontSize: 13.5,
-                color: "#6a727f",
-                textDecoration: "none",
-              }}
+              className="text-[13.5px] text-muted-soft no-underline hover:text-white"
             >
               Politique de confidentialité
             </Link>
             <Link
               href="/confidentialite#mentions"
-              style={{
-                fontSize: 13.5,
-                color: "#6a727f",
-                textDecoration: "none",
-              }}
+              className="text-[13.5px] text-muted-soft no-underline hover:text-white"
             >
               Mentions légales
             </Link>
           </div>
         </div>
       </div>
-      <style>{`
-        .footer-grid {
-          grid-template-columns: 1fr;
-        }
-        @media (min-width: 640px) {
-          .footer-grid { grid-template-columns: 1fr 1fr; }
-        }
-        @media (min-width: 900px) {
-          .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
-        }
-      `}</style>
     </footer>
   );
 }
@@ -146,20 +79,10 @@ function FooterCol({
 }) {
   return (
     <div>
-      <div
-        style={{
-          fontWeight: 600,
-          fontSize: 11,
-          letterSpacing: ".16em",
-          color: "#5d6573",
-          marginBottom: 20,
-        }}
-      >
+      <div className="font-semibold text-[11px] tracking-[.16em] text-[#5d6573] mb-5">
         {title}
       </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-        {children}
-      </div>
+      <div className="flex flex-col gap-[14px]">{children}</div>
     </div>
   );
 }
@@ -173,20 +96,16 @@ function FooterLink({
   children: React.ReactNode;
   external?: boolean;
 }) {
-  const style = {
-    fontSize: 14.5,
-    color: "#aab0bb",
-    textDecoration: "none",
-  } as const;
+  const cls = "text-[14.5px] text-[#aab0bb] no-underline hover:text-white";
   if (external) {
     return (
-      <a href={href} style={style} target="_blank" rel="noopener noreferrer">
+      <a href={href} className={cls} target="_blank" rel="noopener noreferrer">
         {children}
       </a>
     );
   }
   return (
-    <Link href={href} style={style}>
+    <Link href={href} className={cls}>
       {children}
     </Link>
   );

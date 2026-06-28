@@ -6,24 +6,7 @@ export default function FloatingCta() {
     <ModalLink
       modal="booking"
       ariaLabel="Réserver une rencontre gratuite"
-      className="floating-cta"
-      style={{
-        position: "fixed",
-        right: 28,
-        bottom: 28,
-        zIndex: 60,
-        display: "inline-flex",
-        alignItems: "center",
-        gap: 9,
-        background: "#1a60f5",
-        color: "#fff",
-        fontSize: 14,
-        fontWeight: 600,
-        padding: "13px 22px",
-        borderRadius: 13,
-        textDecoration: "none",
-        boxShadow: "0 14px 34px rgba(26,96,245,.4)",
-      }}
+      className="floating-cta fixed right-7 bottom-7 z-[60] inline-flex items-center gap-[9px] bg-brand text-white text-[14px] font-semibold px-[22px] py-[13px] rounded-[13px] no-underline shadow-[0_14px_34px_rgba(26,96,245,.4)]"
     >
       Réserver une rencontre gratuite <ArrowRight />
     </ModalLink>

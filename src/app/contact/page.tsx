@@ -18,37 +18,20 @@ export default function ContactPage() {
     <>
       <SiteHeader />
       <main>
-        <section className="container-x" style={{ padding: "64px 24px 24px" }}>
-          <div style={{ maxWidth: 720 }}>
-            <div className="eyebrow" style={{ marginBottom: 16 }}>
-              CONTACT
-            </div>
-            <h1
-              style={{
-                fontWeight: 700,
-                fontSize: "clamp(30px, 4.5vw, 46px)",
-                lineHeight: 1.1,
-                letterSpacing: "-.02em",
-                marginBottom: 18,
-              }}
-            >
+        <section className="container-x pt-16 pb-6">
+          <div className="max-w-[720px]">
+            <div className="eyebrow mb-4">CONTACT</div>
+            <h1 className="font-bold text-[clamp(30px,4.5vw,46px)] leading-[1.1] tracking-[-.02em] mb-[18px]">
               Une question ? Écrivez-moi.
             </h1>
-            <p
-              style={{
-                fontSize: 17,
-                color: "#5b626e",
-                lineHeight: 1.6,
-                marginBottom: 28,
-              }}
-            >
+            <p className="text-[17px] text-muted leading-[1.6] mb-7">
               Pour toute question, partenariat ou demande qui ne rentre pas
               dans les autres formulaires. Pour un projet, préférez{" "}
-              <Link href="/rendez-vous" style={{ color: "#1a60f5" }}>
+              <Link href="/rendez-vous" className="text-brand">
                 la rencontre gratuite
               </Link>{" "}
               ou{" "}
-              <Link href="/soumission" style={{ color: "#1a60f5" }}>
+              <Link href="/soumission" className="text-brand">
                 la soumission
               </Link>
               .
@@ -56,46 +39,24 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section
-          className="container-x"
-          style={{
-            paddingBottom: 80,
-            display: "grid",
-            gap: 48,
-            gridTemplateColumns: "1fr",
-          }}
-        >
-          <div style={{ maxWidth: 600 }}>
+        <section className="container-x pb-20 grid gap-12">
+          <div className="max-w-[600px]">
             <ContactForm />
           </div>
-          <div
-            style={{
-              background: "#f6f6f2",
-              borderRadius: 18,
-              padding: 28,
-              maxWidth: 600,
-            }}
-          >
-            <h2 style={{ fontWeight: 600, fontSize: 18, marginBottom: 10 }}>
+          <div className="bg-cream rounded-[18px] p-7 max-w-[600px]">
+            <h2 className="font-semibold text-[18px] mb-2.5">
               Coordonnées directes
             </h2>
-            <p style={{ color: "#5b626e", lineHeight: 1.6, fontSize: 15 }}>
+            <p className="text-muted leading-[1.6] text-[15px]">
               Courriel :{" "}
               <a
                 href={`mailto:${site.email}`}
-                style={{ color: "#1a60f5", textDecoration: "underline" }}
+                className="text-brand underline"
               >
                 {site.email}
               </a>
             </p>
-            <p
-              style={{
-                color: "#5b626e",
-                lineHeight: 1.6,
-                fontSize: 15,
-                marginTop: 6,
-              }}
-            >
+            <p className="text-muted leading-[1.6] text-[15px] mt-1.5">
               Région desservie : {site.region} — rencontres virtuelles
               disponibles.
             </p>

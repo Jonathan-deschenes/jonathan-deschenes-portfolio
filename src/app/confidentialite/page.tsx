@@ -18,44 +18,23 @@ export default function ConfidentialitePage() {
     <>
       <SiteHeader />
       <main>
-        <section className="container-x" style={{ padding: "64px 24px 80px" }}>
-          <div style={{ maxWidth: 760 }}>
-            <div className="eyebrow" style={{ marginBottom: 16 }}>
-              CONFIDENTIALITÉ
-            </div>
-            <h1
-              style={{
-                fontWeight: 700,
-                fontSize: "clamp(28px, 4vw, 40px)",
-                lineHeight: 1.15,
-                letterSpacing: "-.02em",
-                marginBottom: 14,
-              }}
-            >
+        <section className="container-x pt-16 pb-20">
+          <div className="max-w-[760px]">
+            <div className="eyebrow mb-4">CONFIDENTIALITÉ</div>
+            <h1 className="font-bold text-[clamp(28px,4vw,40px)] leading-[1.15] tracking-[-.02em] mb-[14px]">
               Politique de confidentialité
             </h1>
-            <p style={{ color: "#6a727f", marginBottom: 32, fontSize: 14 }}>
+            <p className="text-muted-soft mb-8 text-[14px]">
               Dernière mise à jour : {updated}
             </p>
 
-            <div
-              style={{
-                display: "grid",
-                gap: 22,
-                fontSize: 16,
-                lineHeight: 1.7,
-                color: "#3a414d",
-              }}
-            >
+            <div className="grid gap-[22px] text-[16px] leading-[1.7] text-ink-soft">
               <Section title="Qui est responsable ?">
                 <p>
                   Le présent site est exploité par {site.name}, prestataire de
                   services web et d&apos;automatisation établi au Québec. Vous
                   pouvez nous joindre à{" "}
-                  <a
-                    href={`mailto:${site.email}`}
-                    style={{ color: "#1a60f5" }}
-                  >
+                  <a href={`mailto:${site.email}`} className="text-brand">
                     {site.email}
                   </a>
                   .
@@ -73,7 +52,7 @@ export default function ConfidentialitePage() {
               </Section>
 
               <Section title="À quelles fins ?">
-                <ul style={{ paddingLeft: 22 }}>
+                <ul className="pl-[22px] list-disc">
                   <li>répondre à votre demande;</li>
                   <li>préparer la rencontre ou la soumission;</li>
                   <li>vous transmettre une confirmation par courriel;</li>
@@ -102,10 +81,7 @@ export default function ConfidentialitePage() {
                   personnels dans le secteur privé (Loi 25), vous pouvez en
                   tout temps demander l&apos;accès, la rectification ou la
                   suppression de vos renseignements en écrivant à{" "}
-                  <a
-                    href={`mailto:${site.email}`}
-                    style={{ color: "#1a60f5" }}
-                  >
+                  <a href={`mailto:${site.email}`} className="text-brand">
                     {site.email}
                   </a>
                   . Une réponse vous sera transmise dans les 30 jours.
@@ -123,7 +99,7 @@ export default function ConfidentialitePage() {
               </Section>
 
               <Section title="Sous-traitants">
-                <ul style={{ paddingLeft: 22 }}>
+                <ul className="pl-[22px] list-disc">
                   <li>
                     <strong>Vercel</strong> — hébergement du site (États-Unis /
                     Canada).
@@ -148,12 +124,7 @@ export default function ConfidentialitePage() {
 
               <h2
                 id="mentions"
-                style={{
-                  fontWeight: 700,
-                  fontSize: 24,
-                  marginTop: 24,
-                  scrollMarginTop: 100,
-                }}
+                className="font-bold text-[24px] mt-6 scroll-mt-[100px]"
               >
                 Mentions légales
               </h2>
@@ -192,16 +163,7 @@ function Section({
 }) {
   return (
     <div>
-      <h2
-        style={{
-          fontWeight: 600,
-          fontSize: 18,
-          marginBottom: 8,
-          color: "#0e1320",
-        }}
-      >
-        {title}
-      </h2>
+      <h2 className="font-semibold text-[18px] mb-2 text-ink">{title}</h2>
       {children}
     </div>
   );

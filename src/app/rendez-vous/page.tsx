@@ -19,56 +19,30 @@ export default function RendezVousPage() {
     <>
       <SiteHeader />
       <main>
-        <section className="container-x" style={{ padding: "64px 24px 24px" }}>
-          <div style={{ maxWidth: 760 }}>
-            <div className="eyebrow" style={{ marginBottom: 16 }}>
-              RENCONTRE GRATUITE · 30 MIN
-            </div>
-            <h1
-              style={{
-                fontWeight: 700,
-                fontSize: "clamp(30px, 4.5vw, 46px)",
-                lineHeight: 1.1,
-                letterSpacing: "-.02em",
-                marginBottom: 18,
-              }}
-            >
+        <section className="container-x pt-16 pb-6">
+          <div className="max-w-[760px]">
+            <div className="eyebrow mb-4">RENCONTRE GRATUITE · 30 MIN</div>
+            <h1 className="font-bold text-[clamp(30px,4.5vw,46px)] leading-[1.1] tracking-[-.02em] mb-[18px]">
               Discutons de votre projet — sans engagement.
             </h1>
-            <p
-              style={{
-                fontSize: 17,
-                color: "#5b626e",
-                lineHeight: 1.6,
-                marginBottom: 28,
-              }}
-            >
+            <p className="text-[17px] text-muted leading-[1.6] mb-7">
               30 minutes pour cerner votre besoin, répondre à vos questions et
               voir si on peut travailler ensemble. Virtuel, partout au Québec.
             </p>
           </div>
         </section>
 
-        <section className="container-x" style={{ paddingBottom: 80 }}>
-          <div
-            style={{
-              border: "1px solid #ececed",
-              borderRadius: 18,
-              overflow: "hidden",
-              background: "#fff",
-              maxWidth: 980,
-              minHeight: 760,
-            }}
-          >
+        <section className="container-x pb-20">
+          <div className="border border-border rounded-[18px] overflow-hidden bg-white max-w-[980px] min-h-[760px]">
             <CalEmbed url={site.bookingUrl} />
           </div>
-          <p style={{ marginTop: 20, color: "#6a727f", fontSize: 14 }}>
+          <p className="mt-5 text-muted-soft text-[14px]">
             Le calendrier ne charge pas ?{" "}
             <a
               href={site.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#1a60f5" }}
+              className="text-brand"
             >
               Ouvrez-le dans un nouvel onglet
             </a>
@@ -76,27 +50,12 @@ export default function RendezVousPage() {
           </p>
         </section>
 
-        <section style={{ background: "#f6f6f2" }}>
-          <div
-            className="container-x"
-            style={{ padding: "72px 24px", textAlign: "center" }}
-          >
-            <h2
-              style={{
-                fontWeight: 700,
-                fontSize: "clamp(24px, 3vw, 32px)",
-                marginBottom: 14,
-              }}
-            >
+        <section className="bg-cream">
+          <div className="container-x py-[72px] text-center">
+            <h2 className="font-bold text-[clamp(24px,3vw,32px)] mb-[14px]">
               Pas prêt à réserver ?
             </h2>
-            <p
-              style={{
-                color: "#5b626e",
-                marginBottom: 24,
-                fontSize: 16,
-              }}
-            >
+            <p className="text-muted mb-6 text-[16px]">
               Décrivez votre projet par écrit, je vous reviens avec une
               première idée.
             </p>

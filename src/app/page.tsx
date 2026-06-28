@@ -50,55 +50,22 @@ export default function Home() {
 
       <main>
         {/* ===== HERO ===== */}
-        <section
-          className="container-x hero-grid"
-          style={{
-            padding: "72px 24px 96px",
-            display: "grid",
-            gap: 48,
-            alignItems: "center",
-          }}
-        >
+        <section className="container-x grid items-center gap-12 pt-[72px] pb-24 min-[960px]:gap-16 min-[960px]:pt-24 min-[960px]:pb-[120px] min-[960px]:grid-cols-[1.02fr_.98fr]">
           <div className="anim-in">
-            <div
-              style={{
-                fontWeight: 500,
-                fontSize: 12,
-                letterSpacing: ".2em",
-                color: "#9aa1ad",
-                marginBottom: 26,
-                textTransform: "uppercase",
-              }}
-            >
+            <div className="font-medium text-[12px] tracking-[.2em] text-faint mb-[26px] uppercase">
               NOUS / ACCOMPAGNEMENT / X / VOUS PRENEZ CONTACT
             </div>
-            <h1
-              style={{
-                fontWeight: 700,
-                fontSize: "clamp(36px, 5vw, 60px)",
-                lineHeight: 1.05,
-                letterSpacing: "-.02em",
-                marginBottom: 28,
-              }}
-            >
+            <h1 className="font-bold text-[clamp(36px,5vw,60px)] leading-[1.05] tracking-[-.02em] mb-7">
               Modernisez votre{" "}
-              <span style={{ color: "#1a60f5" }}>cabinet comptable</span>, sans
-              la lourdeur d&apos;une agence.
+              <span className="text-brand">cabinet comptable</span>, sans la
+              lourdeur d&apos;une agence.
             </h1>
-            <p
-              style={{
-                fontSize: 18,
-                lineHeight: 1.6,
-                color: "#5b626e",
-                maxWidth: 520,
-                marginBottom: 38,
-              }}
-            >
+            <p className="text-[18px] leading-[1.6] text-muted max-w-[520px] mb-[38px]">
               Sites web professionnels, automatisation des tâches répétitives et
               intégration de l&apos;IA. Votre entreprise, votre image — enfin à
               la hauteur de votre expertise.
             </p>
-            <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <div className="flex gap-[14px] flex-wrap">
               <ModalLink modal="booking" className="btn-primary">
                 Réserver une rencontre gratuite <ArrowRight />
               </ModalLink>
@@ -108,52 +75,19 @@ export default function Home() {
             </div>
           </div>
           <div
-            className="anim-in"
-            style={{
-              animationDelay: "130ms",
-              justifySelf: "stretch",
-              width: "100%",
-              maxWidth: 460,
-              marginLeft: "auto",
-            }}
+            className="anim-in justify-self-stretch w-full max-w-[460px] ml-auto"
+            style={{ animationDelay: "130ms" }}
           >
-            <div
-              style={{
-                background: "#fff",
-                border: "1px solid #ececed",
-                borderRadius: 22,
-                padding: 6,
-                boxShadow: "0 40px 80px -28px rgba(14,19,32,.25)",
-                overflow: "hidden",
-              }}
-            >
-              <div
-                style={{
-                  padding: "14px 16px 8px",
-                  borderBottom: "1px solid #f1f1ef",
-                }}
-              >
-                <div
-                  style={{
-                    fontWeight: 600,
-                    fontSize: 12,
-                    letterSpacing: ".14em",
-                    color: "#1a60f5",
-                  }}
-                >
+            <div className="bg-white border border-border rounded-[22px] p-1.5 shadow-[0_40px_80px_-28px_rgba(14,19,32,.25)] overflow-hidden">
+              <div className="px-4 pt-[14px] pb-2 border-b border-[#f1f1ef]">
+                <div className="font-semibold text-[12px] tracking-[.14em] text-brand">
                   RENCONTRE GRATUITE · 30 MIN
                 </div>
-                <div
-                  style={{
-                    fontSize: 13,
-                    color: "#5b626e",
-                    marginTop: 4,
-                  }}
-                >
+                <div className="text-[13px] text-muted mt-1">
                   Choisissez une plage qui vous convient.
                 </div>
               </div>
-              <div style={{ minHeight: 520 }}>
+              <div className="min-h-[520px]">
                 <CalEmbed url={site.bookingUrl} />
               </div>
             </div>
@@ -161,115 +95,41 @@ export default function Home() {
         </section>
 
         {/* ===== STATS + PROBLEMS (navy) ===== */}
-        <section style={{ background: "#101927", color: "#fff" }}>
-          <div
-            className="container-x"
-            style={{
-              padding: "70px 24px",
-              borderBottom: "1px solid rgba(255,255,255,.07)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 30,
-              flexWrap: "wrap",
-            }}
-          >
-            <div
-              style={{
-                fontWeight: 700,
-                fontSize: "clamp(56px, 8vw, 78px)",
-                lineHeight: 0.9,
-                color: "#1a60f5",
-                letterSpacing: "-.03em",
-              }}
-            >
+        <section className="bg-navy text-white">
+          <div className="container-x py-[70px] border-b border-white/[.07] flex items-center justify-center gap-[30px] flex-wrap">
+            <div className="font-bold text-[clamp(56px,8vw,78px)] leading-[.9] text-brand tracking-[-.03em]">
               20+
             </div>
-            <p
-              style={{
-                fontSize: 18,
-                lineHeight: 1.5,
-                color: "#cfd3da",
-                maxWidth: 330,
-              }}
-            >
+            <p className="text-[18px] leading-[1.5] text-[#cfd3da] max-w-[330px]">
               organisations accompagnées dans leur présence web et leurs
               automatisations.
             </p>
           </div>
 
-          <div
-            className="container-x"
-            style={{ padding: "96px 24px 120px" }}
-            id="problemes"
-          >
-            <div style={{ maxWidth: 760, margin: "0 auto 56px" }}>
-              <div className="eyebrow" style={{ marginBottom: 22 }}>
+          <div id="problemes" className="container-x pt-24 pb-[120px]">
+            <div className="max-w-[760px] mx-auto mb-14">
+              <div className="eyebrow mb-[22px]">
                 CE QUE JE RÈGLE POUR VOTRE CABINET
               </div>
-              <h2
-                style={{
-                  fontWeight: 700,
-                  fontSize: "clamp(28px, 4vw, 40px)",
-                  lineHeight: 1.13,
-                  letterSpacing: "-.02em",
-                }}
-              >
+              <h2 className="font-bold text-[clamp(28px,4vw,40px)] leading-[1.13] tracking-[-.02em]">
                 Si vous vous reconnaissez dans l&apos;un de ces irritants, on a
                 des choses à se dire.
               </h2>
             </div>
-            <div
-              className="problem-grid"
-              style={{
-                maxWidth: 1080,
-                margin: "0 auto",
-                display: "grid",
-                gap: 22,
-              }}
-            >
+            <div className="max-w-[1080px] mx-auto grid gap-[22px] grid-cols-1 min-[720px]:grid-cols-2">
               {problems.map((p, i) => (
                 <div
                   key={i}
-                  style={{
-                    background: "#151e2e",
-                    border: "1px solid rgba(255,255,255,.06)",
-                    borderRadius: 18,
-                    padding: "30px 32px",
-                  }}
+                  className="bg-navy-card border border-white/[.06] rounded-[18px] px-8 py-[30px]"
                 >
                   <div
-                    style={{
-                      width: 44,
-                      height: 44,
-                      borderRadius: 11,
-                      background: "rgba(26,96,245,.14)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      marginBottom: 42,
-                      color: "#1a60f5",
-                    }}
+                    className="w-11 h-11 rounded-[11px] bg-[rgba(26,96,245,.14)] flex items-center justify-center mb-[42px] text-brand"
                     aria-hidden
                   >
                     {problemIcons[i]}
                   </div>
-                  <h3
-                    style={{
-                      fontWeight: 600,
-                      fontSize: 19,
-                      marginBottom: 12,
-                    }}
-                  >
-                    {p.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: 15,
-                      lineHeight: 1.6,
-                      color: "#8b93a1",
-                    }}
-                  >
+                  <h3 className="font-semibold text-[19px] mb-3">{p.title}</h3>
+                  <p className="text-[15px] leading-[1.6] text-[#8b93a1]">
                     {p.desc}
                   </p>
                 </div>
@@ -281,34 +141,18 @@ export default function Home() {
         {/* ===== PROJECTS ===== */}
         <section
           id="realisations"
-          className="container-x"
-          style={{ padding: "110px 24px", scrollMarginTop: 80 }}
+          className="container-x py-[110px] scroll-mt-20"
         >
-          <div style={{ maxWidth: 1080, margin: "0 auto 60px" }}>
-            <div className="eyebrow" style={{ marginBottom: 22 }}>
+          <div className="max-w-[1080px] mx-auto mb-[60px]">
+            <div className="eyebrow mb-[22px]">
               RÉALISATIONS À IMPACT MESURABLE
             </div>
-            <h2
-              style={{
-                fontWeight: 700,
-                fontSize: "clamp(28px, 4vw, 40px)",
-                lineHeight: 1.15,
-                letterSpacing: "-.02em",
-                marginBottom: 26,
-              }}
-            >
+            <h2 className="font-bold text-[clamp(28px,4vw,40px)] leading-[1.15] tracking-[-.02em] mb-[26px]">
               Des projets livrés.
               <br />
               Des compétences démontrées.
             </h2>
-            <p
-              style={{
-                fontSize: 17,
-                lineHeight: 1.6,
-                color: "#5b626e",
-                maxWidth: 610,
-              }}
-            >
+            <p className="text-[17px] leading-[1.6] text-muted max-w-[610px]">
               J&apos;ai accompagné des organismes et des PME dans leur présence
               web et leurs automatisations. J&apos;applique aujourd&apos;hui
               cette expérience aux besoins précis des cabinets comptables —
@@ -317,161 +161,58 @@ export default function Home() {
             </p>
           </div>
 
-          <div
-            className="projects-grid"
-            style={{
-              maxWidth: 1080,
-              margin: "0 auto",
-              display: "grid",
-              gap: 24,
-            }}
-          >
+          <div className="max-w-[1080px] mx-auto grid gap-6 grid-cols-1 min-[720px]:grid-cols-2 min-[960px]:grid-cols-3">
             {projects.map((p) => (
               <article
                 key={p.slug}
-                style={{
-                  border: "1px solid #ebebe9",
-                  borderRadius: 16,
-                  overflow: "hidden",
-                  background: "#fff",
-                  display: "flex",
-                  flexDirection: "column",
-                }}
+                className="border border-[#ebebe9] rounded-[16px] overflow-hidden bg-white flex flex-col"
               >
                 <div
-                  style={{
-                    background: "#e9e9e4",
-                    padding: "11px 14px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 13,
-                  }}
+                  className="bg-[#e9e9e4] px-[14px] py-[11px] flex items-center gap-[13px]"
                   aria-hidden
                 >
-                  <div style={{ display: "flex", gap: 6 }}>
+                  <div className="flex gap-1.5">
                     <Dot color="#f25f57" />
                     <Dot color="#fbbe2e" />
                     <Dot color="#28c93f" />
                   </div>
-                  <div
-                    style={{
-                      flex: 1,
-                      height: 9,
-                      borderRadius: 5,
-                      background: "#d4d4cd",
-                    }}
-                  />
+                  <div className="flex-1 h-[9px] rounded-[5px] bg-[#d4d4cd]" />
                 </div>
                 <div
-                  style={{
-                    background: "#e3e3de",
-                    border: "1.5px dashed #c4c4bd",
-                    margin: 14,
-                    borderRadius: 8,
-                    height: 185,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    textAlign: "center",
-                    padding: "0 18px",
-                    position: "relative",
-                  }}
+                  className="bg-[#e3e3de] border-[1.5px] border-dashed border-[#c4c4bd] m-[14px] rounded-lg h-[185px] flex flex-col items-center justify-center text-center px-[18px] relative"
                   role="img"
                   aria-label={p.imageAlt}
                 >
                   {p.concept && (
-                    <div
-                      style={{
-                        position: "absolute",
-                        top: -2,
-                        right: -2,
-                        background: "#f3a019",
-                        color: "#3a2700",
-                        fontWeight: 700,
-                        fontSize: 10,
-                        letterSpacing: ".1em",
-                        padding: "5px 10px",
-                        borderRadius: 7,
-                      }}
-                    >
+                    <div className="absolute -top-0.5 -right-0.5 bg-[#f3a019] text-[#3a2700] font-bold text-[10px] tracking-[.1em] px-2.5 py-[5px] rounded-[7px]">
                       CONCEPT
                     </div>
                   )}
-                  <div style={{ color: "#a3a39c", marginBottom: 14 }}>
+                  <div className="text-[#a3a39c] mb-[14px]">
                     <ImagePlaceholder />
                   </div>
-                  <div
-                    style={{
-                      fontSize: 13.5,
-                      color: "#7c7c74",
-                      lineHeight: 1.5,
-                    }}
-                  >
+                  <div className="text-[13.5px] text-[#7c7c74] leading-[1.5]">
                     {p.imageAlt}
                   </div>
                 </div>
-                <div
-                  style={{
-                    padding: "6px 22px 26px",
-                    display: "flex",
-                    flexDirection: "column",
-                    flex: 1,
-                  }}
-                >
+                <div className="px-[22px] pt-1.5 pb-[26px] flex flex-col flex-1">
                   <span
-                    style={{
-                      display: "inline-block",
-                      alignSelf: "flex-start",
-                      fontWeight: 700,
-                      fontSize: 11,
-                      letterSpacing: ".09em",
-                      padding: "5px 10px",
-                      borderRadius: 7,
-                      marginBottom: 16,
-                      background: p.tagBg,
-                      color: p.tagColor,
-                    }}
+                    className="inline-block self-start font-bold text-[11px] tracking-[.09em] px-2.5 py-[5px] rounded-[7px] mb-4"
+                    style={{ background: p.tagBg, color: p.tagColor }}
                   >
                     {p.tag}
                   </span>
-                  <h3
-                    style={{
-                      fontWeight: 600,
-                      fontSize: 21,
-                      marginBottom: 13,
-                    }}
-                  >
+                  <h3 className="font-semibold text-[21px] mb-[13px]">
                     {p.title}
                   </h3>
-                  <p
-                    style={{
-                      fontSize: 14.5,
-                      lineHeight: 1.6,
-                      color: "#5b626e",
-                      marginBottom: 18,
-                    }}
-                  >
+                  <p className="text-[14.5px] leading-[1.6] text-muted mb-[18px]">
                     {p.desc}
                   </p>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexWrap: "wrap",
-                      gap: 8,
-                      marginBottom: 22,
-                    }}
-                  >
+                  <div className="flex flex-wrap gap-2 mb-[22px]">
                     {p.chips.map((c) => (
                       <span
                         key={c}
-                        style={{
-                          fontSize: 12.5,
-                          color: "#5d6470",
-                          background: "#f0f0ed",
-                          padding: "5px 11px",
-                          borderRadius: 20,
-                        }}
+                        className="text-[12.5px] text-[#5d6470] bg-[#f0f0ed] px-[11px] py-[5px] rounded-[20px]"
                       >
                         {c}
                       </span>
@@ -479,16 +220,8 @@ export default function Home() {
                   </div>
                   <Link
                     href={`/realisations/${p.slug}`}
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: 7,
-                      fontWeight: 600,
-                      fontSize: 14,
-                      textDecoration: "none",
-                      color: p.linkColor,
-                      marginTop: "auto",
-                    }}
+                    className="inline-flex items-center gap-[7px] font-semibold text-[14px] no-underline mt-auto"
+                    style={{ color: p.linkColor }}
                   >
                     {p.cta} <ArrowRight />
                   </Link>
@@ -499,76 +232,35 @@ export default function Home() {
         </section>
 
         {/* ===== SERVICES (cream) ===== */}
-        <section id="services" style={{ background: "#f6f6f2", scrollMarginTop: 80 }}>
-          <div
-            style={{
-              maxWidth: 1080,
-              margin: "0 auto",
-              padding: "96px 24px 104px",
-            }}
-          >
-            <div className="eyebrow" style={{ marginBottom: 48 }}>
+        <section id="services" className="bg-cream scroll-mt-20">
+          <div className="max-w-[1080px] mx-auto pt-24 pb-[104px] px-6">
+            <div className="eyebrow mb-12">
               MES SERVICES TAILLÉS POUR VOTRE CABINET
             </div>
             <div>
               {services.map((s, i) => (
                 <div
                   key={s.title}
-                  style={{
-                    display: "flex",
-                    gap: 24,
-                    padding: "32px 0",
-                    borderTop: "1px solid #e1e1da",
-                  }}
+                  className="flex gap-6 py-8 border-t border-cream-border"
                 >
                   <div
-                    style={{
-                      flex: "none",
-                      width: 46,
-                      height: 46,
-                      borderRadius: 12,
-                      background: "#0e1320",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "#fff",
-                    }}
+                    className="flex-none w-[46px] h-[46px] rounded-xl bg-ink flex items-center justify-center text-white"
                     aria-hidden
                   >
                     {serviceIcons[i]}
                   </div>
                   <div>
-                    <h3
-                      style={{
-                        fontWeight: 600,
-                        fontSize: 20,
-                        marginBottom: 10,
-                      }}
-                    >
-                      <span style={{ color: "#1a60f5" }}>{s.title}</span>{" "}
-                      {s.tail}
+                    <h3 className="font-semibold text-[20px] mb-2.5">
+                      <span className="text-brand">{s.title}</span> {s.tail}
                     </h3>
-                    <p
-                      style={{
-                        fontSize: 15.5,
-                        lineHeight: 1.6,
-                        color: "#5b626e",
-                        maxWidth: 920,
-                      }}
-                    >
+                    <p className="text-[15.5px] leading-[1.6] text-muted max-w-[920px]">
                       {s.desc}
                     </p>
                   </div>
                 </div>
               ))}
             </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                marginTop: 48,
-              }}
-            >
+            <div className="flex justify-center mt-12">
               <ModalLink modal="booking" className="btn-primary">
                 Réserver une rencontre <ArrowRight />
               </ModalLink>
@@ -579,49 +271,20 @@ export default function Home() {
         {/* ===== PROCESS ===== */}
         <section
           id="processus"
-          className="container-x"
-          style={{ padding: "104px 24px 110px", scrollMarginTop: 80 }}
+          className="container-x pt-[104px] pb-[110px] scroll-mt-20"
         >
-          <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-            <div className="eyebrow" style={{ marginBottom: 54 }}>
-              COMMENT JE TRAVAILLE
-            </div>
-            <div
-              className="steps-grid"
-              style={{
-                display: "grid",
-                gap: 34,
-              }}
-            >
+          <div className="max-w-[1080px] mx-auto">
+            <div className="eyebrow mb-[54px]">COMMENT JE TRAVAILLE</div>
+            <div className="grid gap-[34px] grid-cols-1 sm:grid-cols-2 min-[960px]:grid-cols-4">
               {steps.map((st) => (
                 <div key={st.num}>
-                  <div
-                    style={{
-                      fontWeight: 700,
-                      fontSize: 46,
-                      color: "#1a60f5",
-                      letterSpacing: "-.02em",
-                      marginBottom: 20,
-                    }}
-                  >
+                  <div className="font-bold text-[46px] text-brand tracking-[-.02em] mb-5">
                     {st.num}
                   </div>
-                  <h3
-                    style={{
-                      fontWeight: 600,
-                      fontSize: 18,
-                      marginBottom: 13,
-                    }}
-                  >
+                  <h3 className="font-semibold text-[18px] mb-[13px]">
                     {st.title}
                   </h3>
-                  <p
-                    style={{
-                      fontSize: 14.5,
-                      lineHeight: 1.62,
-                      color: "#5b626e",
-                    }}
-                  >
+                  <p className="text-[14.5px] leading-[1.62] text-muted">
                     {st.desc}
                   </p>
                 </div>
@@ -633,84 +296,37 @@ export default function Home() {
         {/* ===== ABOUT (navy) ===== */}
         <section
           id="a-propos"
-          style={{ background: "#101927", color: "#fff", scrollMarginTop: 80 }}
+          className="bg-navy text-white scroll-mt-20"
         >
-          <div
-            className="container-x about-grid"
-            style={{
-              padding: "104px 24px",
-              display: "grid",
-              gap: 56,
-              alignItems: "center",
-            }}
-          >
+          <div className="container-x py-[104px] grid items-center gap-14 min-[960px]:gap-[72px] min-[960px]:grid-cols-[.82fr_1.18fr]">
             <div
-              style={{
-                background: "#151e2e",
-                border: "1px solid rgba(255,255,255,.06)",
-                borderRadius: 18,
-                aspectRatio: "4/5",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                textAlign: "center",
-                color: "#6a727f",
-                maxWidth: 420,
-              }}
+              className="bg-navy-card border border-white/[.06] rounded-[18px] aspect-[4/5] flex flex-col items-center justify-center text-center text-muted-soft max-w-[420px]"
               role="img"
               aria-label="Photo professionnelle de Jonathan Deschênes"
             >
-              <div style={{ marginBottom: 16 }} aria-hidden>
+              <div className="mb-4" aria-hidden>
                 <ImagePlaceholder />
               </div>
-              <div style={{ fontSize: 14, lineHeight: 1.5 }}>
+              <div className="text-[14px] leading-[1.5]">
                 Photo professionnelle de
                 <br />
                 Jonathan Deschênes
               </div>
             </div>
             <div>
-              <div
-                className="eyebrow"
-                style={{ marginBottom: 24, color: "#1a60f5" }}
-              >
-                QUI RÉALISE VOTRE PROJET
-              </div>
-              <h2
-                style={{
-                  fontWeight: 700,
-                  fontSize: "clamp(26px, 3.5vw, 37px)",
-                  lineHeight: 1.15,
-                  letterSpacing: "-.02em",
-                  marginBottom: 30,
-                }}
-              >
+              <div className="eyebrow mb-6">QUI RÉALISE VOTRE PROJET</div>
+              <h2 className="font-bold text-[clamp(26px,3.5vw,37px)] leading-[1.15] tracking-[-.02em] mb-[30px]">
                 Vous parlez directement à la personne qui conçoit et livre votre
                 projet — pas à un intermédiaire.
               </h2>
-              <p
-                style={{
-                  fontSize: 16.5,
-                  lineHeight: 1.68,
-                  color: "#aab0bb",
-                  marginBottom: 22,
-                }}
-              >
+              <p className="text-[16.5px] leading-[1.68] text-[#aab0bb] mb-[22px]">
                 Je suis Jonathan Deschênes, étudiant en Techniques de
                 l&apos;informatique avec l&apos;intention de poursuivre au
                 baccalauréat en génie logiciel. J&apos;ai déjà livré des sites
                 web réellement utilisés et des applications fonctionnelles en
                 production.
               </p>
-              <p
-                style={{
-                  fontSize: 16.5,
-                  lineHeight: 1.68,
-                  color: "#aab0bb",
-                  marginBottom: 34,
-                }}
-              >
+              <p className="text-[16.5px] leading-[1.68] text-[#aab0bb] mb-[34px]">
                 Être étudiant, c&apos;est maîtriser les technologies les plus
                 récentes — dont l&apos;IA — à des tarifs accessibles, avec un
                 contact direct et une imputabilité totale. Votre projet ne sera
@@ -726,27 +342,11 @@ export default function Home() {
         {/* ===== FAQ ===== */}
         <section
           id="faq"
-          className="container-x"
-          style={{ padding: "104px 24px 110px", scrollMarginTop: 80 }}
+          className="container-x pt-[104px] pb-[110px] scroll-mt-20"
         >
-          <div
-            style={{
-              maxWidth: 840,
-              margin: "0 auto 64px",
-              textAlign: "center",
-            }}
-          >
-            <div className="eyebrow" style={{ marginBottom: 20 }}>
-              QUESTIONS FRÉQUENTES
-            </div>
-            <h2
-              style={{
-                fontWeight: 700,
-                fontSize: "clamp(28px, 4.5vw, 42px)",
-                lineHeight: 1.1,
-                letterSpacing: "-.02em",
-              }}
-            >
+          <div className="max-w-[840px] mx-auto mb-16 text-center">
+            <div className="eyebrow mb-5">QUESTIONS FRÉQUENTES</div>
+            <h2 className="font-bold text-[clamp(28px,4.5vw,42px)] leading-[1.1] tracking-[-.02em]">
               Ce que vous voudrez savoir avant d&apos;appeler
             </h2>
           </div>
@@ -754,41 +354,16 @@ export default function Home() {
         </section>
 
         {/* ===== FINAL CTA (cream) ===== */}
-        <section id="contact" style={{ background: "#f6f6f2", scrollMarginTop: 80 }}>
-          <div
-            className="container-x"
-            style={{ padding: "110px 24px", textAlign: "center" }}
-          >
-            <h2
-              style={{
-                fontWeight: 700,
-                fontSize: "clamp(30px, 5vw, 46px)",
-                lineHeight: 1.12,
-                letterSpacing: "-.02em",
-                maxWidth: 720,
-                margin: "0 auto 24px",
-              }}
-            >
+        <section id="contact" className="bg-cream scroll-mt-20">
+          <div className="container-x py-[110px] text-center">
+            <h2 className="font-bold text-[clamp(30px,5vw,46px)] leading-[1.12] tracking-[-.02em] max-w-[720px] mx-auto mb-6">
               Pas encore décidé ? Présentez-moi votre projet en 3 minutes.
             </h2>
-            <p
-              style={{
-                fontSize: 17,
-                color: "#5b626e",
-                marginBottom: 38,
-              }}
-            >
+            <p className="text-[17px] text-muted mb-[38px]">
               Décrivez votre besoin en deux phrases. Je vous dis si on peut
               travailler ensemble.
             </p>
-            <div
-              style={{
-                display: "flex",
-                gap: 14,
-                justifyContent: "center",
-                flexWrap: "wrap",
-              }}
-            >
+            <div className="flex gap-[14px] justify-center flex-wrap">
               <ModalLink modal="quote" className="btn-outline">
                 Demander une soumission rapide <ArrowRight />
               </ModalLink>
@@ -802,36 +377,6 @@ export default function Home() {
 
       <SiteFooter />
       <FloatingCta />
-
-      {/* page-scoped responsive overrides */}
-      <style>{`
-        .hero-grid { grid-template-columns: 1fr; }
-        @media (min-width: 960px) {
-          .hero-grid { grid-template-columns: 1.02fr .98fr; gap: 64px; padding: 96px 40px 120px !important; }
-        }
-        .problem-grid { grid-template-columns: 1fr; }
-        @media (min-width: 720px) {
-          .problem-grid { grid-template-columns: 1fr 1fr; }
-        }
-        .projects-grid { grid-template-columns: 1fr; }
-        @media (min-width: 720px) {
-          .projects-grid { grid-template-columns: 1fr 1fr; }
-        }
-        @media (min-width: 960px) {
-          .projects-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-        .steps-grid { grid-template-columns: 1fr; }
-        @media (min-width: 640px) {
-          .steps-grid { grid-template-columns: 1fr 1fr; }
-        }
-        @media (min-width: 960px) {
-          .steps-grid { grid-template-columns: repeat(4, 1fr); }
-        }
-        .about-grid { grid-template-columns: 1fr; }
-        @media (min-width: 960px) {
-          .about-grid { grid-template-columns: .82fr 1.18fr; gap: 72px; }
-        }
-      `}</style>
 
       <Script
         id="ld-json-faq"
@@ -868,12 +413,8 @@ export default function Home() {
 function Dot({ color }: { color: string }) {
   return (
     <div
-      style={{
-        width: 11,
-        height: 11,
-        borderRadius: "50%",
-        background: color,
-      }}
+      className="w-[11px] h-[11px] rounded-full"
+      style={{ background: color }}
     />
   );
 }
