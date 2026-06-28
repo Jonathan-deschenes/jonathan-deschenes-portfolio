@@ -113,7 +113,11 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="fr-CA" className={spaceGrotesk.variable}>
+    <html
+      lang="fr-CA"
+      data-scroll-behavior="smooth"
+      className={spaceGrotesk.variable}
+    >
       <body>
         {children}
         <ModalRoot />
