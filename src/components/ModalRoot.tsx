@@ -45,7 +45,7 @@ export default function ModalRoot() {
         size="xl"
       >
         <div className="min-h-[640px]">
-          <CalEmbed url={site.bookingUrl} />
+          <CalEmbed url={site.bookingUrl} namespace="modal" />
         </div>
       </Modal>
 

@@ -15,12 +15,13 @@ function extractCalLink(url: string): string {
 export default function CalEmbed({
   url,
   namespace,
+  hideEventTypeDetails = false,
 }: {
   url: string;
   namespace?: string;
+  hideEventTypeDetails?: boolean;
 }) {
   const generated = useId();
-  // Cal namespace must be filesystem/url safe — strip the React-generated colons
   const ns = (namespace ?? `cal-${generated}`).replace(/[^a-zA-Z0-9_-]/g, "");
   const calLink = extractCalLink(url);
 
@@ -32,11 +33,11 @@ export default function CalEmbed({
           light: { "cal-brand": "#1a60f5" },
           dark: { "cal-brand": "#1a60f5" },
         },
-        hideEventTypeDetails: false,
+        hideEventTypeDetails,
         layout: "month_view",
       });
     })();
-  }, [ns]);
+  }, [ns, hideEventTypeDetails]);
 
   return (
     <Cal

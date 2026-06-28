@@ -78,17 +78,30 @@ export default function Home() {
             className="anim-in justify-self-stretch w-full max-w-[460px] ml-auto"
             style={{ animationDelay: "130ms" }}
           >
-            <div className="bg-white border border-border rounded-[22px] p-1.5 shadow-[0_40px_80px_-28px_rgba(14,19,32,.25)] overflow-hidden">
-              <div className="px-4 pt-[14px] pb-2 border-b border-[#f1f1ef]">
-                <div className="font-semibold text-[12px] tracking-[.14em] text-brand">
-                  RENCONTRE GRATUITE · 30 MIN
+            <div className="bg-white border border-border rounded-[22px] overflow-hidden shadow-[0_40px_80px_-28px_rgba(14,19,32,.25)]">
+              <div className="px-5 pt-4 pb-3 border-b border-[#f1f1ef] flex items-center justify-between gap-3">
+                <div>
+                  <div className="font-semibold text-[12px] tracking-[.14em] text-brand">
+                    RENCONTRE GRATUITE · 30 MIN
+                  </div>
+                  <div className="text-[13px] text-muted mt-0.5">
+                    Choisissez une plage qui vous convient.
+                  </div>
                 </div>
-                <div className="text-[13px] text-muted mt-1">
-                  Choisissez une plage qui vous convient.
-                </div>
+                <ModalLink
+                  modal="booking"
+                  ariaLabel="Ouvrir le calendrier en grand"
+                  className="text-[12px] text-brand font-semibold no-underline whitespace-nowrap hover:underline"
+                >
+                  Plein écran →
+                </ModalLink>
               </div>
-              <div className="min-h-[520px]">
-                <CalEmbed url={site.bookingUrl} />
+              <div className="h-[560px] overflow-y-auto overflow-x-hidden">
+                <CalEmbed
+                  url={site.bookingUrl}
+                  namespace="hero"
+                  hideEventTypeDetails
+                />
               </div>
             </div>
           </div>
