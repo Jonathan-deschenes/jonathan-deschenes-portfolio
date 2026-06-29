@@ -7,12 +7,12 @@ import SiteFooter from "@/components/SiteFooter";
 import FloatingCta from "@/components/FloatingCta";
 import { ArrowRight, ImagePlaceholder } from "@/components/Icons";
 import ModalLink from "@/components/ModalLink";
-import { caseStudies } from "@/lib/data";
+import { getProject, getProjectSlugs } from "@/lib/content";
 import { site } from "@/lib/site";
 import Image from "next/image";
 
 export function generateStaticParams() {
-	return caseStudies.map((c) => ({ slug: c.slug }));
+	return getProjectSlugs().map((slug) => ({ slug }));
 }
 
 type Params = { slug: string };
@@ -23,15 +23,15 @@ export async function generateMetadata({
 	params: Promise<Params>;
 }): Promise<Metadata> {
 	const { slug } = await params;
-	const cs = caseStudies.find((c) => c.slug === slug);
+	const cs = getProject(slug);
 	if (!cs) return {};
 	return {
 		title: cs.title,
-		description: cs.challenge.slice(0, 160),
+		description: cs.defi.slice(0, 160),
 		alternates: { canonical: `/realisations/${cs.slug}` },
 		openGraph: {
 			title: cs.title,
-			description: cs.challenge.slice(0, 160),
+			description: cs.defi.slice(0, 160),
 			type: "article",
 			url: `${site.baseUrl}/realisations/${cs.slug}`,
 		},
@@ -44,14 +44,16 @@ export default async function CaseStudyPage({
 	params: Promise<Params>;
 }) {
 	const { slug } = await params;
-	const cs = caseStudies.find((c) => c.slug === slug);
+	const cs = getProject(slug);
 	if (!cs) notFound();
+
+	const heroImage = cs.images[0] ?? "";
 
 	const ld = {
 		"@context": "https://schema.org",
 		"@type": "Article",
 		headline: cs.title,
-		description: cs.challenge.slice(0, 160),
+		description: cs.defi.slice(0, 160),
 		author: { "@type": "Person", name: site.name },
 		publisher: { "@type": "Organization", name: site.name },
 		url: `${site.baseUrl}/realisations/${cs.slug}`,
@@ -71,11 +73,6 @@ export default async function CaseStudyPage({
 					<div className='eyebrow mb-3 sm:mb-[14px]'>{cs.tag}</div>
 					<h1 className='font-bold text-[clamp(24px,6vw,50px)] leading-[1.12] sm:leading-[1.08] tracking-[-.02em] mb-3 sm:mb-[14px] max-w-[880px]'>
 						<span>{cs.title}</span>
-						{cs.concept && (
-							<span className='inline-block bg-[#f3a019] text-[#3a2700] font-bold text-[10px] sm:text-[12px] tracking-[.1em] px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg ml-2 sm:ml-[14px] align-middle whitespace-nowrap'>
-								CONCEPT
-							</span>
-						)}
 					</h1>
 				</section>
 
@@ -92,10 +89,10 @@ export default async function CaseStudyPage({
 							</div>
 							<div className='flex-1 h-[9px] rounded-[5px] bg-[#d4d4cd]' />
 						</div>
-						{cs.imageUrl ? (
+						{heroImage ? (
 							<Image
-								src={cs.imageUrl}
-								alt={cs.imageAlt}
+								src={heroImage}
+								alt={`Capture du projet ${cs.title}`}
 								width={1600}
 								height={900}
 								sizes='(max-width: 1100px) 100vw, 1080px'
@@ -121,11 +118,11 @@ export default async function CaseStudyPage({
 
 				<section className='container-x pt-8 pb-12 sm:pb-[60px]'>
 					<div className='grid gap-5 sm:gap-10 max-w-[1080px] grid-cols-1 md:grid-cols-3'>
-						<Card title='Le défi'>{cs.challenge}</Card>
+						<Card title='Le défi'>{cs.defi}</Card>
 						<Card title='La solution'>{cs.solution}</Card>
-						<Card title='Le résultat'>{cs.result}</Card>
+						<Card title='Le résultat'>{cs.resultat}</Card>
 					</div>
-
+						
 					<div className='mt-8 sm:mt-10 max-w-[1080px]'>
 						<div className='eyebrow mb-3 sm:mb-[14px]'>
 							TECHNOLOGIES UTILISÉES
@@ -141,6 +138,16 @@ export default async function CaseStudyPage({
 							))}
 						</div>
 					</div>
+					{cs.link && (
+						<a
+							href={cs.link.startsWith("http") ? cs.link : `https://${cs.link}`}
+							target='_blank'
+							rel='noopener noreferrer'
+							className='btn-primary inline-flex items-center gap-2 mt-5 sm:mt-6'
+						>
+							Voir le site <ArrowRight />
+						</a>
+					)}
 				</section>
 
 				<section className='bg-cream'>

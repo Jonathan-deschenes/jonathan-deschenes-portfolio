@@ -18,11 +18,14 @@ import {
 	IconUser,
 	ImagePlaceholder,
 } from "@/components/Icons";
-import { faqs, problems, projects, services, steps } from "@/lib/data";
+import { faqs, problems, services, steps } from "@/lib/data";
+import { getAllProjects } from "@/lib/content";
 import { site } from "@/lib/site";
 import Image from "next/image";
 
 export default function Home() {
+	const projects = getAllProjects();
+
 	const faqLd = {
 		"@context": "https://schema.org",
 		"@type": "FAQPage",
@@ -204,22 +207,17 @@ export default function Home() {
 								</div>
 								<div
 									className={`m-[14px] rounded-lg h-[185px] flex flex-col items-center justify-center text-center relative overflow-hidden ${
-										p.imageUrl
+										p.logo
 											? "bg-white border border-[#ebebe9]"
 											: "bg-[#e3e3de] border-[1.5px] border-dashed border-[#c4c4bd] px-[18px]"
 									}`}
 									role='img'
-									aria-label={p.imageAlt}
+									aria-label={`Visuel du projet ${p.title}`}
 								>
-									{p.concept && (
-										<div className='absolute -top-0.5 -right-0.5 z-10 bg-[#f3a019] text-[#3a2700] font-bold text-[10px] tracking-[.1em] px-2.5 py-[5px] rounded-[7px]'>
-											CONCEPT
-										</div>
-									)}
-									{p.imageUrl ? (
+									{p.logo ? (
 										<Image
-											src={p.imageUrl}
-											alt={p.imageAlt}
+											src={p.logo}
+											alt={`Logo ${p.title}`}
 											width={240}
 											height={140}
 											className='max-h-[130px] w-auto object-contain'
@@ -239,7 +237,7 @@ export default function Home() {
 										{p.title}
 									</h3>
 									<p className='text-[14.5px] leading-[1.6] text-muted mb-[18px]'>
-										{p.desc}
+										{p.description}
 									</p>
 									<div className='flex flex-wrap gap-2 mb-[22px]'>
 										{p.chips.map((c) => (
