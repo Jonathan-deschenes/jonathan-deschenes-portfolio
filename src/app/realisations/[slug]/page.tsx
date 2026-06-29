@@ -74,6 +74,7 @@ export default async function CaseStudyPage({
 					<h1 className='font-bold text-[clamp(24px,6vw,50px)] leading-[1.12] sm:leading-[1.08] tracking-[-.02em] mb-3 sm:mb-[14px] max-w-[880px]'>
 						<span>{cs.title}</span>
 					</h1>
+					<p className='text-[15.5px] leading-[1.65] text-ink-soft text-justify'>{cs.description}</p>
 				</section>
 
 				<section className='container-x pb-6'>
@@ -191,7 +192,7 @@ function Card({
 	return (
 		<div className='bg-white border border-border rounded-[16px] p-7'>
 			<h2 className='font-semibold text-[18px] mb-3 text-brand'>{title}</h2>
-			<p className='text-[15.5px] leading-[1.65] text-ink-soft'>{children}</p>
+			<p className='text-[15.5px] leading-[1.65] text-ink-soft text-justify'>{children}</p>
 		</div>
 	);
 }
