@@ -7,13 +7,13 @@ export type Problem = {
 export const problems: Problem[] = [
 	{
 		title: "Collecte de documents clients",
-		desc: "Relances manuelles par courriel, documents manquants, dossiers incomplets — des heures perdues qui pourraient être facturées.",
+		desc: "Relances manuelles par courriel, documents manquants, dossiers incomplets et des heures perdues qui pourraient être facturées.",
 		iconPath:
 			"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z|M14 2v6h6|M8 13h8M8 17h8M8 9h2",
 	},
 	{
 		title: "Tâches répétitives qui grignotent du temps facturable",
-		desc: "Classement, saisie de données, accueil de nouveaux clients — des processus manuels qui vous coûtent des heures chaque semaine.",
+		desc: "Classement, saisie de données, accueil de nouveaux clients, etc. Bref,  des processus manuels qui vous coûtent des heures chaque semaine.",
 		iconPath: "M12 8v4l3 2|c-circle-9",
 	},
 	{
@@ -23,7 +23,7 @@ export const problems: Problem[] = [
 	},
 	{
 		title: "Rappels d'échéances fiscales gérés à la main",
-		desc: "Courriels écrits un à un, risque d'oubli, image peu professionnelle. Des rappels automatisés changent la donne.",
+		desc: "Courriels écrits un à un, risque d'oubli, image peu professionnelle. Des rappels automatisés changent la donne et optimise votre temp.",
 		iconPath: "M3 4h18v18H3z|M16 2v4M8 2v4M3 10h18",
 	},
 ];
@@ -38,20 +38,20 @@ export type Service = {
 export const services: Service[] = [
 	{
 		title: "Site web professionnel",
-		tail: "— Crédibilité immédiate et nouveaux clients.",
-		desc: "Conception sur mesure orientée conversion : présentation claire de vos services, prise de rendez-vous en ligne, formulaires et référencement de base inclus.",
+		tail: "— Visiblité en ligne propulsé",
+		desc: "Conception sur mesure orientée conversion : présentation claire de vos services, prise de rendez-vous en ligne, formulaires et référencement SEO inclus.",
 		iconPath: "M3 3h18v18H3z|M9 3v18M3 9h6",
 	},
 	{
 		title: "Automatisation",
 		tail: "— Du temps facturable récupéré.",
-		desc: "Collecte de documents clients, accueil de nouveaux clients, rappels d'échéances — des heures récupérées chaque semaine, sans intervention manuelle.",
+		desc: "Collecte de documents clients, accueil de nouveaux clients, rappels d'échéances, des heures récupérées chaque semaine sans intervention manuelle.",
 		iconPath: "M12 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z|M5 21a7 7 0 0 1 14 0",
 	},
 	{
 		title: "Intégration de l'IA",
 		tail: "— Moins de questions répétitives, plus de qualité.",
-		desc: "Un agent qui répond aux questions fréquentes de vos clients, qualifie les prospects et traite les documents — en portant une attention particulière à la confidentialité des données financières.",
+		desc: "Un agent qui répond aux questions fréquentes de vos clients, qualifie les prospects et traite les documents en portant une attention particulière à la confidentialité des données financières.",
 		iconPath:
 			"c-circle-4|M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19",
 	},
@@ -96,14 +96,19 @@ export type Faq = { question: string; answer: string };
 
 export const faqs: Faq[] = [
 	{
+		question: "Qu'est-ce que l'automatisation peut faire pour mon cabinet?",
+		answer:
+			"Collecte de documents, accueil de nouveaux clients, rappels d'échéances, saisie de données, traitement de documents par IA, donc des heures récupérées chaque semaine, sans intervention manuelle.",
+	},
+	{
 		question: "Combien coûte votre projet?",
 		answer:
-			"Chaque projet est unique. Après notre rencontre de 30 minutes, vous recevez une proposition écrite avec une portée, un prix et un échéancier fixes — aucune surprise en cours de route.",
+			"Chaque projet est unique. Après notre rencontre de 30 minutes, vous recevez une proposition écrite avec une portée, un prix et un échéancier fixes avec aucune surprise en cours de route.",
 	},
 	{
 		question: "Travaillez-vous à distance?",
 		answer:
-			"Oui. Je travaille avec des cabinets partout au Québec, en visioconférence et par courriel. L'ensemble du processus peut se faire à distance, sans déplacement de votre part.",
+			"Oui. Je travaille avec des cabinets partout au Québec, en personne, en rencontre en ligne et par courriel. L'ensemble du processus peut se faire à distance, sans déplacement de votre part.",
 	},
 	{
 		question: "Mes données financières sont-elles en sécurité?",
@@ -120,10 +125,4 @@ export const faqs: Faq[] = [
 		answer:
 			"Un site vitrine prend généralement de 2 à 4 semaines. Les projets d'automatisation et sur mesure varient selon la portée, définie ensemble dès le départ.",
 	},
-	{
-		question: "Qu'est-ce que l'automatisation peut faire pour mon cabinet?",
-		answer:
-			"Collecte de documents, accueil de nouveaux clients, rappels d'échéances, saisie de données, traitement de documents par IA — des heures récupérées chaque semaine, sans intervention manuelle.",
-	},
 ];
-

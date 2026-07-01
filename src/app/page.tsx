@@ -58,17 +58,17 @@ export default function Home() {
 				<section className='container-x grid items-center gap-10 pt-10 pb-14 sm:pt-[72px] sm:pb-24 min-[960px]:gap-16 min-[960px]:pt-24 min-[960px]:pb-[120px] min-[960px]:grid-cols-[1.02fr_.98fr]'>
 					<div className='anim-in'>
 						<div className='font-medium text-[11px] sm:text-[12px] tracking-[.18em] sm:tracking-[.2em] text-faint mb-5 sm:mb-[26px] uppercase'>
-							NOUS / ACCOMPAGNEMENT / X / VOUS PRENEZ CONTACT
+							WEB · AUTOMATISATION · IA · CABINETS COMPTABLES
 						</div>
 						<h1 className='font-bold text-[clamp(32px,7vw,60px)] leading-[1.05] tracking-[-.02em] mb-5 sm:mb-7'>
-							Modernisez votre{" "}
+							Optimisez votre{" "}
 							<span className='text-brand'>cabinet comptable</span>, sans la
 							lourdeur d&apos;une agence.
 						</h1>
 						<p className='text-[16px] sm:text-[18px] leading-[1.6] text-muted max-w-[520px] mb-7 sm:mb-[38px]'>
 							Sites web professionnels, automatisation des tâches répétitives et
-							intégration de l&apos;IA. Votre entreprise, votre image — enfin à
-							la hauteur de votre expertise.
+							intégration de l&apos;IA. Votre entreprise, votre image à la
+							hauteur de votre expertise.
 						</p>
 						<div className='flex gap-3 sm:gap-[14px] flex-wrap'>
 							<ModalLink modal='booking' className='btn-primary'>
@@ -134,11 +134,11 @@ export default function Home() {
 						<div className='max-w-[1080px] mx-auto'>
 							<div className='max-w-[760px] mb-10 sm:mb-14'>
 								<div className='eyebrow mb-4 sm:mb-[22px]'>
-									CE QUE JE RÈGLE POUR VOTRE CABINET
+									CE QUI VOUS RALENTIT
 								</div>
 								<h2 className='font-bold text-[clamp(24px,5.5vw,40px)] leading-[1.15] tracking-[-.02em]'>
-									Si vous vous reconnaissez dans l&apos;un de ces irritants, on
-									a des choses à se dire.
+									Les cabinets comptables me contactent dès l&apos;apparition
+									d&apos;un de ces premiers signes de ralentissement.
 								</h2>
 							</div>
 							<div className='mx-auto grid gap-4 sm:gap-[22px] grid-cols-1 min-[720px]:grid-cols-2'>
@@ -173,7 +173,7 @@ export default function Home() {
 				>
 					<div className='max-w-[1080px] mx-auto mb-10 sm:mb-[60px]'>
 						<div className='eyebrow mb-4 sm:mb-[22px]'>
-							RÉALISATIONS À IMPACT MESURABLE
+							RÉALISATIONS & IMPACT MESURABLE
 						</div>
 						<h2 className='font-bold text-[clamp(24px,5.5vw,40px)] leading-[1.15] tracking-[-.02em] mb-4 sm:mb-[26px]'>
 							Des projets livrés.
@@ -181,10 +181,10 @@ export default function Home() {
 							Des compétences démontrées.
 						</h2>
 						<p className='text-[15px] sm:text-[17px] leading-[1.6] text-muted max-w-[610px]'>
-							J&apos;ai accompagné des organismes et des PME dans leur présence
-							web et leurs automatisations. J&apos;applique aujourd&apos;hui
-							cette expérience aux besoins précis des cabinets comptables —
-							chaque réalisation illustre une compétence directement pertinente.
+							Découvrez comment combiner conception web, développement
+							d&apos;applications et automatisation intelligente pour résoudre
+							des problèmes concrets, améliorer les processus et créer des
+							systèmes plus efficaces pour les entreprises.
 						</p>
 					</div>
 
@@ -266,7 +266,7 @@ export default function Home() {
 				<section id='services' className='bg-cream scroll-mt-20'>
 					<div className='max-w-[1080px] mx-auto pt-14 pb-16 sm:pt-24 sm:pb-[104px] px-6 md:px-10'>
 						<div className='eyebrow mb-8 sm:mb-12'>
-							MES SERVICES TAILLÉS POUR VOTRE CABINET
+							MES SERVICES POUR OPTIMISER VOTRE CABINET
 						</div>
 						<div>
 							{services.map((s, i) => (
@@ -330,16 +330,24 @@ export default function Home() {
 				<section id='a-propos' className='bg-navy text-white scroll-mt-20'>
 					<div className='container-x py-14 sm:py-[104px] grid items-center gap-10 sm:gap-14 min-[960px]:gap-[72px] min-[960px]:grid-cols-[.82fr_1.18fr]'>
 						<div
-							className='bg-navy-card border border-white/[.06] rounded-[16px] sm:rounded-[18px] aspect-[4/5] flex flex-col items-center justify-center text-center text-muted-soft max-w-[300px] sm:max-w-[420px] w-full mx-auto min-[960px]:mx-0'
+							className='relative bg-navy-card border border-white/[.06] rounded-[16px] sm:rounded-[18px] aspect-[4/5] flex flex-col items-center justify-center text-center text-muted-soft max-w-[300px] sm:max-w-[420px] w-full mx-auto min-[960px]:mx-0'
 							role='img'
 							aria-label='Photo professionnelle de Jonathan Deschênes'
 						>
-							<div className='mb-3 sm:mb-4' aria-hidden></div>
-							<div className='text-[13px] sm:text-[14px] leading-[1.5]'>
-								Photo professionnelle de
-								<br />
-								Jonathan Deschênes
+							<div className='absolute top-0 left-0 grid grid-cols-12 gap-4 opacity-35'>
+								{Array.from({ length: 192 }).map((_, index) => (
+									<IconCode key={index} />
+								))}
 							</div>
+							<Image
+								src='/about-me.png'
+								alt={`Capture à propos de moi Jonathan Deschênes`}
+								width={1600}
+								height={900}
+								sizes='(max-width: 1100px) 100vw, 1080px'
+								className='block w-full h-auto opacity-75'
+								priority
+							/>
 						</div>
 						<div>
 							<div className='eyebrow mb-4 sm:mb-6'>
@@ -347,20 +355,20 @@ export default function Home() {
 							</div>
 							<h2 className='font-bold text-[clamp(22px,5vw,37px)] leading-[1.15] tracking-[-.02em] mb-5 sm:mb-[30px]'>
 								Vous parlez directement à la personne qui conçoit et livre votre
-								projet — pas à un intermédiaire.
+								projet.
 							</h2>
 							<p className='text-[15px] sm:text-[16.5px] leading-[1.68] text-[#aab0bb] mb-5 sm:mb-[22px]'>
 								Je suis Jonathan Deschênes, étudiant en Techniques de
 								l&apos;informatique avec l&apos;intention de poursuivre au
-								baccalauréat en génie logiciel. J&apos;ai déjà livré des sites
-								web réellement utilisés et des applications fonctionnelles en
-								production.
+								baccalauréat en génie logiciel. Avec déjà plus de 3 ans en tant
+								que travailleur autonome, je me concentre dès maintenant sur
+								l&apos;optimisation des cabinets comptables.
 							</p>
 							<p className='text-[15px] sm:text-[16.5px] leading-[1.68] text-[#aab0bb] mb-7 sm:mb-[34px]'>
 								Être étudiant, c&apos;est maîtriser les technologies les plus
-								récentes — dont l&apos;IA — à des tarifs accessibles, avec un
-								contact direct et une imputabilité totale. Votre projet ne sera
-								jamais confié à quelqu&apos;un d&apos;autre.
+								récentes à des tarifs accessibles, avec un contact direct et une
+								imputabilité totale. Votre projet ne sera jamais confié à
+								quelqu&apos;un d&apos;autre.
 							</p>
 							<ModalLink modal='booking' className='btn-primary'>
 								Réserver une rencontre <ArrowRight />
@@ -390,8 +398,8 @@ export default function Home() {
 							Pas encore décidé ? Présentez-moi votre projet en 3 minutes.
 						</h2>
 						<p className='text-[15px] sm:text-[17px] text-muted mb-7 sm:mb-[38px]'>
-							Décrivez votre besoin en deux phrases. Je vous dis si on peut
-							travailler ensemble.
+							Répondez à ce cours formulaire de soumission et je vous dis si on
+							peut travailler ensemble.
 						</p>
 						<div className='flex gap-3 sm:gap-[14px] justify-center flex-wrap'>
 							<ModalLink modal='quote' className='btn-outline'>

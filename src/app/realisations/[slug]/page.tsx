@@ -74,11 +74,13 @@ export default async function CaseStudyPage({
 					<h1 className='font-bold text-[clamp(24px,6vw,50px)] leading-[1.12] sm:leading-[1.08] tracking-[-.02em] mb-3 sm:mb-[14px] max-w-[880px]'>
 						<span>{cs.title}</span>
 					</h1>
-					<p className='text-[15.5px] leading-[1.65] text-ink-soft text-justify'>{cs.description}</p>
+					<p className='text-[15.5px] leading-[1.65] text-ink-soft text-justify'>
+						{cs.description}
+					</p>
 				</section>
 
 				<section className='container-x pb-6'>
-					<div className='border border-[#ebebe9] rounded-[18px] bg-white overflow-hidden max-w-[1080px]'>
+					<div className='border border-[#ebebe9] rounded-[18px] bg-white overflow-hidden max-w-full'>
 						<div
 							className='bg-[#e9e9e4] px-[14px] py-[11px] flex items-center gap-[13px]'
 							aria-hidden
@@ -109,22 +111,20 @@ export default async function CaseStudyPage({
 								<div className='text-[#a3a39c] mb-[14px]' aria-hidden>
 									<ImagePlaceholder size={42} />
 								</div>
-								<div className='text-[14px]'>
-									Capture du projet à intégrer
-								</div>
+								<div className='text-[14px]'>Capture du projet à intégrer</div>
 							</div>
 						)}
 					</div>
 				</section>
 
 				<section className='container-x pt-8 pb-12 sm:pb-[60px]'>
-					<div className='grid gap-5 sm:gap-10 max-w-[1080px] grid-cols-1 md:grid-cols-3'>
+					<div className='grid gap-5 sm:gap-10 max-w-full grid-cols-1 md:grid-cols-3'>
 						<Card title='Le défi'>{cs.defi}</Card>
 						<Card title='La solution'>{cs.solution}</Card>
 						<Card title='Le résultat'>{cs.resultat}</Card>
 					</div>
-						
-					<div className='mt-8 sm:mt-10 max-w-[1080px]'>
+
+					<div className='mt-8 sm:mt-10 max-w-full'>
 						<div className='eyebrow mb-3 sm:mb-[14px]'>
 							TECHNOLOGIES UTILISÉES
 						</div>
@@ -192,7 +192,9 @@ function Card({
 	return (
 		<div className='bg-white border border-border rounded-[16px] p-7'>
 			<h2 className='font-semibold text-[18px] mb-3 text-brand'>{title}</h2>
-			<p className='text-[15.5px] leading-[1.65] text-ink-soft text-justify'>{children}</p>
+			<p className='text-[15.5px] leading-[1.65] text-ink-soft text-justify'>
+				{children}
+			</p>
 		</div>
 	);
 }
