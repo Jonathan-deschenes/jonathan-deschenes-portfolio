@@ -330,11 +330,11 @@ export default function Home() {
 				<section id='a-propos' className='bg-navy text-white scroll-mt-20'>
 					<div className='container-x py-14 sm:py-[104px] grid items-center gap-10 sm:gap-14 min-[960px]:gap-[72px] min-[960px]:grid-cols-[.82fr_1.18fr]'>
 						<div
-							className='relative bg-navy-card border border-white/[.06] rounded-[16px] sm:rounded-[18px] aspect-[4/5] flex flex-col items-center justify-center text-center text-muted-soft max-w-[300px] sm:max-w-[420px] w-full mx-auto min-[960px]:mx-0'
+							className='relative overflow-hidden bg-navy-card border border-white/[.06] rounded-[16px] sm:rounded-[18px] aspect-[4/5] flex flex-col items-center justify-center text-center text-muted-soft max-w-[300px] sm:max-w-[420px] w-full mx-auto min-[960px]:mx-0'
 							role='img'
 							aria-label='Photo professionnelle de Jonathan Deschênes'
 						>
-							<div className='absolute top-0 left-0 grid grid-cols-12 gap-4 opacity-35'>
+							<div className='pointer-events-none absolute inset-0 grid grid-cols-12 gap-4 opacity-35'>
 								{Array.from({ length: 192 }).map((_, index) => (
 									<IconCode key={index} />
 								))}

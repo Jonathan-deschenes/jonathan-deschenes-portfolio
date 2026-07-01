@@ -190,10 +190,9 @@ export default function SubmissionForm() {
               value={values.company}
               onChange={(v) => setValue("company", v)}
             />
-            <Field
+            <PhoneField
               label="Téléphone (facultatif)"
               name="phone"
-              type="tel"
               value={values.phone}
               onChange={(v) => setValue("phone", v)}
             />
@@ -416,6 +415,42 @@ function Field({
       {error && (
         <span className="text-[13px] text-[#a40000]">{error}</span>
       )}
+    </label>
+  );
+}
+
+// Formatte un numéro nord-américain en (514) 123-4567 au fil de la saisie.
+function formatPhone(digits: string) {
+  const d = digits.slice(0, 10);
+  if (d.length <= 3) return d;
+  if (d.length <= 6) return `(${d.slice(0, 3)}) ${d.slice(3)}`;
+  return `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}`;
+}
+
+function PhoneField({
+  label,
+  name,
+  value,
+  onChange,
+}: {
+  label: string;
+  name: string;
+  value: string;
+  onChange: (v: string) => void;
+}) {
+  return (
+    <label className="grid gap-2">
+      <span className="text-[14px] font-semibold text-ink">{label}</span>
+      <input
+        name={name}
+        type="tel"
+        inputMode="tel"
+        autoComplete="tel"
+        value={value}
+        onChange={(e) => onChange(formatPhone(e.target.value.replace(/\D/g, "")))}
+        placeholder="(514) 123-4567"
+        className="input-base"
+      />
     </label>
   );
 }
