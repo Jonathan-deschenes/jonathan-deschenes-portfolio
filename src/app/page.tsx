@@ -22,6 +22,7 @@ import { faqs, problems, services, steps } from "@/lib/data";
 import { getAllProjects } from "@/lib/content";
 import { site } from "@/lib/site";
 import Image from "next/image";
+import { ExpandIcon } from "lucide-react";
 
 export default function Home() {
 	const projects = getAllProjects();
@@ -97,9 +98,9 @@ export default function Home() {
 								<ModalLink
 									modal='booking'
 									ariaLabel='Ouvrir le calendrier en grand'
-									className='text-[12px] text-white font-semibold no-underline whitespace-nowrap hover:underline flex-none'
+									className='btn-primary'
 								>
-									Plein écran →
+									Plein écran <ExpandIcon className='w-4 h-4' />
 								</ModalLink>
 							</div>
 							<div className='h-[560px] overflow-y-auto overflow-x-hidden'>

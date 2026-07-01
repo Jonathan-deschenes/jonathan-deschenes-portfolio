@@ -40,43 +40,65 @@ export default function CalEmbed({
     })();
   }, [ns, hideEventTypeDetails]);
 
-  // En choisissant une date, Cal passe à la vue « heure » : il agrandit
-  // l'iframe (__dimensionChanged) et scrolle la page (__routeChanged →
-  // scrollIntoView). Dans un embed encadré, ça fait sauter toute la page.
-  // On verrouille la position de défilement de la fenêtre pendant qu'on
-  // interagit avec l'embed : tout scroll programmatique déclenché par Cal
-  // est immédiatement annulé, sans empêcher le défilement interne du
-  // calendrier ni le défilement normal de la page ailleurs.
+  // En choisissant une date, Cal passe à la vue « heure » et scrolle la page
+  // (__routeChanged → scrollIntoView). Dans un embed encadré, ça fait sauter
+  // toute la page. On annule uniquement ce scroll *programmatique* : un scroll
+  // provoqué par un vrai geste de l'utilisateur (molette, tactile, touches) est
+  // toujours respecté, même si le curseur est au-dessus du calendrier.
   useEffect(() => {
     const root = containerRef.current;
     if (!root) return;
 
-    let lockUntil = 0;
-    let lockedY = window.scrollY;
+    // Position réellement voulue par l'utilisateur (mise à jour à chaque
+    // défilement légitime).
+    let intendedY = window.scrollY;
+    // Horodatage du dernier vrai geste de défilement de l'utilisateur.
+    let lastGestureAt = -Infinity;
+    // Fenêtre pendant laquelle un scroll de Cal peut suivre un clic dans l'embed.
+    let embedActiveUntil = 0;
 
-    const arm = () => {
-      const now = performance.now();
-      // On ne re-mémorise la position que si on n'est pas déjà verrouillé,
-      // pour ne pas capturer une position en plein milieu d'un scroll de Cal.
-      if (now >= lockUntil) lockedY = window.scrollY;
-      lockUntil = now + 1200;
+    const SCROLL_KEYS = new Set([
+      "ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " ",
+    ]);
+
+    const markGesture = () => {
+      lastGestureAt = performance.now();
+    };
+    const markKey = (e: KeyboardEvent) => {
+      if (SCROLL_KEYS.has(e.key)) lastGestureAt = performance.now();
+    };
+    const markEmbed = () => {
+      embedActiveUntil = performance.now() + 1000;
     };
 
     const onScroll = () => {
-      if (performance.now() < lockUntil && window.scrollY !== lockedY) {
-        window.scrollTo(0, lockedY);
+      const now = performance.now();
+      const userDriven = now - lastGestureAt < 250;
+      const embedContext =
+        now < embedActiveUntil ||
+        root.matches(":hover") ||
+        root.contains(document.activeElement);
+
+      // On n'annule que si le scroll n'a pas de geste utilisateur derrière lui
+      // ET qu'il provient du contexte de l'embed (donc un scroll auto de Cal).
+      if (!userDriven && embedContext) {
+        if (window.scrollY !== intendedY) window.scrollTo(0, intendedY);
+      } else {
+        intendedY = window.scrollY;
       }
     };
 
-    root.addEventListener("pointerenter", arm, true);
-    root.addEventListener("pointerdown", arm, true);
-    root.addEventListener("mousemove", arm, true);
+    window.addEventListener("wheel", markGesture, { passive: true });
+    window.addEventListener("touchmove", markGesture, { passive: true });
+    window.addEventListener("keydown", markKey, true);
+    root.addEventListener("pointerdown", markEmbed, true);
     window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
-      root.removeEventListener("pointerenter", arm, true);
-      root.removeEventListener("pointerdown", arm, true);
-      root.removeEventListener("mousemove", arm, true);
+      window.removeEventListener("wheel", markGesture);
+      window.removeEventListener("touchmove", markGesture);
+      window.removeEventListener("keydown", markKey, true);
+      root.removeEventListener("pointerdown", markEmbed, true);
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
