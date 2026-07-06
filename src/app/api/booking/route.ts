@@ -6,12 +6,18 @@ import {
   notifyTo,
   sendEmail,
 } from "@/lib/email";
+import { rateLimit, rateLimitResponse } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
 // Fallback API route for booking data — used either by a manual booking form
 // or as a webhook target from Cal.com (configure in Cal → Webhooks).
+// IMPORTANT : si cette route est un jour branchée comme webhook Cal.com,
+// vérifier la signature HMAC (en-tête `x-cal-signature-256`, secret configuré
+// dans Cal → Webhooks) avant tout traitement, sinon n'importe qui peut forger
+// des réservations.
 export async function POST(req: Request) {
+  if (!rateLimit("booking", req).ok) return rateLimitResponse();
   let json: unknown;
   try {
     json = await req.json();
@@ -48,8 +54,7 @@ export async function POST(req: Request) {
       html: confirmationHtml({
         name: d.name,
         intro:
-          "Merci d'avoir réservé une rencontre. Vous recevrez l'invitation calendrier sous peu. Voici les informations que vous avez fournies :",
-        bullets,
+          "Merci d'avoir réservé une rencontre. Vous recevrez l'invitation calendrier sous peu.",
       }),
     });
     await sendEmail({

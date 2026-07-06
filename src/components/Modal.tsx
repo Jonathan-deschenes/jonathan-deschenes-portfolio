@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 
 type Props = {
   open: boolean;
@@ -36,9 +37,13 @@ export default function Modal({
     };
   }, [open, onClose]);
 
-  if (!open) return null;
+  if (!open || typeof document === "undefined") return null;
 
-  return (
+  // Rendu via portail sur <body> : indispensable pour que `position: fixed`
+  // couvre bien tout l'écran. Sinon, si un ancêtre porte un `transform`
+  // (ex. l'animation `anim-in` du hero), le modal serait « piégé » dans cet
+  // ancêtre au lieu de s'afficher plein écran.
+  return createPortal(
     <div
       role="dialog"
       aria-modal="true"
@@ -81,6 +86,7 @@ export default function Modal({
           {children}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

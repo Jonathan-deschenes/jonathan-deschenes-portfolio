@@ -92,9 +92,6 @@ de l'invitation calendrier native de Cal.com.
 
 ## À faire (post-étape 1)
 
-- Vraies captures d'écran des réalisations (remplacer placeholders)
-- Photo professionnelle (section « À propos »)
 - Domaine personnalisé + fiche Google Business
-- Articles de blogue (MDX dans `content/`)
 - Démonstration d'agent IA conversationnel
 - Version anglaise (i18n)

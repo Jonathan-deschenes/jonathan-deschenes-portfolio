@@ -3,6 +3,11 @@
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect, useId, useRef } from "react";
 
+// Remplace `scrollIntoView` de <cal-inline> pour empêcher Cal de faire sauter
+// la page parente au choix d'une date. Défini une fois pour pouvoir comparer
+// l'identité (éviter de re-patcher inutilement).
+const noop = () => {};
+
 function extractCalLink(url: string): string {
   try {
     const u = new URL(url);
@@ -40,67 +45,38 @@ export default function CalEmbed({
     })();
   }, [ns, hideEventTypeDetails]);
 
-  // En choisissant une date, Cal passe à la vue « heure » et scrolle la page
-  // (__routeChanged → scrollIntoView). Dans un embed encadré, ça fait sauter
-  // toute la page. On annule uniquement ce scroll *programmatique* : un scroll
-  // provoqué par un vrai geste de l'utilisateur (molette, tactile, touches) est
-  // toujours respecté, même si le curseur est au-dessus du calendrier.
+  // En choisissant une date, Cal navigue (« __routeChanged ») et, si l'embed a
+  // défilé un peu hors de l'écran, appelle `inlineEl.scrollIntoView()` — c'est
+  // LE seul et unique endroit où Cal fait bouger la page parente (vérifié dans
+  // @calcom/embed-core : aucun autre scrollTo/scrollBy). Ce saut automatique est
+  // désagréable et entrait en conflit avec le défilement de l'utilisateur.
+  //
+  // Plutôt que de surveiller la fenêtre et d'annuler le scroll après coup (ce
+  // qui finit toujours par se battre avec l'utilisateur, surtout au-dessus d'une
+  // iframe qui « avale » les évènements molette), on neutralise l'appel à la
+  // source : on remplace `scrollIntoView` par une fonction vide sur l'élément
+  // <cal-inline>. Cet élément n'est jamais scrollé par autre chose que Cal, donc
+  // c'est chirurgical : le défilement de l'utilisateur n'est plus jamais touché.
   useEffect(() => {
     const root = containerRef.current;
     if (!root) return;
 
-    // Position réellement voulue par l'utilisateur (mise à jour à chaque
-    // défilement légitime).
-    let intendedY = window.scrollY;
-    // Horodatage du dernier vrai geste de défilement de l'utilisateur.
-    let lastGestureAt = -Infinity;
-    // Fenêtre pendant laquelle un scroll de Cal peut suivre un clic dans l'embed.
-    let embedActiveUntil = 0;
-
-    const SCROLL_KEYS = new Set([
-      "ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " ",
-    ]);
-
-    const markGesture = () => {
-      lastGestureAt = performance.now();
-    };
-    const markKey = (e: KeyboardEvent) => {
-      if (SCROLL_KEYS.has(e.key)) lastGestureAt = performance.now();
-    };
-    const markEmbed = () => {
-      embedActiveUntil = performance.now() + 1000;
-    };
-
-    const onScroll = () => {
-      const now = performance.now();
-      const userDriven = now - lastGestureAt < 250;
-      const embedContext =
-        now < embedActiveUntil ||
-        root.matches(":hover") ||
-        root.contains(document.activeElement);
-
-      // On n'annule que si le scroll n'a pas de geste utilisateur derrière lui
-      // ET qu'il provient du contexte de l'embed (donc un scroll auto de Cal).
-      if (!userDriven && embedContext) {
-        if (window.scrollY !== intendedY) window.scrollTo(0, intendedY);
-      } else {
-        intendedY = window.scrollY;
+    const neutralize = () => {
+      const inline = root.querySelector("cal-inline") as HTMLElement | null;
+      if (inline && inline.scrollIntoView !== noop) {
+        inline.scrollIntoView = noop;
+        return true;
       }
+      return false;
     };
 
-    window.addEventListener("wheel", markGesture, { passive: true });
-    window.addEventListener("touchmove", markGesture, { passive: true });
-    window.addEventListener("keydown", markKey, true);
-    root.addEventListener("pointerdown", markEmbed, true);
-    window.addEventListener("scroll", onScroll, { passive: true });
+    // <cal-inline> est injecté de façon asynchrone : on le neutralise dès qu'il
+    // apparaît (et on reste à l'écoute au cas où il serait recréé).
+    neutralize();
+    const observer = new MutationObserver(() => neutralize());
+    observer.observe(root, { childList: true, subtree: true });
 
-    return () => {
-      window.removeEventListener("wheel", markGesture);
-      window.removeEventListener("touchmove", markGesture);
-      window.removeEventListener("keydown", markKey, true);
-      root.removeEventListener("pointerdown", markEmbed, true);
-      window.removeEventListener("scroll", onScroll);
-    };
+    return () => observer.disconnect();
   }, []);
 
   return (

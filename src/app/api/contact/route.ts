@@ -6,10 +6,12 @@ import {
   notifyTo,
   sendEmail,
 } from "@/lib/email";
+import { rateLimit, rateLimitResponse } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
 export async function POST(req: Request) {
+  if (!rateLimit("contact", req).ok) return rateLimitResponse();
   let json: unknown;
   try {
     json = await req.json();
@@ -46,10 +48,6 @@ export async function POST(req: Request) {
         name: d.name,
         intro:
           "Merci pour votre message. J'ai bien reçu votre demande et je vous répondrai dès que possible.",
-        bullets: [
-          { label: "Sujet", value: d.subject },
-          { label: "Votre message", value: d.message },
-        ],
       }),
     });
     await sendEmail({

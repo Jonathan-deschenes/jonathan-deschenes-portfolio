@@ -3,8 +3,8 @@ import Script from "next/script";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import FloatingCta from "@/components/FloatingCta";
-import CalEmbed from "@/components/CalEmbed";
-import BookingCalendarPreview from "@/components/BookingCalendarPreview";
+import HeroVideoPlayer from "@/components/HeroVideoPlayer";
+import HeroCredibility from "@/components/HeroCredibility";
 import ModalLink from "@/components/ModalLink";
 import Faq from "@/components/Faq";
 import {
@@ -22,7 +22,6 @@ import { faqs, problems, services, steps } from "@/lib/data";
 import { getAllProjects } from "@/lib/content";
 import { site } from "@/lib/site";
 import Image from "next/image";
-import { ExpandIcon } from "lucide-react";
 
 export default function Home() {
 	const projects = getAllProjects();
@@ -81,38 +80,27 @@ export default function Home() {
 						</div>
 					</div>
 					<div
-						className='anim-in justify-self-stretch w-full max-w-[460px] mx-auto min-[960px]:ml-auto min-[960px]:mr-0'
+						className='anim-in justify-self-stretch w-full max-w-[520px] mx-auto min-[960px]:ml-auto min-[960px]:mr-0 space-y-4'
 						style={{ animationDelay: "130ms" }}
 					>
-						{/* Desktop : carte blanche + calendrier réel embarqué */}
-						<div className='hidden min-[960px]:block bg-gray-800 border border-border rounded-[18px] sm:rounded-[22px] overflow-hidden shadow-[0_40px_80px_-28px_rgba(14,19,32,.25)]'>
-							<div className='px-4 sm:px-5 pt-3 sm:pt-4 pb-2.5 sm:pb-3 border-b border-neutral-700 flex items-center justify-between gap-2 flex-wrap'>
-								<div className='min-w-0'>
-									<div className='font-semibold text-[11px] sm:text-[12px] tracking-[.14em] text-white'>
-										RENCONTRE GRATUITE · 30 MIN
-									</div>
-									<div className='text-[12px] sm:text-[13px] text-neutral-300 mt-0.5'>
-										Choisissez une plage qui vous convient.
-									</div>
+						<div className='border border-[#ebebe9] rounded-[16px] overflow-hidden bg-white flex flex-col shadow-[0_18px_44px_-24px_rgba(14,19,32,.28)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_34px_66px_-26px_rgba(14,19,32,.45)]'>
+							<div
+								className='bg-[#e9e9e4] px-[14px] py-[11px] flex items-center gap-[13px]'
+								aria-hidden
+							>
+								<div className='flex gap-1.5'>
+									<Dot color='#f25f57' />
+									<Dot color='#fbbe2e' />
+									<Dot color='#28c93f' />
 								</div>
-								<ModalLink
-									modal='booking'
-									ariaLabel='Ouvrir le calendrier en grand'
-									className='btn-primary'
-								>
-									Plein écran <ExpandIcon className='w-4 h-4' />
-								</ModalLink>
+								<div className='flex-1 h-[9px] rounded-[5px] bg-[#d4d4cd]' />
 							</div>
-							<div className='h-[560px] overflow-y-auto overflow-x-hidden'>
-								<CalEmbed
-									url={site.bookingUrl}
-									namespace='hero'
-									hideEventTypeDetails
-								/>
+
+							<div className='p-4 flex flex-col gap-8'>
+								<HeroCredibility />
+								<HeroVideoPlayer />
 							</div>
 						</div>
-						{/* Mobile : calendrier dynamique simulé (ouvre le modal) */}
-						<BookingCalendarPreview className='min-[960px]:hidden' />
 					</div>
 				</section>
 

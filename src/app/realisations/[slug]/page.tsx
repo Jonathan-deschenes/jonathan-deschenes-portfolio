@@ -15,6 +15,10 @@ export function generateStaticParams() {
 	return getProjectSlugs().map((slug) => ({ slug }));
 }
 
+// Seuls les slugs générés au build existent : tout autre slug → 404, sans
+// jamais atteindre le système de fichiers avec une valeur venue de l'URL.
+export const dynamicParams = false;
+
 type Params = { slug: string };
 
 export async function generateMetadata({

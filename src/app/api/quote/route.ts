@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
 import { quoteSchema } from "@/lib/validation";
 import { confirmationHtml, notifyHtml, notifyTo, sendEmail } from "@/lib/email";
+import { rateLimit, rateLimitResponse } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
 export async function POST(req: Request) {
+	if (!rateLimit("quote", req).ok) return rateLimitResponse();
 	let json: unknown;
 	try {
 		json = await req.json();
