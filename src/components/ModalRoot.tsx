@@ -46,9 +46,11 @@ export default function ModalRoot() {
 			>
 				<section className='max-w-4xl'>
 					<div className='max-w-full'>
-						<div className='eyebrow mb-3 sm:mb-4'>RENCONTRE GRATUITE · 30 MIN</div>
+						<div className='eyebrow mb-3 sm:mb-4'>
+							RENCONTRE GRATUITE (30 MIN)
+						</div>
 						<h1 className='font-bold text-[22px] sm:text-[28px] md:text-[32px] leading-[1.15] sm:leading-[1.1] tracking-[-.02em] mb-3 sm:mb-[18px]'>
-							Discutons de votre projet — sans engagement.
+							Discutons de votre projet, sans engagement.
 						</h1>
 						<p className='text-[14px] sm:text-[15px] text-muted leading-[1.6] mb-5 sm:mb-7'>
 							30 minutes pour cerner votre besoin, répondre à vos questions et
