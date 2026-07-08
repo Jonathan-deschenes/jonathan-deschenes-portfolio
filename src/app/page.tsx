@@ -270,7 +270,7 @@ export default function Home() {
 										{serviceIcons[i]}
 									</div>
 									<div className='min-w-0'>
-										<h3 className='font-semibold text-[17px] sm:text-[20px] mb-2 sm:mb-2.5 leading-snug'>
+										<h3 className='font-semibold text-[17px] sm:text-[20px] mb-2 sm:mb-2.5 leading-snug inline-flex gap-1'>
 											<span className='text-brand'>{s.title}</span>{" "}
 											<span className='hidden lg:block'>{s.tail}</span>
 										</h3>
