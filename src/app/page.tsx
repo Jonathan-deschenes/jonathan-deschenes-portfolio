@@ -65,7 +65,7 @@ export default function Home() {
 							<span className='text-brand'>cabinet comptable</span>, sans la
 							lourdeur d&apos;une agence.
 						</h1>
-						<p className='text-[16px] sm:text-[18px] leading-[1.6] text-muted max-w-[520px] mb-7 sm:mb-[38px]'>
+						<p className='text-[16px] sm:text-[18px] leading-[1.6] text-muted lg:max-w-[520px] mb-7 sm:mb-[38px]'>
 							Sites web professionnels, automatisation des tâches répétitives et
 							intégration de l&apos;IA. Votre entreprise, votre image à la
 							hauteur de votre expertise.
@@ -272,7 +272,7 @@ export default function Home() {
 									<div className='min-w-0'>
 										<h3 className='font-semibold text-[17px] sm:text-[20px] mb-2 sm:mb-2.5 leading-snug'>
 											<span className='text-brand'>{s.title}</span>{" "}
-											<span className='hidden md:block'>{s.tail}</span>
+											<span className='hidden lg:block'>{s.tail}</span>
 										</h3>
 										<p className='text-[14px] sm:text-[15.5px] leading-[1.6] text-muted max-w-[920px]'>
 											{s.desc}

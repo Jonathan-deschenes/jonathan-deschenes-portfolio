@@ -22,10 +22,16 @@ export default function Faq({ items }: { items: FaqType[] }) {
               onClick={() => setOpen(isOpen ? null : i)}
               className="w-full bg-transparent border-0 cursor-pointer flex items-center justify-between gap-5 py-[26px] px-1 text-left text-inherit font-inherit"
             >
-              <span className="font-semibold text-[17px]">{q.question}</span>
+              <span
+                className={`font-semibold text-[17px] transition-colors duration-300 ${
+                  isOpen ? "text-brand" : ""
+                }`}
+              >
+                {q.question}
+              </span>
               <span
                 className={`text-faint flex-none inline-flex leading-none transition-transform duration-300 ${
-                  isOpen ? "rotate-180" : "rotate-0"
+                  isOpen ? "rotate-180 text-brand" : "rotate-0"
                 }`}
                 aria-hidden
               >
@@ -36,14 +42,18 @@ export default function Faq({ items }: { items: FaqType[] }) {
               id={panelId}
               role="region"
               aria-labelledby={btnId}
-              hidden={!isOpen}
+              inert={!isOpen}
               className="overflow-hidden transition-[max-height,opacity,padding] duration-300 ease-in-out"
               style={{
                 maxHeight: isOpen ? 1000 : 0,
                 opacity: isOpen ? 1 : 0,
               }}
             >
-              <p className="text-[15.5px] leading-[1.65] text-muted px-1 pb-[26px] max-w-[760px]">
+              <p
+                className={`text-[15.5px] leading-[1.65] text-muted px-1 pb-[26px] max-w-[760px] transition-transform duration-300 ${
+                  isOpen ? "translate-y-0" : "-translate-y-1"
+                }`}
+              >
                 {q.answer}
               </p>
             </div>

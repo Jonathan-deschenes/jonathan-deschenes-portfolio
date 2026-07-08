@@ -60,6 +60,18 @@ export default function ModalRoot() {
 				<div className='min-h-[520px] sm:min-h-[640px]'>
 					<CalEmbed url={site.bookingUrl} namespace='modal' />
 				</div>
+				<p className='mt-4 sm:mt-5 text-muted-soft text-[13px] sm:text-[14px]'>
+					Le calendrier ne charge pas ?{" "}
+					<a
+						href={site.bookingUrl}
+						target='_blank'
+						rel='noopener noreferrer'
+						className='text-brand'
+					>
+						Ouvrez-le dans un nouvel onglet
+					</a>
+					.
+				</p>
 			</Modal>
 
 			<Modal

@@ -19,11 +19,11 @@ export default function HeroVideoPlayer({
 				type='button'
 				onClick={() => setOpen(true)}
 				aria-label='Lire la présentation vidéo en plein écran'
-				className={`group relative block w-full aspect-video bg-navy border border-border rounded-[18px] sm:rounded-[22px] overflow-hidden shadow-[0_40px_80px_-28px_rgba(14,19,32,.25)] cursor-pointer ${className}`}
+				className={`group relative block w-full aspect-video bg-navy border border-border rounded-[18px] sm:rounded-[22px] overflow-hidden shadow-[0_40px_80px_-28px_rgba(14,19,32,.25)] cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-brand/50 hover:shadow-[0_50px_100px_-24px_rgba(26,96,245,.35)] ${className}`}
 			>
 				{/* Aperçu animé, muet, en boucle (pochette) */}
 				<video
-					className='absolute inset-0 w-full h-full object-cover'
+					className='absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'
 					src='/hero-video.mp4'
 					autoPlay
 					muted
@@ -34,7 +34,7 @@ export default function HeroVideoPlayer({
 				/>
 
 				{/* Voile + bouton lecture */}
-				<span className='absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[rgba(14,19,32,0.72)] group-hover:bg-[rgba(14,19,32,.42)] transition-colors'>
+				<span className='absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[rgba(14,19,32,0.49)] group-hover:bg-[rgba(14,19,32,.42)] transition-colors'>
 					<span className='w-16 h-16 sm:w-[74px] sm:h-[74px] rounded-full bg-brand text-white flex items-center justify-center shadow-[0_10px_30px_rgba(26,96,245,.5)] group-hover:scale-105 transition-transform'>
 						<PlayIcon />
 					</span>

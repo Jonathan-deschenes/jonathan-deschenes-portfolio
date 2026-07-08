@@ -10,6 +10,7 @@ import ModalLink from "@/components/ModalLink";
 import { getProject, getProjectSlugs } from "@/lib/content";
 import { site } from "@/lib/site";
 import Image from "next/image";
+import { ArrowLeft } from "lucide-react";
 
 export function generateStaticParams() {
 	return getProjectSlugs().map((slug) => ({ slug }));
@@ -70,9 +71,9 @@ export default async function CaseStudyPage({
 				<section className='container-x pt-10 sm:pt-16 pb-6 sm:pb-8'>
 					<Link
 						href='/#realisations'
-						className='text-[14px] text-brand no-underline mb-4 sm:mb-6 inline-block'
+						className='text-[14px] text-brand no-underline mb-4 sm:mb-6 inline-flex items-center gap-1'
 					>
-						← Toutes les réalisations
+						<ArrowLeft size={20} /> Toutes les réalisations
 					</Link>
 					<div className='eyebrow mb-3 sm:mb-[14px]'>{cs.tag}</div>
 					<h1 className='font-bold text-[clamp(24px,6vw,50px)] leading-[1.12] sm:leading-[1.08] tracking-[-.02em] mb-3 sm:mb-[14px] max-w-[880px]'>
@@ -122,7 +123,7 @@ export default async function CaseStudyPage({
 				</section>
 
 				<section className='container-x pt-8 pb-12 sm:pb-[60px]'>
-					<div className='grid gap-5 sm:gap-10 max-w-full grid-cols-1 md:grid-cols-3'>
+					<div className='grid gap-5 sm:gap-10 max-w-full grid-cols-1 lg:grid-cols-3'>
 						<Card title='Le défi'>{cs.defi}</Card>
 						<Card title='La solution'>{cs.solution}</Card>
 						<Card title='Le résultat'>{cs.resultat}</Card>

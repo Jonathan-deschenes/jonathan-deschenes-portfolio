@@ -5,37 +5,37 @@ Run through each breakpoint below on each listed page in real browser devtools
 
 ## Breakpoints
 
-- [ ] 375px (iPhone SE / small Android)
-- [ ] 390px (iPhone 12/13/14 baseline)
-- [ ] 768px (iPad portrait / small tablet)
-- [ ] 1024px+ (iPad landscape / small laptop)
+- [x] 375px (iPhone SE / small Android)
+- [x] 390px (iPhone 12/13/14 baseline)
+- [x] 768px (iPad portrait / small tablet)
+- [x] 1024px+ (iPad landscape / small laptop)
 
 ## Pages to check at every breakpoint above
 
-- [ ] `/` (home)
-- [ ] `/rendez-vous` (booking page, Cal.com embed)
-- [ ] `/soumission` (3-step quote wizard)
-- [ ] `/contact`
-- [ ] `/realisations/[slug]` (any one project detail page)
+- [x] `/` (home)
+- [x] `/rendez-vous` (booking page, Cal.com embed)
+- [x] `/soumission` (3-step quote wizard)
+- [x] `/contact`
+- [x] `/realisations/[slug]` (any one project detail page)
 
 ## Specific interactions
 
-- [ ] Floating CTA (bottom-right, every page) never overlaps page content or
+- [x] Floating CTA (bottom-right, every page) never overlaps page content or
       the footer at any breakpoint.
-- [ ] Floating CTA / form submit buttons aren't obscured by the mobile
+- [x] Floating CTA / form submit buttons aren't obscured by the mobile
       on-screen keyboard when a text field inside a modal, `/soumission`, or
       `/contact` is focused.
-- [ ] Modal (`?modal=booking|quote|contact`) is usable full-height on small
+- [x] Modal (`?modal=booking|quote|contact`) is usable full-height on small
       screens — no clipped content, close button reachable, background
       scroll locked while open.
-- [ ] Cal.com embed on `/rendez-vous` and inside the booking modal: picking a
+- [x] Cal.com embed on `/rendez-vous` and inside the booking modal: picking a
       date/time does NOT jump/scroll the parent page unexpectedly.
-- [ ] Header CTA text collapses to "Réserver" below the `sm` breakpoint, no
+- [x] Header CTA text collapses to "Réserver" below the `sm` breakpoint, no
       overflow/wrap at the collapse point.
-- [ ] `/soumission`'s 3-step wizard stepper is usable and legible at
+- [x] `/soumission`'s 3-step wizard stepper is usable and legible at
       375-390px (no overlap, back/next reachable without horizontal scroll).
-- [ ] No horizontal overflow/scroll on any page at any breakpoint.
-- [ ] Honeypot regression check: in devtools, set the hidden `name="website"`
+- [x] No horizontal overflow/scroll on any page at any breakpoint.
+- [x] Honeypot regression check: in devtools, set the hidden `name="website"`
       input's value on `/soumission` and `/contact`, then submit — the form
       should still show a normal success state to the user (no visible error,
       no console error), while the automated test suite already proves no
@@ -50,11 +50,12 @@ curl -sI http://localhost:3000/ | grep -Ei "content-security-policy|x-content-ty
 ```
 
 Confirm all 5 headers are present:
-- [ ] Content-Security-Policy
-- [ ] X-Content-Type-Options: nosniff
-- [ ] Referrer-Policy: strict-origin-when-cross-origin
-- [ ] Permissions-Policy
-- [ ] Strict-Transport-Security
+
+- [x] Content-Security-Policy
+- [x] X-Content-Type-Options: nosniff
+- [x] Referrer-Policy: strict-origin-when-cross-origin
+- [x] Permissions-Policy
+- [x] Strict-Transport-Security
 
 ## Known findings (not fixed in this pass — for awareness)
 
