@@ -43,3 +43,9 @@ export function rateLimitResponse() {
     { status: 429 }
   );
 }
+
+// Test-only: clears all buckets so test files don't leak rate-limit state
+// into each other. Never called from production code paths.
+export function resetRateLimit() {
+  buckets.clear();
+}

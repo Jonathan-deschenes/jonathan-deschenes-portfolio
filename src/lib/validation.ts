@@ -1,10 +1,6 @@
 import { z } from "zod";
 
-const honeypot = z
-  .string()
-  .max(0, "Spam détecté.")
-  .optional()
-  .or(z.literal(""));
+const honeypot = z.string().optional().or(z.literal(""));
 
 export const quoteSchema = z.object({
   name: z.string().min(2).max(120),

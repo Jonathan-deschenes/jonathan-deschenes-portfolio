@@ -266,8 +266,6 @@ export default function SubmissionForm() {
         tabIndex={-1}
         autoComplete="off"
         aria-hidden
-        value={values.name === "honeypot-noop" ? "" : ""}
-        onChange={() => {}}
         className="absolute left-[-9999px] w-px h-px opacity-0"
       />
 
