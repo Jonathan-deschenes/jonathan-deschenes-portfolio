@@ -43,7 +43,7 @@ export default function HeroCredibility({
 				{stats.map((s) => (
 					<span
 						key={s.value}
-						className='inline-flex items-center gap-1.5 border border-border rounded-full px-3.5 py-2 text-[13px] text-ink'
+						className='inline-flex items-center gap-1.5 border border-border rounded-full px-2 py-0.5 sm:px-3.5 sm:py-2 text-[13px] text-ink'
 					>
 						<b className='font-bold text-brand'>{s.value}</b> {s.label}
 					</span>

@@ -271,7 +271,8 @@ export default function Home() {
 									</div>
 									<div className='min-w-0'>
 										<h3 className='font-semibold text-[17px] sm:text-[20px] mb-2 sm:mb-2.5 leading-snug'>
-											<span className='text-brand'>{s.title}</span> {s.tail}
+											<span className='text-brand'>{s.title}</span>{" "}
+											<span className='hidden md:block'>{s.tail}</span>
 										</h3>
 										<p className='text-[14px] sm:text-[15.5px] leading-[1.6] text-muted max-w-[920px]'>
 											{s.desc}

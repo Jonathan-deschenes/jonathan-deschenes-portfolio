@@ -18,11 +18,10 @@ function readModalFromUrl(): ModalName | null {
 }
 
 export default function ModalRoot() {
-	const [open, setOpen] = useState<ModalName | null>(null);
+	const [open, setOpen] = useState<ModalName | null>(() => readModalFromUrl());
 
-	// Sync with URL on mount + back/forward navigation
+	// Sync with back/forward navigation
 	useEffect(() => {
-		setOpen(readModalFromUrl());
 		const onPop = () => setOpen(readModalFromUrl());
 		window.addEventListener("popstate", onPop);
 		return () => window.removeEventListener("popstate", onPop);
