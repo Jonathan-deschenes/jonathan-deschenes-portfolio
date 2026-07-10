@@ -12,12 +12,15 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "project:new": "node scripts/new-project.mjs",
-    "project:compress": "node scripts/compress-project.mjs"
+    "project:compress": "node scripts/compress-project.mjs",
+    "legal:new": "node scripts/new-legal-doc.mjs",
+    "legal:publish": "node scripts/publish-legal-doc.mjs"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",
     "gray-matter": "^4.0.3",
     "lucide-react": "^1.23.0",
+    "marked": "^18.0.6",
     "next": "16.2.9",
     "react": "19.2.4",
     "react-dom": "19.2.4",

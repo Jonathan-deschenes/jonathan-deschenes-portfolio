@@ -275,7 +275,7 @@ export default function SubmissionForm() {
 					En soumettant ce formulaire, vous consentez à ce que vos informations
 					soient utilisées uniquement pour répondre à votre demande,
 					conformément à notre{" "}
-					<a href='/confidentialite' className='text-brand underline'>
+					<a href='/politique-de-confidentialite' className='text-brand underline'>
 						politique de confidentialité.
 					</a>
 				</p>
