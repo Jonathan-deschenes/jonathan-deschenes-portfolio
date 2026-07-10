@@ -11,7 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/rendez-vous",
     "/soumission",
     "/contact",
-    "/confidentialite",
+    "/politique-de-confidentialite",
+    "/conditions-utilisation",
   ];
 
   return [
