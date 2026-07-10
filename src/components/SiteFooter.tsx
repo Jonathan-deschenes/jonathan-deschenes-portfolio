@@ -52,16 +52,16 @@ export default function SiteFooter() {
 					</span>
 					<div className='flex gap-[30px] flex-wrap'>
 						<Link
-							href='/confidentialite'
+							href='/politique-de-confidentialite'
 							className='text-[13.5px] text-muted-soft no-underline hover:text-white'
 						>
 							Politique de confidentialité
 						</Link>
 						<Link
-							href='/confidentialite#mentions'
+							href='/conditions-utilisation'
 							className='text-[13.5px] text-muted-soft no-underline hover:text-white'
 						>
-							Mentions légales
+							Conditions d&apos;utilisation
 						</Link>
 					</div>
 				</div>
