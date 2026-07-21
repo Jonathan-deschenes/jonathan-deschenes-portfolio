@@ -1,8 +1,7 @@
-# Jonathan Deschênes — Portfolio (Étape 1)
+# Jonathan Deschênes portfolio SPA
 
 Site monopage ciblé pour les **cabinets comptables et tenue de livres**.
-Implémente le design `Jonathan Deschenes.dc.html` (Claude Design) et le cahier
-des besoins du `CLAUDE.md` racine.
+Implémente le cahier des besoins du `CLAUDE.md` racine.
 
 ## Stack
 
@@ -89,9 +88,3 @@ de l'invitation calendrier native de Cal.com.
    - `RESEND_FROM`
    - `NOTIFY_EMAIL`
 4. Vérifier le domaine dans Resend (DKIM/SPF/DMARC)
-
-## À faire (post-étape 1)
-
-- Domaine personnalisé + fiche Google Business
-- Démonstration d'agent IA conversationnel
-- Version anglaise (i18n)
