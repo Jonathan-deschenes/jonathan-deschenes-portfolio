@@ -57,9 +57,6 @@ export default function Home() {
 				{/* ===== HERO ===== */}
 				<section className='container-x grid items-center gap-10 pt-10 pb-14 sm:pt-[72px] sm:pb-24 min-[960px]:gap-16 min-[960px]:pt-24 min-[960px]:pb-[120px] min-[960px]:grid-cols-[1.02fr_.98fr]'>
 					<div className='anim-in'>
-						<div className='font-medium text-[11px] sm:text-[12px] tracking-[.18em] sm:tracking-[.2em] text-faint mb-5 sm:mb-[26px] uppercase'>
-							WEB · AUTOMATISATION · IA · CABINETS COMPTABLES
-						</div>
 						<h1 className='font-bold text-[clamp(32px,7vw,60px)] leading-[1.05] tracking-[-.02em] mb-5 sm:mb-7'>
 							Optimisez votre{" "}
 							<span className='text-brand'>cabinet comptable</span>, sans la
@@ -251,36 +248,45 @@ export default function Home() {
 					</div>
 				</section>
 
-				{/* ===== SERVICES (cream) ===== */}
+				{/* ===== SERVICES ===== */}
 				<section id='services' className='bg-cream scroll-mt-20'>
 					<div className='max-w-[1080px] mx-auto pt-14 pb-16 sm:pt-24 sm:pb-[104px] px-6 md:px-10'>
 						<div className='eyebrow mb-8 sm:mb-12'>
-							MES SERVICES POUR OPTIMISER VOTRE CABINET
+							DES SOLUTIONS POUR VOUS SUR MESURES
 						</div>
-						<div>
-							{services.map((s, i) => (
-								<div
-									key={s.title}
-									className='flex gap-4 sm:gap-6 py-6 sm:py-8 border-t border-cream-border'
-								>
+						<div className="flex flex-wrap justify-between">
+							{services.map((s, i) => {
+								// Rendre l'index en tant que pourcentage de 25%
+								const bgOpacity = 100 - i * 25
+								
+								return (
 									<div
-										className='flex-none w-10 h-10 sm:w-[46px] sm:h-[46px] rounded-xl bg-ink flex items-center justify-center text-white'
-										aria-hidden
+										key={s.title}
+										className="w-1/3 p-10 m-1 rounded-2xl"
+										style={{
+										backgroundColor: `color-mix(in srgb, #3b46e0 ${bgOpacity}%, transparent)`,
+										}}
 									>
-										{serviceIcons[i]}
+										<div
+											className="flex-none w-10 h-10 sm:w-[46px] sm:h-[46px] text-white"
+											aria-hidden
+										>
+											{serviceIcons[i]}
+										</div>
+										<div className={`w-auto ${bgOpacity === 100 ? `text-white` : 'text-black'}`}>
+											<h3
+												className="font-semibold text-[17px] sm:text-[20px] mb-2 sm:mb-2.5 leading-snug inline-flex gap-1"
+											>
+												{s.title}
+											</h3>
+											<p className="text-[14px] sm:text-[13.5px] leading-[1.6] max-w-[920px] text-cream">
+												{s.desc}
+											</p>
+										</div>
 									</div>
-									<div className='min-w-0'>
-										<h3 className='font-semibold text-[17px] sm:text-[20px] mb-2 sm:mb-2.5 leading-snug inline-flex gap-1'>
-											<span className='text-brand'>{s.title}</span>{" "}
-											<span className='hidden lg:block'>{s.tail}</span>
-										</h3>
-										<p className='text-[14px] sm:text-[15.5px] leading-[1.6] text-muted max-w-[920px]'>
-											{s.desc}
-										</p>
-									</div>
-								</div>
-							))}
+							);})}
 						</div>
+						
 						<div className='flex justify-center mt-10 sm:mt-12'>
 							<ModalLink modal='booking' className='btn-primary'>
 								Réserver une rencontre <ArrowRight />

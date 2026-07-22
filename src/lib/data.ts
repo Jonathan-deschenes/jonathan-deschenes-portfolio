@@ -30,37 +30,31 @@ export const problems: Problem[] = [
 
 export type Service = {
 	title: string;
-	tail: string;
 	desc: string;
+	options: string[]
 	iconPath: string;
 };
 
 export const services: Service[] = [
 	{
-		title: "Site web professionnel",
-		tail: "— Visiblité en ligne propulsé",
-		desc: "Conception sur mesure orientée conversion : présentation claire de vos services, prise de rendez-vous en ligne, formulaires et référencement SEO inclus.",
+		title: "Développement web et d'application",
+		desc: "Conception de site web et d'application sur mesure.",
+		options: [],
 		iconPath: "M3 3h18v18H3z|M9 3v18M3 9h6",
 	},
 	{
 		title: "Automatisation",
-		tail: "— Du temps facturable récupéré.",
 		desc: "Collecte de documents clients, accueil de nouveaux clients, rappels d'échéances, des heures récupérées chaque semaine sans intervention manuelle.",
+		options: [],
 		iconPath: "M12 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z|M5 21a7 7 0 0 1 14 0",
 	},
 	{
 		title: "Intégration de l'IA",
-		tail: "— Moins de questions répétitives, plus de qualité.",
 		desc: "Un agent qui répond aux questions fréquentes de vos clients, qualifie les prospects et traite les documents en portant une attention particulière à la confidentialité des données financières.",
+		options: [],
 		iconPath:
 			"c-circle-4|M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19",
-	},
-	{
-		title: "Applications sur mesure",
-		tail: "— Pour un besoin particulier.",
-		desc: "Du portail client au tableau de bord interne, des solutions construites entièrement pour votre cabinet selon vos besoins spécifiques. Sur devis.",
-		iconPath: "M9 8l-4 4 4 4|M15 8l4 4-4 4",
-	},
+	}
 ];
 
 export type Step = {
