@@ -4,21 +4,21 @@ import { site } from "@/lib/site";
 export default function SiteFooter() {
 	return (
 		<footer className='bg-navy-deep text-white'>
-			<div className='container-x pt-12 sm:pt-[72px] pb-8 sm:pb-10'>
+			<div className='container-x py-8 sm:pt-[72px] sm:pb-10'>
 				<div className='grid gap-8 sm:gap-10 pb-10 sm:pb-14 grid-cols-1 min-[900px]:grid-cols-[1.4fr_1fr_1fr_1fr]'>
 					<div>
 						<div className='flex items-center gap-3 mb-[22px]'>
 							<div
-								className='w-9 h-9 rounded-[9px] bg-white text-ink flex items-center justify-center font-bold text-[14px]'
+								className='w-9 h-9 rounded-[9px] bg-white text-ink flex items-center justify-center font-bold text-body-sm'
 								aria-hidden
 							>
 								JD
 							</div>
-							<span className='font-bold text-[14px] tracking-[.13em]'>
+							<span className='font-bold text-body-sm tracking-[.13em]'>
 								JONATHAN DESCHÊNES
 							</span>
 						</div>
-						<p className='text-[14.5px] leading-[1.6] text-[#7e8694] max-w-[300px]'>
+						<p className='text-body-sm leading-[1.6] text-[#7e8694] max-w-[300px]'>
 							Sites web, automatisation et IA pour les cabinets comptables et
 							tenue de livres — sans la lourdeur d&apos;une agence.
 						</p>
@@ -47,19 +47,19 @@ export default function SiteFooter() {
 					</FooterCol>
 				</div>
 				<div className='border-t border-white/[.08] pt-[26px] flex items-center justify-between flex-wrap gap-[14px]'>
-					<span className='text-[13.5px] text-muted-soft'>
+					<span className='text-caption text-muted-soft'>
 						© {new Date().getFullYear()} {site.name}. Tous droits réservés.
 					</span>
 					<div className='flex gap-[30px] flex-wrap'>
 						<Link
 							href='/politique-de-confidentialite'
-							className='text-[13.5px] text-muted-soft no-underline hover:text-white'
+							className='text-caption text-muted-soft no-underline hover:text-white'
 						>
 							Politique de confidentialité
 						</Link>
 						<Link
 							href='/conditions-utilisation'
-							className='text-[13.5px] text-muted-soft no-underline hover:text-white'
+							className='text-caption text-muted-soft no-underline hover:text-white'
 						>
 							Conditions d&apos;utilisation
 						</Link>
@@ -79,7 +79,7 @@ function FooterCol({
 }) {
 	return (
 		<div>
-			<div className='font-semibold text-[11px] tracking-[.16em] text-[#5d6573] mb-5'>
+			<div className='font-semibold text-tiny tracking-[.16em] text-[#5d6573] mb-5'>
 				{title}
 			</div>
 			<div className='flex flex-col gap-[14px]'>{children}</div>
@@ -96,7 +96,7 @@ function FooterLink({
 	children: React.ReactNode;
 	external?: boolean;
 }) {
-	const cls = "text-[14.5px] text-[#aab0bb] no-underline hover:text-white";
+	const cls = "text-body-sm text-[#aab0bb] no-underline hover:text-white";
 	if (external) {
 		return (
 			<a href={href} className={cls} target='_blank' rel='noopener noreferrer'>

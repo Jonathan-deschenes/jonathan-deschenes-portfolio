@@ -38,7 +38,7 @@ export default function HeroVideoPlayer({
 					<span className='w-16 h-16 sm:w-[74px] sm:h-[74px] rounded-full bg-brand text-white flex items-center justify-center shadow-[0_10px_30px_rgba(26,96,245,.5)] group-hover:scale-105 transition-transform'>
 						<PlayIcon />
 					</span>
-					<span className='font-semibold text-[13px] sm:text-[14px] tracking-[.06em] text-white uppercase'>
+					<span className='font-semibold text-caption tracking-[.06em] text-white uppercase'>
 						Voir la présentation · 1 min
 					</span>
 				</span>

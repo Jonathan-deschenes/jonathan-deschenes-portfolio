@@ -158,10 +158,10 @@ export default function SubmissionForm() {
 			<Stepper current={stepIndex} total={totalSteps} steps={STEPS} />
 
 			<div>
-				<h3 className='font-semibold text-[18px] tracking-[-.01em]'>
+				<h3 className='font-semibold text-h3 tracking-[-.01em]'>
 					{step.title}
 				</h3>
-				<p className='text-[14px] text-muted mt-1'>{step.subtitle}</p>
+				<p className='text-body-sm text-muted mt-1'>{step.subtitle}</p>
 			</div>
 
 			<div className='grid gap-[18px]'>
@@ -271,7 +271,7 @@ export default function SubmissionForm() {
 			/>
 
 			{isLastStep && (
-				<p className='text-[13px] text-muted-soft leading-[1.5]'>
+				<p className='text-caption text-muted-soft leading-[1.5]'>
 					En soumettant ce formulaire, vous consentez à ce que vos informations
 					soient utilisées uniquement pour répondre à votre demande,
 					conformément à notre{" "}
@@ -284,7 +284,7 @@ export default function SubmissionForm() {
 			{state.status === "error" && (
 				<div
 					role='alert'
-					className='bg-[#fff0f0] text-[#a40000] border border-[#f5c0c0] p-3 rounded-[10px] text-[14px]'
+					className='bg-[#fff0f0] text-[#a40000] border border-[#f5c0c0] p-3 rounded-[10px] text-body-sm'
 				>
 					{state.message}
 				</div>
@@ -295,7 +295,7 @@ export default function SubmissionForm() {
 					<button
 						type='button'
 						onClick={goBack}
-						className='text-[14px] font-semibold text-ink-soft px-3 py-2 rounded-lg hover:bg-cream transition-colors inline-flex gap-1'
+						className='text-body-sm font-semibold text-ink-soft px-3 py-2 rounded-lg hover:bg-cream transition-colors inline-flex gap-1'
 					>
 						<ArrowLeft size={20} /> Précédent
 					</button>
@@ -350,7 +350,7 @@ function Stepper({
 							className='flex items-center gap-1.5 sm:gap-2 flex-1'
 						>
 							<div
-								className={`flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-full text-[11px] sm:text-[12px] font-bold flex-none transition-colors ${
+								className={`flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-full text-tiny font-bold flex-none transition-colors ${
 									done
 										? "bg-brand text-white"
 										: active
@@ -372,7 +372,7 @@ function Stepper({
 					);
 				})}
 			</div>
-			<div className='text-[12px] text-muted-soft font-medium'>
+			<div className='text-tiny text-muted-soft font-medium'>
 				Étape {current + 1} sur {total} · {steps[current].title}
 			</div>
 		</div>
@@ -400,7 +400,7 @@ function Field({
 }) {
 	return (
 		<label className='grid gap-2'>
-			<span className='text-[14px] font-semibold text-ink'>
+			<span className='text-body-sm font-semibold text-ink'>
 				{label}
 				{required && <span className='text-brand'> *</span>}
 			</span>
@@ -413,7 +413,7 @@ function Field({
 				aria-invalid={!!error}
 				className={`input-base ${error ? "border-[#f5c0c0] bg-[#fff8f8]" : ""}`}
 			/>
-			{error && <span className='text-[13px] text-[#a40000]'>{error}</span>}
+			{error && <span className='text-caption text-[#a40000]'>{error}</span>}
 		</label>
 	);
 }
@@ -439,7 +439,7 @@ function PhoneField({
 }) {
 	return (
 		<label className='grid gap-2'>
-			<span className='text-[14px] font-semibold text-ink'>{label}</span>
+			<span className='text-body-sm font-semibold text-ink'>{label}</span>
 			<input
 				name={name}
 				type='tel'
@@ -475,7 +475,7 @@ function Select({
 }) {
 	return (
 		<label className='grid gap-2'>
-			<span className='text-[14px] font-semibold text-ink'>
+			<span className='text-body-sm font-semibold text-ink'>
 				{label}
 				{required && <span className='text-brand'> *</span>}
 			</span>
@@ -493,7 +493,7 @@ function Select({
 					<option key={o}>{o}</option>
 				))}
 			</select>
-			{error && <span className='text-[13px] text-[#a40000]'>{error}</span>}
+			{error && <span className='text-caption text-[#a40000]'>{error}</span>}
 		</label>
 	);
 }
@@ -515,7 +515,7 @@ function Textarea({
 }) {
 	return (
 		<label className='grid gap-2'>
-			<span className='text-[14px] font-semibold text-ink'>
+			<span className='text-body-sm font-semibold text-ink'>
 				{label}
 				{required && <span className='text-brand'> *</span>}
 			</span>
@@ -527,7 +527,7 @@ function Textarea({
 				aria-invalid={!!error}
 				className={`input-base resize-y ${error ? "border-[#f5c0c0] bg-[#fff8f8]" : ""}`}
 			/>
-			{error && <span className='text-[13px] text-[#a40000]'>{error}</span>}
+			{error && <span className='text-caption text-[#a40000]'>{error}</span>}
 		</label>
 	);
 }

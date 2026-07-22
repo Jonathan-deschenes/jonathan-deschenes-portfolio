@@ -31,7 +31,7 @@ export const problems: Problem[] = [
 export type Service = {
 	title: string;
 	desc: string;
-	options: string[]
+	options: string[];
 	iconPath: string;
 };
 
@@ -39,22 +39,32 @@ export const services: Service[] = [
 	{
 		title: "Développement web et d'application",
 		desc: "Conception de site web et d'application sur mesure.",
-		options: [],
+		options: [
+			"Accessibilité 24/7",
+			"Design professionnel",
+			"Référencement SEO",
+			"Réactivité mobile",
+		],
 		iconPath: "M3 3h18v18H3z|M9 3v18M3 9h6",
 	},
 	{
 		title: "Automatisation",
-		desc: "Collecte de documents clients, accueil de nouveaux clients, rappels d'échéances, des heures récupérées chaque semaine sans intervention manuelle.",
-		options: [],
+		desc: "Développement d'un système sur mesure pour faciliter vos tâches répétitives.",
+		options: [
+			"Optimisation du worflow",
+			"Hébergement cloud",
+			"Maintenance régulière",
+			"Aucune interruption",
+		],
 		iconPath: "M12 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z|M5 21a7 7 0 0 1 14 0",
 	},
 	{
 		title: "Intégration de l'IA",
-		desc: "Un agent qui répond aux questions fréquentes de vos clients, qualifie les prospects et traite les documents en portant une attention particulière à la confidentialité des données financières.",
-		options: [],
+		desc: "Automatiser vos processus efficacement grâce aux models performants de l'IA.",
+		options: ["Modèle performant", "Réelle optimisation du temp", "Autonomie"],
 		iconPath:
 			"c-circle-4|M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19",
-	}
+	},
 ];
 
 export type Step = {

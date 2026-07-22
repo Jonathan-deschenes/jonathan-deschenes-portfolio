@@ -22,12 +22,12 @@ export default function SiteHeader() {
 					className='flex items-center gap-2.5 sm:gap-[13px] no-underline text-inherit min-w-0'
 				>
 					<span
-						className='w-9 h-9 rounded-[9px] bg-ink text-white flex items-center justify-center font-bold text-[14px] tracking-[.02em] flex-none'
+						className='w-9 h-9 rounded-[9px] bg-ink text-white flex items-center justify-center font-bold text-body-sm tracking-[.02em] flex-none'
 						aria-hidden
 					>
 						JD
 					</span>
-					<span className='hidden sm:inline font-bold text-[13px] sm:text-[14px] tracking-[.13em]'>
+					<span className='hidden sm:inline font-bold text-body-sm tracking-[.13em]'>
 						JONATHAN DESCHÊNES
 					</span>
 				</Link>
@@ -37,7 +37,7 @@ export default function SiteHeader() {
 						<Link
 							key={l.href}
 							href={l.href}
-							className='text-[15px] text-ink-soft no-underline hover:text-ink'
+							className='text-body-sm text-ink-soft no-underline hover:text-ink'
 						>
 							{l.label}
 						</Link>
@@ -47,7 +47,7 @@ export default function SiteHeader() {
 				<ModalLink
 					modal='booking'
 					ariaLabel='Réserver une rencontre'
-					className='inline-flex items-center gap-2 bg-brand text-white text-[13px] sm:text-[14px] font-semibold px-3.5 sm:px-5 py-2.5 sm:py-[11px] rounded-[11px] no-underline shadow-[0_6px_18px_rgba(26,96,245,.28)] whitespace-nowrap'
+					className='inline-flex items-center gap-2 bg-brand text-white text-control font-semibold px-3.5 sm:px-5 py-2.5 sm:py-[11px] rounded-[11px] no-underline shadow-[0_6px_18px_rgba(26,96,245,.28)] whitespace-nowrap'
 				>
 					<span className='hidden sm:inline'>Réserver une rencontre</span>
 					<span className='sm:hidden'>Réserver</span>

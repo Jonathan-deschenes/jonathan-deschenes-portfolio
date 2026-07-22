@@ -48,10 +48,10 @@ export default function ModalRoot() {
 						<div className='eyebrow mb-3 sm:mb-4'>
 							RENCONTRE GRATUITE (30 MIN)
 						</div>
-						<h1 className='font-bold text-[22px] sm:text-[28px] md:text-[32px] leading-[1.15] sm:leading-[1.1] tracking-[-.02em] mb-3 sm:mb-[18px]'>
+						<h1 className='font-bold text-h2 leading-[1.15] sm:leading-[1.1] tracking-[-.02em] mb-3 sm:mb-[18px]'>
 							Discutons de votre projet, sans engagement.
 						</h1>
-						<p className='text-[14px] sm:text-[15px] text-muted leading-[1.6] mb-5 sm:mb-7'>
+						<p className='text-body-sm text-muted leading-[1.6] mb-5 sm:mb-7'>
 							30 minutes pour cerner votre besoin, répondre à vos questions et
 							voir si on peut travailler ensemble. Virtuel, partout au Québec.
 						</p>
@@ -60,7 +60,7 @@ export default function ModalRoot() {
 				<div className='min-h-[520px] sm:min-h-[640px]'>
 					<CalEmbed url={site.bookingUrl} namespace='modal' />
 				</div>
-				<p className='mt-4 sm:mt-5 text-muted-soft text-[13px] sm:text-[14px]'>
+				<p className='mt-4 sm:mt-5 text-muted-soft text-caption'>
 					Le calendrier ne charge pas ?{" "}
 					<a
 						href={site.bookingUrl}
@@ -80,7 +80,7 @@ export default function ModalRoot() {
 				title='Demander une soumission'
 				size='md'
 			>
-				<p className='text-muted text-[15px] leading-[1.6] mb-[18px]'>
+				<p className='text-muted text-body leading-[1.6] mb-[18px]'>
 					Décrivez votre projet en quelques lignes. Je vous reviens par courriel
 					avec une première idée ou une estimation.
 				</p>
@@ -93,7 +93,7 @@ export default function ModalRoot() {
 				title='Nous écrire'
 				size='md'
 			>
-				<p className='text-muted text-[15px] leading-[1.6] mb-[18px]'>
+				<p className='text-muted text-body leading-[1.6] mb-[18px]'>
 					Question, partenariat ou demande générale ? Écrivez-moi ici.
 				</p>
 				<ContactForm />

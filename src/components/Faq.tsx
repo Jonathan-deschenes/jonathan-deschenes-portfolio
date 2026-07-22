@@ -23,7 +23,7 @@ export default function Faq({ items }: { items: FaqType[] }) {
               className="w-full bg-transparent border-0 cursor-pointer flex items-center justify-between gap-5 py-[26px] px-1 text-left text-inherit font-inherit"
             >
               <span
-                className={`font-semibold text-[17px] transition-colors duration-300 ${
+                className={`font-semibold text-h3 transition-colors duration-300 ${
                   isOpen ? "text-brand" : ""
                 }`}
               >
@@ -50,7 +50,7 @@ export default function Faq({ items }: { items: FaqType[] }) {
               }}
             >
               <p
-                className={`text-[15.5px] leading-[1.65] text-muted px-1 pb-[26px] max-w-[760px] transition-transform duration-300 ${
+                className={`text-body leading-[1.65] text-muted px-1 pb-[26px] max-w-[760px] transition-transform duration-300 ${
                   isOpen ? "translate-y-0" : "-translate-y-1"
                 }`}
               >
