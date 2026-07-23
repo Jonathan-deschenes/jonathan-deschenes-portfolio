@@ -249,15 +249,15 @@ export default function Home() {
 
 				{/* ===== SERVICES ===== */}
 				<section id='services' className='bg-cream scroll-mt-20'>
-					<div className='max-w-[1080px] mx-auto pt-14 pb-16 sm:pt-24 sm:pb-[104px] px-6 md:px-10 mb-10 sm:mb-[60px]'>
-						<div className='eyebrow  mb-4 sm:mb-[22px] font-extrabold'>
-							MES SERVICES
+					<div className='container-x pt-14 pb-16 sm:pt-[104px] sm:pb-[110px]'>
+						<div className='max-w-[1080px] mx-auto mb-10 sm:mb-[60px]'>
+							<div className='eyebrow mb-4 sm:mb-[22px]'>MES SERVICES</div>
+							<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em]'>
+								Des solutions adaptés pour vous sur mesures.
+							</h2>
 						</div>
-						<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em] mb-4 sm:mb-[26px]'>
-							Des solutions adaptés pour vous sur mesures.
-						</h2>
 
-						<div className='flex-row sm:flex justify-between space-y-2 sm:space-y-0 sm:space-x-1 md:space-x-2'>
+						<div className='max-w-[1080px] mx-auto flex-row sm:flex justify-between space-y-2 sm:space-y-0 sm:space-x-1 md:space-x-2'>
 							{services.map((s, i) => {
 								// Differente couleur pour le mapping
 								const colors = ["bg-brand", "bg-brand-hard", "bg-brand"];
@@ -265,7 +265,7 @@ export default function Home() {
 								return (
 									<div
 										key={s.title}
-										className={`relative group sm:w-80 h-96 sm:h-[520px] md:h-[470px] p-4 lg:p-10 rounded-2xl transition-[transform,box-shadow] duration-300 ease-in-out will-change-transform hover:scale-[1.015] hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.5)] ${colors[i]}`}
+										className={`relative group sm:w-96 h-96 sm:h-[520px] md:h-[470px] p-4 lg:p-10 rounded-2xl transition-[transform,box-shadow] duration-300 ease-in-out will-change-transform hover:scale-[1.015] hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.5)] ${colors[i]}`}
 									>
 										<div
 											className='flex-none w-10 h-10 sm:w-[46px] sm:h-[46px] text-white'
@@ -321,22 +321,37 @@ export default function Home() {
 					id='processus'
 					className='container-x pt-14 pb-16 sm:pt-[104px] sm:pb-[110px] scroll-mt-20'
 				>
-					<div className='max-w-[1080px] mx-auto'>
-						<div className='eyebrow mb-8 sm:mb-[54px]'>
-							COMMENT JE TRAVAILLE
+					<div className='max-w-[1080px] mx-auto sm:flex space-x-10'>
+						<div>
+							<div className='eyebrow mb-4 sm:mb-[22]'>PROCESSUS</div>
+							<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em] mb-4 sm:mb-[26px]'>
+								Travaillons ensemble?
+							</h2>
 						</div>
-						<div className='grid gap-8 sm:gap-[34px] grid-cols-1 sm:grid-cols-2 min-[960px]:grid-cols-4'>
-							{steps.map((st) => (
-								<div key={st.num}>
-									<div className='font-bold text-h1 text-brand tracking-[-.02em] mb-4 sm:mb-5'>
-										{st.num}
+						<div className='grid gap-4 grid-cols-1 sm:grid-cols-2 min-[960px]:grid-cols-4'>
+							{steps.map((step, i) => (
+								<div
+									key={step.num}
+									className='group relative overflow-hidden bg-neutral-50 border border-cream-border rounded-[16px] sm:rounded-[18px] px-6 py-6 sm:px-8 sm:py-[30px] flex flex-col justify-between h-auto transition-[transform,box-shadow] duration-300 ease-in-out will-change-transform hover:scale-[1.015] hover:shadow-[inset_0_0_0_1px_rgba(26,96,245,0.25)]'
+								>
+									<span
+										aria-hidden
+										className='absolute top-0 left-0 right-0 h-[3px] bg-brand/10'
+									/>
+									<span
+										aria-hidden
+										style={{ animationDelay: `${i * 300}ms` }}
+										className='min-[960px]:hidden absolute top-0 left-0 h-[3px] bg-brand animate-[progress-fill_3.2s_ease-in-out_infinite] motion-reduce:animate-none'
+									/>
+									<span
+										aria-hidden
+										className='hidden min-[960px]:block absolute top-0 left-0 w-0 h-[3px] bg-brand transition-[width] duration-500 ease-out group-hover:w-full'
+									/>
+									<p>{step.desc}</p>
+									<div className='flex flex-wrap justify-between items-center font-semibold text-h3 mt-4'>
+										<h3>{step.title}</h3>
+										<h3 className='text-brand'>{step.num}</h3>
 									</div>
-									<h3 className='font-semibold text-h3 mb-3 sm:mb-[13px]'>
-										{st.title}
-									</h3>
-									<p className='text-body-sm leading-[1.62] text-muted'>
-										{st.desc}
-									</p>
 								</div>
 							))}
 						</div>
