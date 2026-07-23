@@ -52,7 +52,6 @@ export const services: Service[] = [
 		desc: "Développement d'un système sur mesure pour faciliter vos tâches répétitives.",
 		options: [
 			"Optimisation du worflow",
-			"Hébergement cloud",
 			"Maintenance régulière",
 			"Aucune interruption",
 		],
