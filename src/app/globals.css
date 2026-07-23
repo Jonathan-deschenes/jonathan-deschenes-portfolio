@@ -198,4 +198,16 @@
 			transform: none;
 		}
 	}
+	@keyframes progress-fill {
+		0% {
+			width: 0%;
+		}
+		45%,
+		55% {
+			width: 100%;
+		}
+		100% {
+			width: 0%;
+		}
+	}
 }

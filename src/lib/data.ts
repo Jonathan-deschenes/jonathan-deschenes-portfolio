@@ -75,23 +75,23 @@ export type Step = {
 export const steps: Step[] = [
 	{
 		num: "01",
-		title: "Cadrage & proposition",
-		desc: "Rencontre de 30 minutes pour cerner votre besoin. Une proposition écrite avec portée, prix et délais fixes vous est envoyée sous 24-48 h.",
+		title: "Rencontre",
+		desc: "Rencontre gratuite de 30 minutes pour découvrir les besoins.",
 	},
 	{
 		num: "02",
 		title: "Planification",
-		desc: "Échéancier, livrables et nombre de révisions définis par écrit. Chaque étape se termine par une approbation avant de passer à la suivante.",
+		desc: "Début du projet et planification des échéanciers avec un objectif selon vos besoin.",
 	},
 	{
 		num: "03",
-		title: "Conception & développement",
-		desc: "Design, puis développement à partir de la maquette approuvée. Contact direct avec moi à chaque étape — jamais délégué.",
+		title: "Développement",
+		desc: "Approbation de la maquette initial, puis développement avec des révisions selon vous.",
 	},
 	{
 		num: "04",
-		title: "Livraison & optimisation",
-		desc: "Transfert complet après paiement, formation et suivi post-lancement pour s'assurer que tout fonctionne comme prévu.",
+		title: "Déploiement",
+		desc: "Livraison et transfert du projet aux clients. Ensuite, optimisation et maintenance du projet est nécessaire.",
 	},
 ];
 
