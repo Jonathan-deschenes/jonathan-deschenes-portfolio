@@ -50,25 +50,25 @@ export default function ContactForm() {
   return (
     <form onSubmit={onSubmit} noValidate className="grid gap-[18px]">
       <label className="grid gap-2">
-        <span className="text-[14px] font-semibold">
+        <span className="text-body-sm font-semibold">
           Nom <span className="text-brand">*</span>
         </span>
         <input name="name" required className="input-base" />
       </label>
       <label className="grid gap-2">
-        <span className="text-[14px] font-semibold">
+        <span className="text-body-sm font-semibold">
           Courriel <span className="text-brand">*</span>
         </span>
         <input name="email" type="email" required className="input-base" />
       </label>
       <label className="grid gap-2">
-        <span className="text-[14px] font-semibold">
+        <span className="text-body-sm font-semibold">
           Sujet <span className="text-brand">*</span>
         </span>
         <input name="subject" required className="input-base" />
       </label>
       <label className="grid gap-2">
-        <span className="text-[14px] font-semibold">
+        <span className="text-body-sm font-semibold">
           Message <span className="text-brand">*</span>
         </span>
         <textarea
@@ -92,7 +92,7 @@ export default function ContactForm() {
       {state.status === "error" && (
         <div
           role="alert"
-          className="bg-[#fff0f0] text-[#a40000] border border-[#f5c0c0] p-3 rounded-[10px] text-[14px]"
+          className="bg-[#fff0f0] text-[#a40000] border border-[#f5c0c0] p-3 rounded-[10px] text-body-sm"
         >
           {state.message}
         </div>

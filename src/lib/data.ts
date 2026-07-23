@@ -30,36 +30,39 @@ export const problems: Problem[] = [
 
 export type Service = {
 	title: string;
-	tail: string;
 	desc: string;
+	options: string[];
 	iconPath: string;
 };
 
 export const services: Service[] = [
 	{
-		title: "Site web professionnel",
-		tail: "— Visiblité en ligne propulsé",
-		desc: "Conception sur mesure orientée conversion : présentation claire de vos services, prise de rendez-vous en ligne, formulaires et référencement SEO inclus.",
+		title: "Développement web et d'application",
+		desc: "Conception de site web et d'application sur mesure.",
+		options: [
+			"Accessibilité 24/7",
+			"Design professionnel",
+			"Référencement SEO",
+			"Réactivité mobile",
+		],
 		iconPath: "M3 3h18v18H3z|M9 3v18M3 9h6",
 	},
 	{
 		title: "Automatisation",
-		tail: "— Du temps facturable récupéré.",
-		desc: "Collecte de documents clients, accueil de nouveaux clients, rappels d'échéances, des heures récupérées chaque semaine sans intervention manuelle.",
+		desc: "Développement d'un système sur mesure pour faciliter vos tâches répétitives.",
+		options: [
+			"Optimisation du worflow",
+			"Maintenance régulière",
+			"Aucune interruption",
+		],
 		iconPath: "M12 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z|M5 21a7 7 0 0 1 14 0",
 	},
 	{
 		title: "Intégration de l'IA",
-		tail: "— Moins de questions répétitives, plus de qualité.",
-		desc: "Un agent qui répond aux questions fréquentes de vos clients, qualifie les prospects et traite les documents en portant une attention particulière à la confidentialité des données financières.",
+		desc: "Automatiser vos processus efficacement grâce aux models performants de l'IA.",
+		options: ["Modèle performant", "Réelle optimisation du temp", "Autonomie"],
 		iconPath:
 			"c-circle-4|M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19",
-	},
-	{
-		title: "Applications sur mesure",
-		tail: "— Pour un besoin particulier.",
-		desc: "Du portail client au tableau de bord interne, des solutions construites entièrement pour votre cabinet selon vos besoins spécifiques. Sur devis.",
-		iconPath: "M9 8l-4 4 4 4|M15 8l4 4-4 4",
 	},
 ];
 
@@ -72,23 +75,23 @@ export type Step = {
 export const steps: Step[] = [
 	{
 		num: "01",
-		title: "Cadrage & proposition",
-		desc: "Rencontre de 30 minutes pour cerner votre besoin. Une proposition écrite avec portée, prix et délais fixes vous est envoyée sous 24-48 h.",
+		title: "Rencontre",
+		desc: "Rencontre gratuite de 30 minutes pour découvrir les besoins.",
 	},
 	{
 		num: "02",
 		title: "Planification",
-		desc: "Échéancier, livrables et nombre de révisions définis par écrit. Chaque étape se termine par une approbation avant de passer à la suivante.",
+		desc: "Début du projet et planification des échéanciers avec un objectif selon vos besoin.",
 	},
 	{
 		num: "03",
-		title: "Conception & développement",
-		desc: "Design, puis développement à partir de la maquette approuvée. Contact direct avec moi à chaque étape — jamais délégué.",
+		title: "Développement",
+		desc: "Approbation de la maquette initial, puis développement avec des révisions selon vous.",
 	},
 	{
 		num: "04",
-		title: "Livraison & optimisation",
-		desc: "Transfert complet après paiement, formation et suivi post-lancement pour s'assurer que tout fonctionne comme prévu.",
+		title: "Déploiement",
+		desc: "Livraison et transfert du projet aux clients. Ensuite, optimisation et maintenance du projet est nécessaire.",
 	},
 ];
 

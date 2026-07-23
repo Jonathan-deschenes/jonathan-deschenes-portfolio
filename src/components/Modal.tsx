@@ -58,7 +58,7 @@ export default function Modal({
         className={`bg-white rounded-[14px] sm:rounded-[18px] w-full ${widths[size]} max-h-full shadow-card outline-none animate-[modal-rise_220ms_cubic-bezier(.2,.7,.2,1)] flex flex-col overflow-hidden`}
       >
         <div className="flex-none flex items-center justify-between gap-3 px-4 sm:px-6 py-4 sm:py-5 border-b border-border bg-white rounded-t-[14px] sm:rounded-t-[18px]">
-          <h2 className="font-bold text-[16px] sm:text-[18px] tracking-[-.01em] min-w-0 truncate">
+          <h2 className="font-bold text-h3 tracking-[-.01em] min-w-0 truncate">
             {title}
           </h2>
           <button

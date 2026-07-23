@@ -71,15 +71,15 @@ export default async function CaseStudyPage({
 				<section className='container-x pt-10 sm:pt-16 pb-6 sm:pb-8'>
 					<Link
 						href='/#realisations'
-						className='text-[14px] text-brand no-underline mb-4 sm:mb-6 inline-flex items-center gap-1'
+						className='text-body-sm text-brand no-underline mb-4 sm:mb-6 inline-flex items-center gap-1'
 					>
 						<ArrowLeft size={20} /> Toutes les réalisations
 					</Link>
 					<div className='eyebrow mb-3 sm:mb-[14px]'>{cs.tag}</div>
-					<h1 className='font-bold text-[clamp(24px,6vw,50px)] leading-[1.12] sm:leading-[1.08] tracking-[-.02em] mb-3 sm:mb-[14px] max-w-[880px]'>
+					<h1 className='font-bold text-h1 leading-[1.12] sm:leading-[1.08] tracking-[-.02em] mb-3 sm:mb-[14px] max-w-[880px]'>
 						<span>{cs.title}</span>
 					</h1>
-					<p className='text-[15.5px] leading-[1.65] text-ink-soft text-justify'>
+					<p className='text-body leading-[1.65] text-ink-soft text-justify'>
 						{cs.description}
 					</p>
 				</section>
@@ -116,7 +116,7 @@ export default async function CaseStudyPage({
 								<div className='text-[#a3a39c] mb-[14px]' aria-hidden>
 									<ImagePlaceholder size={42} />
 								</div>
-								<div className='text-[14px]'>Capture du projet à intégrer</div>
+								<div className='text-body-sm'>Capture du projet à intégrer</div>
 							</div>
 						)}
 					</div>
@@ -137,7 +137,7 @@ export default async function CaseStudyPage({
 							{cs.tech.map((t) => (
 								<span
 									key={t}
-									className='text-[13px] text-[#5d6470] bg-[#f0f0ed] px-3 py-1.5 rounded-[20px]'
+									className='text-caption text-[#5d6470] bg-[#f0f0ed] px-3 py-1.5 rounded-[20px]'
 								>
 									{t}
 								</span>
@@ -158,10 +158,10 @@ export default async function CaseStudyPage({
 
 				<section className='bg-cream'>
 					<div className='container-x py-12 sm:py-[72px] text-center'>
-						<h2 className='font-bold text-[clamp(26px,4vw,40px)] leading-[1.15] tracking-[-.02em] mb-[18px]'>
+						<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em] mb-[18px]'>
 							Un projet similaire ?
 						</h2>
-						<p className='text-[16px] text-muted mb-7'>
+						<p className='text-body text-muted mb-7'>
 							Discutons-en pendant 30 minutes, sans engagement.
 						</p>
 						<div className='flex gap-[14px] justify-center flex-wrap'>
@@ -196,8 +196,8 @@ function Card({
 }) {
 	return (
 		<div className='bg-white border border-border rounded-[16px] p-7'>
-			<h2 className='font-semibold text-[18px] mb-3 text-brand'>{title}</h2>
-			<p className='text-[15.5px] leading-[1.65] text-ink-soft text-justify'>
+			<h2 className='font-semibold text-h3 mb-3 text-brand'>{title}</h2>
+			<p className='text-body leading-[1.65] text-ink-soft text-justify'>
 				{children}
 			</p>
 		</div>

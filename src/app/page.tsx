@@ -22,6 +22,7 @@ import { faqs, problems, services, steps } from "@/lib/data";
 import { getAllProjects } from "@/lib/content";
 import { site } from "@/lib/site";
 import Image from "next/image";
+import { ArrowDownRight, Check } from "lucide-react";
 
 export default function Home() {
 	const projects = getAllProjects();
@@ -57,15 +58,12 @@ export default function Home() {
 				{/* ===== HERO ===== */}
 				<section className='container-x grid items-center gap-10 pt-10 pb-14 sm:pt-[72px] sm:pb-24 min-[960px]:gap-16 min-[960px]:pt-24 min-[960px]:pb-[120px] min-[960px]:grid-cols-[1.02fr_.98fr]'>
 					<div className='anim-in'>
-						<div className='font-medium text-[11px] sm:text-[12px] tracking-[.18em] sm:tracking-[.2em] text-faint mb-5 sm:mb-[26px] uppercase'>
-							WEB · AUTOMATISATION · IA · CABINETS COMPTABLES
-						</div>
-						<h1 className='font-bold text-[clamp(32px,7vw,60px)] leading-[1.05] tracking-[-.02em] mb-5 sm:mb-7'>
+						<h1 className='font-bold text-hero leading-[1.05] tracking-[-.02em] mb-5 sm:mb-7'>
 							Optimisez votre{" "}
 							<span className='text-brand'>cabinet comptable</span>, sans la
 							lourdeur d&apos;une agence.
 						</h1>
-						<p className='text-[16px] sm:text-[18px] leading-[1.6] text-muted lg:max-w-[520px] mb-7 sm:mb-[38px]'>
+						<p className='text-body-lg leading-[1.6] text-muted lg:max-w-[520px] mb-7 sm:mb-[38px]'>
 							Sites web professionnels, automatisation des tâches répétitives et
 							intégration de l&apos;IA. Votre entreprise, votre image à la
 							hauteur de votre expertise.
@@ -107,10 +105,10 @@ export default function Home() {
 				{/* ===== STATS + PROBLEMS (navy) ===== */}
 				<section className='bg-navy text-white'>
 					<div className='container-x py-12 sm:py-[70px] border-b border-white/[.07] flex items-center justify-center gap-6 sm:gap-[30px] flex-wrap'>
-						<div className='font-bold text-[clamp(48px,12vw,78px)] leading-[.9] text-brand tracking-[-.03em]'>
+						<div className='font-bold text-display leading-[.9] text-brand tracking-[-.03em]'>
 							20+
 						</div>
-						<p className='text-[16px] sm:text-[18px] leading-[1.5] text-[#cfd3da] max-w-[330px]'>
+						<p className='text-body-lg leading-[1.5] text-[#cfd3da] max-w-[330px]'>
 							organisations accompagnées dans leur présence web et leurs
 							automatisations.
 						</p>
@@ -125,7 +123,7 @@ export default function Home() {
 								<div className='eyebrow mb-4 sm:mb-[22px]'>
 									CE QUI VOUS RALENTIT
 								</div>
-								<h2 className='font-bold text-[clamp(24px,5.5vw,40px)] leading-[1.15] tracking-[-.02em]'>
+								<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em]'>
 									Les cabinets comptables me contactent dès l&apos;apparition
 									d&apos;un de ces premiers signes de ralentissement.
 								</h2>
@@ -142,10 +140,10 @@ export default function Home() {
 										>
 											{problemIcons[i]}
 										</div>
-										<h3 className='font-semibold text-[17px] sm:text-[19px] mb-2.5 sm:mb-3'>
+										<h3 className='font-semibold text-h3 mb-2.5 sm:mb-3'>
 											{p.title}
 										</h3>
-										<p className='text-[14px] sm:text-[15px] leading-[1.6] text-[#8b93a1]'>
+										<p className='text-body-sm leading-[1.6] text-[#8b93a1]'>
 											{p.desc}
 										</p>
 									</div>
@@ -164,12 +162,12 @@ export default function Home() {
 						<div className='eyebrow mb-4 sm:mb-[22px]'>
 							RÉALISATIONS & IMPACT MESURABLE
 						</div>
-						<h2 className='font-bold text-[clamp(24px,5.5vw,40px)] leading-[1.15] tracking-[-.02em] mb-4 sm:mb-[26px]'>
+						<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em] mb-4 sm:mb-[26px]'>
 							Des projets livrés.
 							<br />
 							Des compétences démontrées.
 						</h2>
-						<p className='text-[15px] sm:text-[17px] leading-[1.6] text-muted max-w-[610px]'>
+						<p className='text-body-lg leading-[1.6] text-muted max-w-[610px]'>
 							Découvrez comment combiner conception web, développement
 							d&apos;applications et automatisation intelligente pour résoudre
 							des problèmes concrets, améliorer les processus et créer des
@@ -217,22 +215,20 @@ export default function Home() {
 								</div>
 								<div className='px-[22px] pt-1.5 pb-[26px] flex flex-col flex-1'>
 									<span
-										className='inline-block self-start font-bold text-[11px] tracking-[.09em] px-2.5 py-[5px] rounded-[7px] mb-4'
+										className='inline-block self-start font-bold text-tiny tracking-[.09em] px-2.5 py-[5px] rounded-[7px] mb-4'
 										style={{ background: p.tagBg, color: p.tagColor }}
 									>
 										{p.tag}
 									</span>
-									<h3 className='font-semibold text-[21px] mb-[13px]'>
-										{p.title}
-									</h3>
-									<p className='text-[14.5px] leading-[1.6] text-muted mb-[18px]'>
+									<h3 className='font-semibold text-h3 mb-[13px]'>{p.title}</h3>
+									<p className='text-body-sm leading-[1.6] text-muted mb-[18px]'>
 										{p.description}
 									</p>
 									<div className='flex flex-wrap gap-2 mb-[22px]'>
 										{p.chips.map((c) => (
 											<span
 												key={c}
-												className='text-[12.5px] text-[#5d6470] bg-[#f0f0ed] px-[11px] py-[5px] rounded-[20px]'
+												className='text-tiny text-[#5d6470] bg-[#f0f0ed] px-[11px] py-[5px] rounded-[20px]'
 											>
 												{c}
 											</span>
@@ -240,7 +236,7 @@ export default function Home() {
 									</div>
 									<Link
 										href={`/realisations/${p.slug}`}
-										className='inline-flex items-center gap-[7px] font-semibold text-[14px] no-underline mt-auto'
+										className='inline-flex items-center gap-[7px] font-semibold text-body-sm no-underline mt-auto'
 										style={{ color: p.linkColor }}
 									>
 										{p.cta} <ArrowRight />
@@ -251,36 +247,67 @@ export default function Home() {
 					</div>
 				</section>
 
-				{/* ===== SERVICES (cream) ===== */}
+				{/* ===== SERVICES ===== */}
 				<section id='services' className='bg-cream scroll-mt-20'>
-					<div className='max-w-[1080px] mx-auto pt-14 pb-16 sm:pt-24 sm:pb-[104px] px-6 md:px-10'>
-						<div className='eyebrow mb-8 sm:mb-12'>
-							MES SERVICES POUR OPTIMISER VOTRE CABINET
+					<div className='container-x pt-14 pb-16 sm:pt-[104px] sm:pb-[110px]'>
+						<div className='max-w-[1080px] mx-auto mb-10 sm:mb-[60px]'>
+							<div className='eyebrow mb-4 sm:mb-[22px]'>MES SERVICES</div>
+							<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em]'>
+								Des solutions adaptés pour vous sur mesures.
+							</h2>
 						</div>
-						<div>
-							{services.map((s, i) => (
-								<div
-									key={s.title}
-									className='flex gap-4 sm:gap-6 py-6 sm:py-8 border-t border-cream-border'
-								>
+
+						<div className='max-w-[1080px] mx-auto flex-row sm:flex justify-between space-y-2 sm:space-y-0 sm:space-x-1 md:space-x-2'>
+							{services.map((s, i) => {
+								// Differente couleur pour le mapping
+								const colors = ["bg-brand", "bg-brand-hard", "bg-brand"];
+
+								return (
 									<div
-										className='flex-none w-10 h-10 sm:w-[46px] sm:h-[46px] rounded-xl bg-ink flex items-center justify-center text-white'
-										aria-hidden
+										key={s.title}
+										className={`relative group sm:w-96 h-96 sm:h-[520px] md:h-[470px] p-4 lg:p-10 rounded-2xl transition-[transform,box-shadow] duration-300 ease-in-out will-change-transform hover:scale-[1.015] hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.5)] ${colors[i]}`}
 									>
-										{serviceIcons[i]}
+										<div
+											className='flex-none w-10 h-10 sm:w-[46px] sm:h-[46px] text-white'
+											aria-hidden
+										>
+											{serviceIcons[i]}
+										</div>
+										<div className='w-full text-white'>
+											<h3 className='font-semibold text-h3 mb-2 sm:mb-2.5 leading-snug min-h-[3.6rem] sm:min-h-[3.9rem] flex items-start gap-1'>
+												{s.title}
+											</h3>
+											<div className='text-body-sm leading-[1.6] w-full text-cream'>
+												<p className='min-h-[3.3rem]'>{s.desc}</p>
+												<div className='flex flex-col space-y-1 mt-4'>
+													{s.options.map((options, indexY) => (
+														<div
+															key={indexY}
+															className='flex space-x-2 items-center'
+														>
+															<Check size={15} />
+															<p>{options}</p>
+														</div>
+													))}
+												</div>
+											</div>
+										</div>
+										<div className='absolute bg-white/25 text-cream w-fit rounded-full p-2 bottom-0 right-0 m-4'>
+											<span
+												aria-hidden
+												className='inline-block lg:hidden absolute -inset-2 rounded-full border-2 border-dashed border-white/70 animate-[spin_4s_linear_infinite] motion-reduce:animate-none'
+											/>
+											<span
+												aria-hidden
+												className='hidden lg:group-hover:inline-block absolute -inset-2 rounded-full border-2 border-dashed border-white/70 lg:group-hover:animate-[spin_4s_linear_infinite] motion-reduce:animate-none'
+											/>
+											<ArrowDownRight size={30} className='relative' />
+										</div>
 									</div>
-									<div className='min-w-0'>
-										<h3 className='font-semibold text-[17px] sm:text-[20px] mb-2 sm:mb-2.5 leading-snug inline-flex gap-1'>
-											<span className='text-brand'>{s.title}</span>{" "}
-											<span className='hidden lg:block'>{s.tail}</span>
-										</h3>
-										<p className='text-[14px] sm:text-[15.5px] leading-[1.6] text-muted max-w-[920px]'>
-											{s.desc}
-										</p>
-									</div>
-								</div>
-							))}
+								);
+							})}
 						</div>
+
 						<div className='flex justify-center mt-10 sm:mt-12'>
 							<ModalLink modal='booking' className='btn-primary'>
 								Réserver une rencontre <ArrowRight />
@@ -294,22 +321,37 @@ export default function Home() {
 					id='processus'
 					className='container-x pt-14 pb-16 sm:pt-[104px] sm:pb-[110px] scroll-mt-20'
 				>
-					<div className='max-w-[1080px] mx-auto'>
-						<div className='eyebrow mb-8 sm:mb-[54px]'>
-							COMMENT JE TRAVAILLE
+					<div className='max-w-[1080px] mx-auto sm:flex space-x-10'>
+						<div>
+							<div className='eyebrow mb-4 sm:mb-[22]'>PROCESSUS</div>
+							<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em] mb-4 sm:mb-[26px]'>
+								Travaillons ensemble?
+							</h2>
 						</div>
-						<div className='grid gap-8 sm:gap-[34px] grid-cols-1 sm:grid-cols-2 min-[960px]:grid-cols-4'>
-							{steps.map((st) => (
-								<div key={st.num}>
-									<div className='font-bold text-[38px] sm:text-[46px] text-brand tracking-[-.02em] mb-4 sm:mb-5'>
-										{st.num}
+						<div className='grid gap-4 grid-cols-1 sm:grid-cols-2 min-[960px]:grid-cols-4'>
+							{steps.map((step, i) => (
+								<div
+									key={step.num}
+									className='group relative overflow-hidden bg-neutral-50 border border-cream-border rounded-[16px] sm:rounded-[18px] px-6 py-6 sm:px-8 sm:py-[30px] flex flex-col justify-between h-auto transition-[transform,box-shadow] duration-300 ease-in-out will-change-transform hover:scale-[1.015] hover:shadow-[inset_0_0_0_1px_rgba(26,96,245,0.25)]'
+								>
+									<span
+										aria-hidden
+										className='absolute top-0 left-0 right-0 h-[3px] bg-brand/10'
+									/>
+									<span
+										aria-hidden
+										style={{ animationDelay: `${i * 300}ms` }}
+										className='min-[960px]:hidden absolute top-0 left-0 h-[3px] bg-brand animate-[progress-fill_3.2s_ease-in-out_infinite] motion-reduce:animate-none'
+									/>
+									<span
+										aria-hidden
+										className='hidden min-[960px]:block absolute top-0 left-0 w-0 h-[3px] bg-brand transition-[width] duration-500 ease-out group-hover:w-full'
+									/>
+									<p>{step.desc}</p>
+									<div className='flex flex-wrap justify-between items-center font-semibold text-h3 mt-4'>
+										<h3>{step.title}</h3>
+										<h3 className='text-brand'>{step.num}</h3>
 									</div>
-									<h3 className='font-semibold text-[17px] sm:text-[18px] mb-3 sm:mb-[13px]'>
-										{st.title}
-									</h3>
-									<p className='text-[14px] sm:text-[14.5px] leading-[1.62] text-muted'>
-										{st.desc}
-									</p>
 								</div>
 							))}
 						</div>
@@ -343,18 +385,18 @@ export default function Home() {
 							<div className='eyebrow mb-4 sm:mb-6'>
 								QUI RÉALISE VOTRE PROJET
 							</div>
-							<h2 className='font-bold text-[clamp(22px,5vw,37px)] leading-[1.15] tracking-[-.02em] mb-5 sm:mb-[30px]'>
+							<h2 className='font-bold text-h2-sm leading-[1.15] tracking-[-.02em] mb-5 sm:mb-[30px]'>
 								Vous parlez directement à la personne qui conçoit et livre votre
 								projet.
 							</h2>
-							<p className='text-[15px] sm:text-[16.5px] leading-[1.68] text-[#aab0bb] mb-5 sm:mb-[22px]'>
+							<p className='text-body-lg leading-[1.68] text-[#aab0bb] mb-5 sm:mb-[22px]'>
 								Je suis Jonathan Deschênes, étudiant en Techniques de
 								l&apos;informatique avec l&apos;intention de poursuivre au
 								baccalauréat en génie logiciel. Avec déjà plus de 3 ans en tant
 								que travailleur autonome, je me concentre dès maintenant sur
 								l&apos;optimisation des cabinets comptables.
 							</p>
-							<p className='text-[15px] sm:text-[16.5px] leading-[1.68] text-[#aab0bb] mb-7 sm:mb-[34px]'>
+							<p className='text-body-lg leading-[1.68] text-[#aab0bb] mb-7 sm:mb-[34px]'>
 								Être étudiant, c&apos;est maîtriser les technologies les plus
 								récentes à des tarifs accessibles, avec un contact direct et une
 								imputabilité totale. Votre projet ne sera jamais confié à
@@ -374,7 +416,7 @@ export default function Home() {
 				>
 					<div className='max-w-[840px] mx-auto mb-10 sm:mb-16 text-center'>
 						<div className='eyebrow mb-4 sm:mb-5'>QUESTIONS FRÉQUENTES</div>
-						<h2 className='font-bold text-[clamp(24px,6vw,42px)] leading-[1.15] tracking-[-.02em]'>
+						<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em]'>
 							Ce que vous voudrez savoir avant d&apos;appeler
 						</h2>
 					</div>
@@ -384,10 +426,10 @@ export default function Home() {
 				{/* ===== FINAL CTA (cream) ===== */}
 				<section id='contact' className='bg-cream scroll-mt-20'>
 					<div className='container-x py-14 sm:py-[110px] text-center'>
-						<h2 className='font-bold text-[clamp(24px,6vw,46px)] leading-[1.15] tracking-[-.02em] max-w-[720px] mx-auto mb-5 sm:mb-6'>
+						<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em] max-w-[720px] mx-auto mb-5 sm:mb-6'>
 							Pas encore décidé ? Présentez-moi votre projet en 3 minutes.
 						</h2>
-						<p className='text-[15px] sm:text-[17px] text-muted mb-7 sm:mb-[38px]'>
+						<p className='text-body-lg text-muted mb-7 sm:mb-[38px]'>
 							Répondez à ce cours formulaire de soumission et je vous dis si on
 							peut travailler ensemble.
 						</p>
