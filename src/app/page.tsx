@@ -254,10 +254,10 @@ export default function Home() {
 							MES SERVICES
 						</div>
 						<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em] mb-4 sm:mb-[26px]'>
-							Des solutions pour vous sur mesures.
+							Des solutions adaptés pour vous sur mesures.
 						</h2>
 
-						<div className='flex justify-between'>
+						<div className='flex-row sm:flex justify-between space-y-2 sm:space-y-0 sm:space-x-1 md:space-x-2'>
 							{services.map((s, i) => {
 								// Differente couleur pour le mapping
 								const colors = ["bg-brand", "bg-brand-hard", "bg-brand"];
@@ -265,7 +265,7 @@ export default function Home() {
 								return (
 									<div
 										key={s.title}
-										className={`relative group w-80 h-[440px] p-10 m-1 rounded-2xl transition-[transform,box-shadow] duration-300 ease-in-out will-change-transform hover:scale-[1.015] hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.5)] ${colors[i]}`}
+										className={`relative group sm:w-80 h-96 sm:h-[520px] md:h-[470px] p-4 lg:p-10 rounded-2xl transition-[transform,box-shadow] duration-300 ease-in-out will-change-transform hover:scale-[1.015] hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.5)] ${colors[i]}`}
 									>
 										<div
 											className='flex-none w-10 h-10 sm:w-[46px] sm:h-[46px] text-white'
@@ -295,7 +295,11 @@ export default function Home() {
 										<div className='absolute bg-white/25 text-cream w-fit rounded-full p-2 bottom-0 right-0 m-4'>
 											<span
 												aria-hidden
-												className='hidden group-hover:inline-block absolute -inset-2 rounded-full border-2 border-dashed border-transparent border-white/70 group-hover:animate-[spin_4s_linear_infinite] motion-reduce:animate-none'
+												className='inline-block lg:hidden absolute -inset-2 rounded-full border-2 border-dashed border-white/70 animate-[spin_4s_linear_infinite] motion-reduce:animate-none'
+											/>
+											<span
+												aria-hidden
+												className='hidden lg:group-hover:inline-block absolute -inset-2 rounded-full border-2 border-dashed border-white/70 lg:group-hover:animate-[spin_4s_linear_infinite] motion-reduce:animate-none'
 											/>
 											<ArrowDownRight size={30} className='relative' />
 										</div>
