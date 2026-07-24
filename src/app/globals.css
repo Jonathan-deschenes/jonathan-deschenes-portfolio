@@ -210,4 +210,15 @@
 			width: 0%;
 		}
 	}
+	@keyframes progress-fill-sequential {
+		0%, 6.25% {
+			width: 0%;
+		}
+		18.75%, 21.25% {
+			width: 100%;
+		}
+		25%, 100% {
+			width: 0%;
+		}
+	}
 }

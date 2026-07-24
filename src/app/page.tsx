@@ -340,8 +340,13 @@ export default function Home() {
 									/>
 									<span
 										aria-hidden
-										style={{ animationDelay: `${i * 300}ms` }}
-										className='min-[960px]:hidden absolute top-0 left-0 h-[3px] bg-brand animate-[progress-fill_3.2s_ease-in-out_infinite] motion-reduce:animate-none'
+										style={{
+											animationDelay: `${i * 3200}ms`,
+											animation: `progress-fill-sequential ${
+												steps.length * 3.2
+											}s ease-in-out infinite`,
+										}}
+										className='min-[960px]:hidden absolute top-0 left-0 h-[3px] bg-brand'
 									/>
 									<span
 										aria-hidden
