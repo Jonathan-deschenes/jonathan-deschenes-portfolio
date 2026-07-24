@@ -1,0 +1,6 @@
+Placez vos images dans ce dossier :
+  logo.avif  — logo affiché sur la carte d'accueil
+  desktop.png — capture plein écran affichée sur la page de cas d'étude
+
+Après avoir ajouté les images, lancez :
+  npm run project:compress -- --slug decorido
