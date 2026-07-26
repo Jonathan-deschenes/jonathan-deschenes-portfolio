@@ -12,6 +12,7 @@
 		"test:watch": "vitest",
 		"test:coverage": "vitest run --coverage",
 		"project:new": "node scripts/projects/new-project.mjs",
+		"project:delete": "node scripts/projects/delete-project.mjs",
 		"project:compress": "node scripts/projects/compress-project.mjs",
 		"legal:new": "node scripts/new-legal-doc.mjs",
 		"legal:publish": "node scripts/publish-legal-doc.mjs"

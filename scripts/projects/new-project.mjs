@@ -24,7 +24,7 @@ function slugify(str) {
 
 console.log("\n[INFO] Nouveau projet \n");
 
-const title = await ask("[WARN] Titre du projet : ");
+const title = await ask("[INFO] Titre du projet : ");
 const slug = slugify(title);
 
 // Build frontmatter
