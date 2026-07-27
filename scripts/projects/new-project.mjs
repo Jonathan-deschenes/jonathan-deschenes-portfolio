@@ -33,11 +33,11 @@ slug: ${slug}
 title: "${title}"
 link: "Lien pour visiter le projet."
 description: "Courte description pour l'aperçu du projet."
-chips: "["", "", ""]"
-defi: ""
-solution: ""
-resultat: ""
-tech: "["", "", ""]"
+chips: ["Lorem", "ipsum", "dolor "]
+defi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
+solution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
+resultat: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
+tech: ["Lorem", "ipsum", "dolor "]
 logo: "/projects/${slug}/logo.avif"
 images:
   - "/projects/${slug}/desktop.png"

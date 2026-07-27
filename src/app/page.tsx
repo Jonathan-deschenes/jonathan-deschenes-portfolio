@@ -23,12 +23,8 @@ import { faqs, problems, services, steps } from "@/lib/data";
 import { getAllProjects } from "@/lib/content";
 import { site } from "@/lib/site";
 import Image from "next/image";
-import {
-	ArrowDownRight,
-	ArrowLeftIcon,
-	ArrowRightIcon,
-	Check,
-} from "lucide-react";
+import { ArrowDownRight, Check } from "lucide-react";
+import ProjectList from "@/components/ProjectsList";
 
 export default function Home() {
 	const projects = getAllProjects();
@@ -171,60 +167,8 @@ export default function Home() {
 								Mes réalisations coups de coeur.
 							</h2>
 						</div>
-						{/** Garder modulaire pour de futur addition de projet */}
-						{projects.length > 3 && (
-							<div className='flex items-center gap-2'>
-								<ArrowLeftIcon className='text-muted' size={20} />
-								<ArrowRightIcon className='text-muted' size={20} />
-							</div>
-						)}
 					</div>
-					<div
-						// Garder modulaire pour de futur addition de projet
-						className={`max-w-[1080px] mx-auto space-x-4 ${projects.length <= 3 ? "grid grid-cols-3" : "flex flex-nowrap"}`}
-					>
-						{projects.map((project) => (
-							<article
-								key={project.slug}
-								className='overflow-hidden bg-white flex flex-col'
-							>
-								<Link
-									href={`/realisations/${project.slug}`}
-									className='flex flex-col space-y-2'
-								>
-									<div
-										className={` rounded-lg h-[185px] flex flex-col items-center justify-center text-center relative overflow-hidden ${
-											project.logo
-												? "bg-project-background border border-[#ebebe9]"
-												: "bg-[#e3e3de] border-[1.5px] border-dashed border-[#c4c4bd] px-[18px]"
-										}`}
-										role='img'
-										aria-label={`Visuel du projet ${project.title}`}
-									>
-										{project.logo ? (
-											<Image
-												src={project.logo}
-												alt={`Logo ${project.title}`}
-												width={240}
-												height={140}
-												className='max-h-[130px] w-auto object-contain'
-											/>
-										) : (
-											<ImagePlaceholder />
-										)}
-									</div>
-									<div className='pt-1.5 pb-[26px] flex flex-col flex-1'>
-										<h3 className='font-semibold text-h3 mb-[13px] text-brand'>
-											{project.title}
-										</h3>
-										<p className='text-body-sm leading-[1.6] text-muted mb-[18px]'>
-											{project.description}
-										</p>
-									</div>
-								</Link>
-							</article>
-						))}
-					</div>
+					<ProjectList projects={projects} />
 				</section>
 
 				{/* ===== SERVICES ===== */}

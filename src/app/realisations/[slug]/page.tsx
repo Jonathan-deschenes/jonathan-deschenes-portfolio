@@ -75,7 +75,6 @@ export default async function CaseStudyPage({
 					>
 						<ArrowLeft size={20} /> Toutes les réalisations
 					</Link>
-					<div className='eyebrow mb-3 sm:mb-[14px]'>{cs.tag}</div>
 					<h1 className='font-bold text-h1 leading-[1.12] sm:leading-[1.08] tracking-[-.02em] mb-3 sm:mb-[14px] max-w-[880px]'>
 						<span>{cs.title}</span>
 					</h1>

@@ -31,6 +31,15 @@ try {
 	process.exit(1);
 }
 
+function slugify(str) {
+	return str
+		.toLowerCase()
+		.normalize("NFD")
+		.replace(/[̀-ͯ]/g, "")
+		.replace(/[^a-z0-9]+/g, "-")
+		.replace(/^-|-$/g, "");
+}
+
 async function compressSlug(slug) {
 	const dir = path.join(PROJECTS_DIR, slug);
 	if (!fs.existsSync(dir)) {
@@ -72,14 +81,14 @@ if (allFlag) {
 	const slugs = fs
 		.readdirSync(PROJECTS_DIR)
 		.filter((f) => fs.statSync(path.join(PROJECTS_DIR, f)).isDirectory());
-	for (const slug of slugs) await compressSlug(slug);
+	for (const slug of slugs) await compressSlug(slugify(slug));
 } else {
 	const slug = args[slugIdx + 1];
 	if (!slug) {
 		console.error("[ERROR] Fournissez un slug après --slug");
 		process.exit(1);
 	}
-	await compressSlug(slug);
+	await compressSlug(slugify(slug));
 }
 
 console.log(
