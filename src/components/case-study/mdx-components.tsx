@@ -108,7 +108,7 @@ function Gallery({ images, caption }: { images: string[]; caption?: string }) {
 	return (
 		<figure className='my-10 sm:my-14'>
 			<div className='overflow-hidden grid gap-2 sm:gap-[14px] grid-cols-1 sm:grid-cols-2'>
-				{images.map((src) => {
+				{images.map((src, i) => {
 					if (src) {
 						return (
 							<div
@@ -128,6 +128,7 @@ function Gallery({ images, caption }: { images: string[]; caption?: string }) {
 					} else {
 						return (
 							<div
+								key={`placeholder-${i}`}
 								className='bg-[#e3e3de] border-[1.5px] border-dashed border-[#c4c4bd] m-2 sm:m-[14px] rounded-[10px] sm:rounded-[12px] min-h-[200px] sm:min-h-[320px] flex flex-col items-center justify-center text-center text-[#7c7c74] p-4'
 								role='img'
 								aria-label={`Capture du projet`}

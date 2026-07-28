@@ -9,7 +9,7 @@ import { ArrowRight, ImagePlaceholder } from "@/components/Icons";
 import ModalLink from "@/components/ModalLink";
 import { getProject, getProjectSlugs } from "@/lib/content";
 import { site } from "@/lib/site";
-import { ArrowLeft, Lightbulb } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { caseStudyComponents } from "@/components/case-study/mdx-components";
 import PreviewableImage from "@/components/case-study/PreviewableImage";

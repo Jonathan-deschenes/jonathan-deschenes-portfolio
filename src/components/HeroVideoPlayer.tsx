@@ -50,7 +50,6 @@ export default function HeroVideoPlayer({
 				title='Présentation en 1 minute'
 				size='xl'
 			>
-				{/* eslint-disable-next-line jsx-a11y/media-has-caption */}
 				<video
 					className='block w-full max-h-[78vh] object-contain rounded-[12px] bg-black'
 					src='/hero-video.mp4'
