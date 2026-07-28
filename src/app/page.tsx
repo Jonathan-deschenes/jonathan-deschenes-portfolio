@@ -162,7 +162,7 @@ export default function Home() {
 				>
 					<div className='max-w-[1080px] mx-auto mb-10 flex justify-between'>
 						<div>
-							<div className='eyebrow mb-4 sm:mb-[22px]'>RÉALISATIONS</div>
+							<div className='eyebrow mb-4 sm:mb-[22px]'>CAS D'ÉTUDES</div>
 							<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em] mb-4 sm:mb-[26px]'>
 								Mes réalisations coups de coeur.
 							</h2>

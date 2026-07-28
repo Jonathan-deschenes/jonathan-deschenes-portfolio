@@ -14,13 +14,14 @@ export type ProjectContent = {
 	tech: string[];
 	logo: string;
 	images: string[];
+	body: string;
 };
 
 const PROJECTS_DIR = path.join(process.cwd(), "content", "projects");
 
 function parseProject(filePath: string): ProjectContent {
 	const raw = fs.readFileSync(filePath, "utf8");
-	const { data } = matter(raw);
+	const { data, content } = matter(raw);
 	return {
 		slug: data.slug ?? "",
 		title: data.title ?? "",
@@ -33,6 +34,7 @@ function parseProject(filePath: string): ProjectContent {
 		tech: Array.isArray(data.tech) ? data.tech : [],
 		logo: data.logo ?? "",
 		images: Array.isArray(data.images) ? data.images : [],
+		body: content.trim(),
 	};
 }
 

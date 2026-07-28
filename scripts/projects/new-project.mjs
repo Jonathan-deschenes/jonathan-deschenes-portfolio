@@ -33,15 +33,24 @@ slug: ${slug}
 title: "${title}"
 link: "Lien pour visiter le projet."
 description: "Courte description pour l'aperçu du projet."
-chips: ["Lorem", "ipsum", "dolor "]
 defi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
 solution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
 resultat: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
 tech: ["Lorem", "ipsum", "dolor "]
-logo: "/projects/${slug}/logo.avif"
+logo: ""
 images:
-  - "/projects/${slug}/desktop.png"
+  - ""
 ---
+
+<Feature title="Nom de la fonctionnalité" image="" imageSide="right">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</Feature>
+
+<Gallery images={["", ""]} caption="Lorem ipsum dolor sit amet." />
+
+<Testimonial author="Nom Client" role="Poste, Entreprise">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</Testimonial>
 `;
 
 // Write MDX file
@@ -57,7 +66,7 @@ const imgDir = path.join(ROOT, "public", "projects", slug);
 fs.mkdirSync(imgDir, { recursive: true });
 fs.writeFileSync(
 	path.join(imgDir, "IMAGES_ICI.txt"),
-	`Placez vos images dans ce dossier :\n  logo.avif  — logo affiché sur la carte d'accueil\n  desktop.png — capture plein écran affichée sur la page de cas d'étude\n\nAprès avoir ajouté les images, lancez :\n  npm run project:compress -- --slug ${slug}\n`,
+	`Placez vos images dans ce dossier :\n  logo.avif   — logo affiché sur la carte d'accueil\n  desktop.png — capture plein écran affichée en haut de la page de cas d'étude\n  feature-1.png, shot-2.png, shot-3.png — images utilisées par l'exemple dans le corps du .mdx (à renommer/ajuster librement)\n\nAprès avoir ajouté les images, lancez :\n  npm run project:compress -- --slug ${slug}\n`,
 	"utf8",
 );
 
@@ -67,7 +76,7 @@ console.log(`
 [INFO] Fichier MDX  : content/projects/${slug}.mdx
 [INFO] Dossier imgs : public/projects/${slug}/
 
-[WARN] Créer le contenu dans le fichier content/projects/${slug}.mdx
+[WARN] Le corps du fichier .mdx contient déjà un exemple actif des 3 composants disponibles (Feature, Gallery, Testimonial) — gardez, modifiez ou supprimez les blocs selon le projet
 [WARN] Ajoutez vos images dans public/projects/${slug}/
 [WARN] Compressez le projet en WebP : npm run project:compress -- --slug ${slug}
 [WARN] Supprimer au besoin le projet : npm run project:delete -- --slug ${slug}

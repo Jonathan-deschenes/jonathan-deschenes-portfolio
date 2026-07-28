@@ -10,7 +10,9 @@ import ModalLink from "@/components/ModalLink";
 import { getProject, getProjectSlugs } from "@/lib/content";
 import { site } from "@/lib/site";
 import Image from "next/image";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Lightbulb } from "lucide-react";
+import { compileMDX } from "next-mdx-remote/rsc";
+import { caseStudyComponents } from "@/components/case-study/mdx-components";
 
 export function generateStaticParams() {
 	return getProjectSlugs().map((slug) => ({ slug }));
@@ -54,6 +56,19 @@ export default async function CaseStudyPage({
 
 	const heroImage = cs.images[0] ?? "";
 
+	const mdxContent = cs.body
+		? (
+				await compileMDX({
+					source: cs.body,
+					components: caseStudyComponents,
+					// blockJS: false — contenu authoré par Jonathan dans le repo, pas
+					// de contenu externe/utilisateur, on a besoin des expressions JS
+					// pour des props comme `images={[...]}`.
+					options: { parseFrontmatter: false, blockJS: false },
+				})
+			).content
+		: null;
+
 	const ld = {
 		"@context": "https://schema.org",
 		"@type": "Article",
@@ -73,39 +88,30 @@ export default async function CaseStudyPage({
 						href='/#realisations'
 						className='text-body-sm text-brand no-underline mb-4 sm:mb-6 inline-flex items-center gap-1'
 					>
-						<ArrowLeft size={20} /> Toutes les réalisations
+						<ArrowLeft size={20} /> Retour
 					</Link>
-					<h1 className='font-bold text-h1 leading-[1.12] sm:leading-[1.08] tracking-[-.02em] mb-3 sm:mb-[14px] max-w-[880px]'>
-						<span>{cs.title}</span>
-					</h1>
-					<p className='text-body leading-[1.65] text-ink-soft text-justify'>
-						{cs.description}
-					</p>
+					<div className='eyebrow'>ÉTUDE DE CAS</div>
 				</section>
 
-				<section className='container-x pb-6'>
-					<div className='border border-[#ebebe9] rounded-[18px] bg-white overflow-hidden max-w-full'>
-						<div
-							className='bg-[#e9e9e4] px-[14px] py-[11px] flex items-center gap-[13px]'
-							aria-hidden
-						>
-							<div className='flex gap-1.5'>
-								<span className='w-[11px] h-[11px] rounded-full bg-[#f25f57]' />
-								<span className='w-[11px] h-[11px] rounded-full bg-[#fbbe2e]' />
-								<span className='w-[11px] h-[11px] rounded-full bg-[#28c93f]' />
-							</div>
-							<div className='flex-1 h-[9px] rounded-[5px] bg-[#d4d4cd]' />
-						</div>
+				<section className='container-x md:pb-6'>
+					<div className='rounded-[18px] overflow-hidden max-w-full'>
 						{heroImage ? (
-							<Image
-								src={heroImage}
-								alt={`Capture du projet ${cs.title}`}
-								width={1600}
-								height={900}
-								sizes='(max-width: 1100px) 100vw, 1080px'
-								className='block w-full h-auto'
-								priority
-							/>
+							<div className='relative lg:aspect-[26/9]'>
+								<Image
+									src={heroImage}
+									alt={`Capture du projet ${cs.title}`}
+									width={1600}
+									height={900}
+									className='block w-full h-full object-cover'
+									priority
+								/>
+								<div className='absolute top-0 bg-black/60 w-full h-full'></div>
+								<div className='absolute bottom-0 text-white p-5 md:py-5 md:px-10 lg:py-10 lg:px-20'>
+									<h1 className='font-bold text-h1 mb-3 sm:mb-[14px] max-w-[880px]'>
+										<span>{cs.title}</span>
+									</h1>
+								</div>
+							</div>
 						) : (
 							<div
 								className='bg-[#e3e3de] border-[1.5px] border-dashed border-[#c4c4bd] m-2 sm:m-[14px] rounded-[10px] sm:rounded-[12px] min-h-[200px] sm:min-h-[320px] flex flex-col items-center justify-center text-center text-[#7c7c74] p-4'
@@ -122,11 +128,19 @@ export default async function CaseStudyPage({
 				</section>
 
 				<section className='container-x pt-8 pb-12 sm:pb-[60px]'>
-					<div className='grid gap-5 sm:gap-10 max-w-full grid-cols-1 lg:grid-cols-3'>
-						<Card title='Le défi'>{cs.defi}</Card>
-						<Card title='La solution'>{cs.solution}</Card>
-						<Card title='Le résultat'>{cs.resultat}</Card>
+					<div
+						className={`grid gap-6 sm:gap-8 max-w-full grid-cols-1 sm:grid-cols-3 ${
+							mdxContent
+								? "mb-12 sm:mb-16 pb-8 sm:pb-10 border-b border-border-soft"
+								: ""
+						}`}
+					>
+						<SummaryItem label='Le défi'>{cs.defi}</SummaryItem>
+						<SummaryItem label='La solution'>{cs.solution}</SummaryItem>
+						<SummaryItem label='Le résultat'>{cs.resultat}</SummaryItem>
 					</div>
+
+					{mdxContent && <div className='max-w-full'>{mdxContent}</div>}
 
 					<div className='mt-8 sm:mt-10 max-w-full'>
 						<div className='eyebrow mb-3 sm:mb-[14px]'>
@@ -186,19 +200,19 @@ export default async function CaseStudyPage({
 	);
 }
 
-function Card({
-	title,
+function SummaryItem({
+	label,
 	children,
 }: {
-	title: string;
+	label: string;
 	children: React.ReactNode;
 }) {
 	return (
-		<div className='bg-white border border-border rounded-[16px] p-7'>
-			<h2 className='font-semibold text-h3 mb-3 text-brand'>{title}</h2>
-			<p className='text-body leading-[1.65] text-ink-soft text-justify'>
-				{children}
-			</p>
+		<div>
+			<div className='text-caption font-semibold uppercase tracking-[.15em] text-brand mb-2'>
+				{label}
+			</div>
+			<p className='text-body-sm leading-[1.6] text-muted'>{children}</p>
 		</div>
 	);
 }
