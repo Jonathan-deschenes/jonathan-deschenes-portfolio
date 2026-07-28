@@ -9,10 +9,11 @@ import { ArrowRight, ImagePlaceholder } from "@/components/Icons";
 import ModalLink from "@/components/ModalLink";
 import { getProject, getProjectSlugs } from "@/lib/content";
 import { site } from "@/lib/site";
-import Image from "next/image";
 import { ArrowLeft, Lightbulb } from "lucide-react";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { caseStudyComponents } from "@/components/case-study/mdx-components";
+import PreviewableImage from "@/components/case-study/PreviewableImage";
+import ImagePreviewModal from "@/components/case-study/ImagePreviewModal";
 
 export function generateStaticParams() {
 	return getProjectSlugs().map((slug) => ({ slug }));
@@ -82,6 +83,7 @@ export default async function CaseStudyPage({
 	return (
 		<>
 			<SiteHeader />
+			<ImagePreviewModal />
 			<main>
 				<section className='container-x pt-10 sm:pt-16 pb-6 sm:pb-8'>
 					<Link
@@ -97,7 +99,7 @@ export default async function CaseStudyPage({
 					<div className='rounded-[18px] overflow-hidden max-w-full'>
 						{heroImage ? (
 							<div className='relative lg:aspect-[26/9]'>
-								<Image
+								<PreviewableImage
 									src={heroImage}
 									alt={`Capture du projet ${cs.title}`}
 									width={1600}

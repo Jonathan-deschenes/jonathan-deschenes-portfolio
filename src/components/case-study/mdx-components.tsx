@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Quote } from "lucide-react";
 import type { MDXComponents } from "mdx/types";
 import { ImagePlaceholder } from "../Icons";
+import PreviewableImage from "./PreviewableImage";
 
 function About({
 	title,
@@ -18,9 +19,9 @@ function About({
 					<h2 className='font-bold text-h2-sm leading-[1.15] tracking-[-.02em] mb-5 sm:mb-[30px]'>
 						{title}
 					</h2>
-					<p className='text-body-lg text-muted mb-7 sm:mb-[38px]'>
+					<div className='text-body-lg text-muted mb-7 sm:mb-[38px]'>
 						{children}
-					</p>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -55,7 +56,7 @@ function Feature({
 					}`}
 				>
 					<div className='rounded-[8px] overflow-hidden bg-white  border border-border-soft'>
-						<Image
+						<PreviewableImage
 							src={image}
 							alt={title}
 							width={800}
@@ -92,7 +93,7 @@ function Gallery({ images, caption }: { images: string[]; caption?: string }) {
 								key={src}
 								className='rounded-[10px] overflow-hidden border border-border-soft aspect-video'
 							>
-								<Image
+								<PreviewableImage
 									src={src}
 									alt={caption ?? ""}
 									width={800}
@@ -141,9 +142,9 @@ function Testimonial({
 	return (
 		<div className='bg-cream border border-cream-border rounded-[16px] p-6 sm:p-7 my-10 sm:my-14'>
 			<Quote className='text-brand mb-3 sm:mb-4' size={26} aria-hidden />
-			<p className='text-body-lg leading-[1.65] text-ink-soft italic mb-4 sm:mb-5'>
+			<div className='text-body-lg leading-[1.65] text-ink-soft italic mb-4 sm:mb-5'>
 				{children}
-			</p>
+			</div>
 			<div className='flex items-center gap-3 sm:gap-4'>
 				{avatar && (
 					<Image
