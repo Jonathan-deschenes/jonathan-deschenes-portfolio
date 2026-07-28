@@ -37,16 +37,16 @@ defi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t
 solution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
 resultat: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
 tech: ["Lorem", "ipsum", "dolor "]
-logo: ""
+logo: "/projects/${slug}/logo.avif"
 images:
-  - ""
+  - "/projects/${slug}/hero.png"
 ---
 
-<Feature title="Nom de la fonctionnalité" image="" imageSide="right">
+<Feature title="Nom de la fonctionnalité" image="/projects/${slug}/" imageSide="right">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </Feature>
 
-<Gallery images={["", ""]} caption="Lorem ipsum dolor sit amet." />
+<Gallery images={["/projects/${slug}/", "/projects/${slug}/"]} caption="Lorem ipsum dolor sit amet." />
 
 <Testimonial author="Nom Client" role="Poste, Entreprise">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

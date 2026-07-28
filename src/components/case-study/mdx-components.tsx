@@ -32,11 +32,13 @@ function Feature({
 	title,
 	image,
 	imageSide = "right",
+	mobile = false,
 	children,
 }: {
 	title: string;
 	image?: string;
 	imageSide?: "left" | "right";
+	mobile?: boolean;
 	children: React.ReactNode;
 }) {
 	return (
@@ -49,7 +51,27 @@ function Feature({
 					{children}
 				</div>
 			</div>
-			{image ? (
+			{image && mobile ? (
+				<div
+					className={`flex justify-center ${
+						imageSide === "left" ? "md:order-1" : ""
+					}`}
+				>
+					<div className='relative w-[240px] sm:w-[280px] rounded-[40px] bg-[#161616] border-[10px] border-[#161616] shadow-card'>
+						<div className='absolute top-0 left-1/2 -translate-x-1/2 w-24 h-5 bg-[#161616] rounded-b-[14px] z-10' />
+						<div className='rounded-[28px] overflow-hidden bg-white aspect-[9/19.5]'>
+							<PreviewableImage
+								src={image}
+								alt={title}
+								width={375}
+								height={812}
+								sizes='(max-width: 640px) 240px, 280px'
+								className='block w-full h-full object-contain'
+							/>
+						</div>
+					</div>
+				</div>
+			) : image ? (
 				<div
 					className={`rounded-[14px] ${
 						imageSide === "left" ? "md:order-1" : ""
