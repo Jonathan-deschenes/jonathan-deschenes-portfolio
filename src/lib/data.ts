@@ -13,7 +13,7 @@ export const problems: Problem[] = [
 	},
 	{
 		title: "Tâches répétitives qui grignotent du temps facturable",
-		desc: "Classement, saisie de données, accueil de nouveaux clients, etc. Bref,  des processus manuels qui vous coûtent des heures chaque semaine.",
+		desc: "Classement, saisie de données, accueil de nouveaux clients, etc. Bref, des processus manuels qui vous coûtent des heures chaque semaine.",
 		iconPath: "M12 8v4l3 2|c-circle-9",
 	},
 	{
@@ -23,7 +23,7 @@ export const problems: Problem[] = [
 	},
 	{
 		title: "Rappels d'échéances fiscales gérés à la main",
-		desc: "Courriels écrits un à un, risque d'oubli, image peu professionnelle. Des rappels automatisés changent la donne et optimise votre temp.",
+		desc: "Courriels écrits un à un, risque d'oubli, image peu professionnelle. Des rappels automatisés changent la donne et optimisent votre temps.",
 		iconPath: "M3 4h18v18H3z|M16 2v4M8 2v4M3 10h18",
 	},
 ];
@@ -37,8 +37,8 @@ export type Service = {
 
 export const services: Service[] = [
 	{
-		title: "Développement web et d'application",
-		desc: "Conception de site web et d'application sur mesure.",
+		title: "Développement web et d'applications",
+		desc: "Conception de sites web et d'applications sur mesure.",
 		options: [
 			"Accessibilité 24/7",
 			"Design professionnel",
@@ -51,7 +51,7 @@ export const services: Service[] = [
 		title: "Automatisation",
 		desc: "Développement d'un système sur mesure pour faciliter vos tâches répétitives.",
 		options: [
-			"Optimisation du worflow",
+			"Optimisation du workflow",
 			"Maintenance régulière",
 			"Aucune interruption",
 		],
@@ -59,8 +59,8 @@ export const services: Service[] = [
 	},
 	{
 		title: "Intégration de l'IA",
-		desc: "Automatiser vos processus efficacement grâce aux models performants de l'IA.",
-		options: ["Modèle performant", "Réelle optimisation du temp", "Autonomie"],
+		desc: "Automatiser vos processus efficacement grâce aux modèles performants de l'IA.",
+		options: ["Modèle performant", "Réelle optimisation du temps", "Autonomie"],
 		iconPath:
 			"c-circle-4|M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19",
 	},
@@ -81,17 +81,17 @@ export const steps: Step[] = [
 	{
 		num: "02",
 		title: "Planification",
-		desc: "Début du projet et planification des échéanciers avec un objectif selon vos besoin.",
+		desc: "Début du projet et planification des échéanciers avec un objectif selon vos besoins.",
 	},
 	{
 		num: "03",
 		title: "Développement",
-		desc: "Approbation de la maquette initial, puis développement avec des révisions selon vous.",
+		desc: "Approbation de la maquette initiale, puis développement avec des révisions selon vous.",
 	},
 	{
 		num: "04",
 		title: "Déploiement",
-		desc: "Livraison et transfert du projet aux clients. Ensuite, optimisation et maintenance du projet est nécessaire.",
+		desc: "Livraison et transfert du projet aux clients. Ensuite, l'optimisation et la maintenance du projet sont nécessaires.",
 	},
 ];
 
@@ -106,7 +106,7 @@ export const faqs: Faq[] = [
 	{
 		question: "Combien coûte votre projet?",
 		answer:
-			"Chaque projet est unique. Après notre rencontre de 30 minutes, vous recevez une proposition écrite avec une portée, un prix et un échéancier fixes avec aucune surprise en cours de route.",
+			"Chaque projet est unique. Après notre rencontre de 30 minutes, vous recevez une proposition écrite avec une portée, un prix et un échéancier fixes, sans aucune surprise en cours de route.",
 	},
 	{
 		question: "Travaillez-vous à distance?",

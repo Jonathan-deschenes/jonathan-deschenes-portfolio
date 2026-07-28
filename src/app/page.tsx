@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Script from "next/script";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -17,13 +16,13 @@ import {
 	IconDoc,
 	IconLayout,
 	IconUser,
-	ImagePlaceholder,
 } from "@/components/Icons";
 import { faqs, problems, services, steps } from "@/lib/data";
 import { getAllProjects } from "@/lib/content";
 import { site } from "@/lib/site";
 import Image from "next/image";
 import { ArrowDownRight, Check } from "lucide-react";
+import ProjectList from "@/components/ProjectsList";
 
 export default function Home() {
 	const projects = getAllProjects();
@@ -159,93 +158,15 @@ export default function Home() {
 					id='realisations'
 					className='container-x py-16 sm:py-[110px] scroll-mt-20'
 				>
-					<div className='max-w-[1080px] mx-auto mb-10 sm:mb-[60px]'>
-						<div className='eyebrow mb-4 sm:mb-[22px]'>
-							RÉALISATIONS & IMPACT MESURABLE
+					<div className='max-w-[1080px] mx-auto mb-10 flex justify-between'>
+						<div>
+							<div className='eyebrow mb-4 sm:mb-[22px]'>CAS D&apos;ÉTUDES</div>
+							<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em] mb-4 sm:mb-[26px]'>
+								Mes réalisations coups de coeur.
+							</h2>
 						</div>
-						<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em] mb-4 sm:mb-[26px]'>
-							Des projets livrés.
-							<br />
-							Des compétences démontrées.
-						</h2>
-						<p className='text-body-lg leading-[1.6] text-muted max-w-[610px]'>
-							Découvrez comment combiner conception web, développement
-							d&apos;applications et automatisation intelligente pour résoudre
-							des problèmes concrets, améliorer les processus et créer des
-							systèmes plus efficaces pour les entreprises.
-						</p>
 					</div>
-
-					<div className='max-w-[1080px] mx-auto grid gap-4 sm:gap-6 grid-cols-1 min-[720px]:grid-cols-2 min-[960px]:grid-cols-3'>
-						{projects.map((p) => (
-							<article
-								key={p.slug}
-								className='border border-[#ebebe9] rounded-[16px] overflow-hidden bg-white flex flex-col'
-							>
-								<div
-									className='bg-[#e9e9e4] px-[14px] py-[11px] flex items-center gap-[13px]'
-									aria-hidden
-								>
-									<div className='flex gap-1.5'>
-										<Dot color='#f25f57' />
-										<Dot color='#fbbe2e' />
-										<Dot color='#28c93f' />
-									</div>
-									<div className='flex-1 h-[9px] rounded-[5px] bg-[#d4d4cd]' />
-								</div>
-								<div
-									className={`m-[14px] rounded-lg h-[185px] flex flex-col items-center justify-center text-center relative overflow-hidden ${
-										p.logo
-											? "bg-white border border-[#ebebe9]"
-											: "bg-[#e3e3de] border-[1.5px] border-dashed border-[#c4c4bd] px-[18px]"
-									}`}
-									role='img'
-									aria-label={`Visuel du projet ${p.title}`}
-								>
-									{p.logo ? (
-										<Image
-											src={p.logo}
-											alt={`Logo ${p.title}`}
-											width={240}
-											height={140}
-											className='max-h-[130px] w-auto object-contain'
-										/>
-									) : (
-										<ImagePlaceholder />
-									)}
-								</div>
-								<div className='px-[22px] pt-1.5 pb-[26px] flex flex-col flex-1'>
-									<span
-										className='inline-block self-start font-bold text-tiny tracking-[.09em] px-2.5 py-[5px] rounded-[7px] mb-4'
-										style={{ background: p.tagBg, color: p.tagColor }}
-									>
-										{p.tag}
-									</span>
-									<h3 className='font-semibold text-h3 mb-[13px]'>{p.title}</h3>
-									<p className='text-body-sm leading-[1.6] text-muted mb-[18px]'>
-										{p.description}
-									</p>
-									<div className='flex flex-wrap gap-2 mb-[22px]'>
-										{p.chips.map((c) => (
-											<span
-												key={c}
-												className='text-tiny text-[#5d6470] bg-[#f0f0ed] px-[11px] py-[5px] rounded-[20px]'
-											>
-												{c}
-											</span>
-										))}
-									</div>
-									<Link
-										href={`/realisations/${p.slug}`}
-										className='inline-flex items-center gap-[7px] font-semibold text-body-sm no-underline mt-auto'
-										style={{ color: p.linkColor }}
-									>
-										{p.cta} <ArrowRight />
-									</Link>
-								</div>
-							</article>
-						))}
-					</div>
+					<ProjectList projects={projects} />
 				</section>
 
 				{/* ===== SERVICES ===== */}
