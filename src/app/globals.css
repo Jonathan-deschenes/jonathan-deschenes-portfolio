@@ -211,4 +211,13 @@
 			width: 0%;
 		}
 	}
+	@keyframes wobble-y {
+		0%,
+		100% {
+			transform: skewY(10deg) translateY(0);
+		}
+		50% {
+			transform: skewY(10deg) translateY(-14px);
+		}
+	}
 }

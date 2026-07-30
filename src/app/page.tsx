@@ -2,8 +2,6 @@ import Script from "next/script";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import FloatingCta from "@/components/FloatingCta";
-import HeroVideoPlayer from "@/components/HeroVideoPlayer";
-import HeroCredibility from "@/components/HeroCredibility";
 import ModalLink from "@/components/ModalLink";
 import Faq from "@/components/Faq";
 import ProcessSteps from "@/components/ProcessSteps";
@@ -85,8 +83,8 @@ export default function Home() {
 					>
 						<div className='relative aspect-[3/4] w-full overflow-hidden'>
 							<div className='absolute inset-0' aria-hidden>
-								<div className='absolute top-[9%] left-[14%] right-[4%] h-[7%] bg-brand/25 rounded-xl [transform:skewY(10deg)]' />
-								<div className='absolute top-[21%] left-[14%] right-[4%] h-[9%] bg-brand/55 rounded-xl [transform:skewY(10deg)]' />
+								<div className='absolute top-[9%] left-[14%] right-[4%] h-[7%] bg-brand/25 rounded-xl [transform:skewY(10deg)] animate-[wobble-y_4.2s_ease-in-out_infinite] motion-reduce:animate-none' />
+								<div className='absolute top-[21%] left-[14%] right-[4%] h-[9%] bg-brand/55 rounded-xl [transform:skewY(10deg)] animate-[wobble-y_4.8s_ease-in-out_0.4s_infinite] motion-reduce:animate-none' />
 								<div className='absolute top-[35%] left-[14%] right-[4%] bottom-[8%] bg-gradient-to-b from-brand-soft to-brand rounded-2xl [transform:skewY(10deg)]' />
 							</div>
 
@@ -395,14 +393,5 @@ export default function Home() {
 				}}
 			/>
 		</>
-	);
-}
-
-function Dot({ color }: { color: string }) {
-	return (
-		<div
-			className='w-[11px] h-[11px] rounded-full'
-			style={{ background: color }}
-		/>
 	);
 }
