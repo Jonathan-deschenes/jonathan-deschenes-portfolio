@@ -56,20 +56,22 @@ export default function Home() {
 
 			<main>
 				{/* ===== HERO ===== */}
-				<section className='container-x grid items-center gap-10 pt-10 pb-14 sm:pt-[72px] sm:pb-24 min-[960px]:gap-16 min-[960px]:pt-24 min-[960px]:pb-[120px] min-[960px]:grid-cols-[1.02fr_.98fr]'>
-					<div className='anim-in'>
-						<h1 className='font-bold text-hero leading-[1.05] tracking-[-.02em] mb-5 sm:mb-7'>
-							Optimisez votre{" "}
-							<span className='text-brand'>cabinet comptable</span>, sans la
-							lourdeur d&apos;une agence.
+				<section className='container-x grid items-center pt-8 sm:pt-[64px] min-[960px]:pt-20 min-[960px]:grid-cols-[1.02fr_.72fr]'>
+					<div className='anim-in pb-10 sm:pb-[100px] min-[960px]:pb-32'>
+						<h1 className='font-bold text-h1 sm:text-hero leading-[1.05] tracking-[-.02em] mb-5 sm:mb-7'>
+							Jonathan Deschênes,<br></br>
+							<span className='text-brand'>Services Numériques</span> pour PME
 						</h1>
 						<p className='text-body-lg leading-[1.6] text-muted lg:max-w-[520px] mb-7 sm:mb-[38px]'>
 							Sites web professionnels, automatisation des tâches répétitives et
-							intégration de l&apos;IA. Votre entreprise, votre image à la
-							hauteur de votre expertise.
+							intégration de l&apos;IA. Des systèmes sur mesures pour votre
+							entreprise.
 						</p>
 						<div className='flex gap-3 sm:gap-[14px] flex-wrap'>
-							<ModalLink modal='booking' className='btn-primary'>
+							<ModalLink modal='booking' className='flex sm:hidden btn-primary'>
+								Rencontre gratuite <ArrowRight />
+							</ModalLink>
+							<ModalLink modal='booking' className='hidden sm:flex btn-primary'>
 								Réserver une rencontre gratuite <ArrowRight />
 							</ModalLink>
 							<ModalLink modal='quote' className='btn-outline'>
@@ -78,25 +80,45 @@ export default function Home() {
 						</div>
 					</div>
 					<div
-						className='anim-in justify-self-stretch w-full max-w-[520px] mx-auto min-[960px]:ml-auto min-[960px]:mr-0 space-y-4'
+						className='relative anim-in justify-self-stretch w-full max-w-[420px] mx-auto min-[960px]:ml-auto min-[960px]:mr-0'
 						style={{ animationDelay: "130ms" }}
 					>
-						<div className='border border-[#ebebe9] rounded-[16px] overflow-hidden bg-white flex flex-col shadow-[0_18px_44px_-24px_rgba(14,19,32,.28)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_34px_66px_-26px_rgba(14,19,32,.45)]'>
-							<div
-								className='bg-[#e9e9e4] px-[14px] py-[11px] flex items-center gap-[13px]'
-								aria-hidden
-							>
-								<div className='flex gap-1.5'>
-									<Dot color='#f25f57' />
-									<Dot color='#fbbe2e' />
-									<Dot color='#28c93f' />
-								</div>
-								<div className='flex-1 h-[9px] rounded-[5px] bg-[#d4d4cd]' />
+						<div className='relative aspect-[3/4] w-full overflow-hidden'>
+							<div className='absolute inset-0' aria-hidden>
+								<div className='absolute top-[9%] left-[14%] right-[4%] h-[7%] bg-brand/25 rounded-xl [transform:skewY(10deg)]' />
+								<div className='absolute top-[21%] left-[14%] right-[4%] h-[9%] bg-brand/55 rounded-xl [transform:skewY(10deg)]' />
+								<div className='absolute top-[35%] left-[14%] right-[4%] bottom-[8%] bg-gradient-to-b from-brand-soft to-brand rounded-2xl [transform:skewY(10deg)]' />
 							</div>
 
-							<div className='p-4 flex flex-col gap-8'>
-								<HeroCredibility />
-								<HeroVideoPlayer />
+							<Image
+								src='/about-me.png'
+								alt={`Capture à propos de moi Jonathan Deschênes`}
+								width={1536}
+								height={2048}
+								sizes='(max-width: 1100px) 60vw, 420px'
+								className='absolute inset-0 z-10 block w-full h-full object-contain object-bottom'
+								priority
+							/>
+
+							{/** Badges */}
+							<div className='absolute z-20 bottom-4 left-0 flex flex-col gap-2.5'>
+								<div className='bg-white border border-border-soft shadow-lg rounded-full pl-2 pr-4 py-2 text-h4 font-medium flex items-center gap-2.5 w-fit'>
+									<span className='w-7 h-7 shrink-0 rounded-lg flex items-center justify-center text-ink'>
+										<IconLayout size={20} />
+									</span>
+									<span>
+										+4 <span className='text-brand font-semibold'>ans</span>
+									</span>
+								</div>
+								<div className='bg-white border border-border-soft shadow-lg rounded-full pl-2 pr-4 py-2 text-h4 font-medium flex items-center gap-2.5 w-fit'>
+									<span className='w-7 h-7 shrink-0 rounded-lg  flex items-center justify-center text-ink'>
+										<IconCode size={25} />
+									</span>
+									<span>
+										Développeur{" "}
+										<span className='text-brand font-semibold'>fullstack</span>
+									</span>
+								</div>
 							</div>
 						</div>
 					</div>
