@@ -12,7 +12,7 @@ function About({
 	children: React.ReactNode;
 }) {
 	return (
-		<section className='pt-10 sm:pt-16 sm:pb-8'>
+		<section className='md:pt-10 md:pb-4'>
 			<div className='lg:flex justify-between'>
 				<div className='eyebrow mb-4 sm:mb-[22px]'>À PROPOS</div>
 				<div className='max-w-3xl'>
@@ -42,7 +42,7 @@ function Feature({
 	children: React.ReactNode;
 }) {
 	return (
-		<div className='grid gap-6 sm:gap-8 items-center grid-cols-1 md:grid-cols-2 bg-white my-32 sm:my-40'>
+		<div className='grid gap-2 sm:gap-4 items-center grid-cols-1 md:grid-cols-2 bg-white my-14 sm:my-26'>
 			<div className={imageSide === "left" ? "md:order-2" : ""}>
 				<h3 className='font-bold text-h3 leading-[1.15] tracking-[-.02em] max-w-[720px] mx-auto mb-2.5 sm:mb-3'>
 					{title}

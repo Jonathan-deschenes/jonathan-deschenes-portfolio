@@ -32,7 +32,7 @@ export default function SiteHeader() {
 					</span>
 				</Link>
 
-				<div className='hidden lg:flex items-center gap-10'>
+				<div className='hidden lg:flex items-center gap-6'>
 					{links.map((l) => (
 						<Link
 							key={l.href}

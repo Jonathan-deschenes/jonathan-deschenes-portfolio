@@ -6,24 +6,24 @@ export type Problem = {
 
 export const problems: Problem[] = [
 	{
-		title: "Collecte de documents clients",
-		desc: "Relances manuelles par courriel, documents manquants, dossiers incomplets et des heures perdues qui pourraient être facturées.",
+		title: "Site web vieillissant ou inexistant",
+		desc: "Un site web inaccessible ou mal adapté vous fait perdre des clients potentiels régulièrement, ne laissez pas cela vous affecter.",
+		iconPath: "M3 3h18v18H3z|M9 3v18M3 9h6",
+	},
+	{
+		title: "Collecte de documents sans fin",
+		desc: "Documents manquants ou dossiers incomplets, n'attendez pas après vos clients avec des délais interminable. Relancez automatiquement vos clients grâce aux automatisations.",
 		iconPath:
 			"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z|M14 2v6h6|M8 13h8M8 17h8M8 9h2",
 	},
 	{
-		title: "Tâches répétitives qui grignotent du temps facturable",
-		desc: "Classement, saisie de données, accueil de nouveaux clients, etc. Bref, des processus manuels qui vous coûtent des heures chaque semaine.",
+		title: "Tâches répétitives",
+		desc: "Classement, saisie de données, accueil de nouveaux clients, etc. Bref, des processus manuels qui peuvent être rapidement automatisés.",
 		iconPath: "M12 8v4l3 2|c-circle-9",
 	},
 	{
-		title: "Site web vieillissant",
-		desc: "Un site qui donne une mauvaise première impression ou qui n'amène pas de nouveaux clients. Votre image en ligne mérite mieux.",
-		iconPath: "M3 3h18v18H3z|M9 3v18M3 9h6",
-	},
-	{
-		title: "Rappels d'échéances fiscales gérés à la main",
-		desc: "Courriels écrits un à un, risque d'oubli, image peu professionnelle. Des rappels automatisés changent la donne et optimisent votre temps.",
+		title: "Prises de rendez-vous et rappels d'échéanciers",
+		desc: "Laissez les clients prendre des rendez-vous eux-mêmes. De plus, des rappels automatisés changent la donne et optimisent votre temps.",
 		iconPath: "M3 4h18v18H3z|M16 2v4M8 2v4M3 10h18",
 	},
 ];
@@ -99,33 +99,44 @@ export type Faq = { question: string; answer: string };
 
 export const faqs: Faq[] = [
 	{
-		question: "Qu'est-ce que l'automatisation peut faire pour mon cabinet?",
-		answer:
-			"Collecte de documents, accueil de nouveaux clients, rappels d'échéances, saisie de données, traitement de documents par IA, donc des heures récupérées chaque semaine, sans intervention manuelle.",
-	},
-	{
-		question: "Combien coûte votre projet?",
-		answer:
-			"Chaque projet est unique. Après notre rencontre de 30 minutes, vous recevez une proposition écrite avec une portée, un prix et un échéancier fixes, sans aucune surprise en cours de route.",
-	},
-	{
 		question: "Travaillez-vous à distance?",
 		answer:
-			"Oui. Je travaille avec des cabinets partout au Québec, en personne, en rencontre en ligne et par courriel. L'ensemble du processus peut se faire à distance, sans déplacement de votre part.",
+			"Oui, je travaille avec des entreprises partout au Québec. En personne, en rencontre en ligne, en courriel, aucun déplacement de votre part est requis.",
 	},
 	{
-		question: "Mes données financières sont-elles en sécurité?",
+		question: "J'ai déjà un site web existant?",
 		answer:
-			"La confidentialité est une priorité. J'applique les bonnes pratiques de sécurité, je signe une entente de confidentialité avant tout accès à vos données et je respecte les exigences de la Loi 25 du Québec sur la protection des renseignements personnels.",
+			"Aucun problème, je fais la refonte de votre site avec un design moderne et intuitif. Je m'occupe de la rédaction, du référencement et de la réactivité mobile.",
 	},
 	{
-		question: "Et si j'ai déjà un site?",
+		question: "Qu'est-ce que l'automatisation peut faire pour mon entreprise?",
 		answer:
-			"Aucun problème. Je peux refondre votre site existant ou en bâtir un nouveau, en récupérant ce qui fonctionne déjà bien pour vous (contenus, références, référencement acquis).",
+			"Collecte de documents, accueil de nouveaux clients, rappels d'échéances, saisie de données, traitement de documents par IA, tout est automatisé sans aucun travail manuel de votre part.",
 	},
 	{
-		question: "Quels sont les délais typiques?",
+		question:
+			"Comment assurer que mes automatisations restent 100% du temps efficace?",
 		answer:
-			"Un site vitrine prend généralement de 2 à 4 semaines. Les projets d'automatisation et sur mesure varient selon la portée, définie ensemble dès le départ.",
+			"Même une fois le projet complété, il est possible de vous procurer le forfait de maintenance. Ce forfait vous assure que je m'occupe régulièrement des maintenances de votre système.",
+	},
+	{
+		question: "Quels sont les délais typiques d'un projet?",
+		answer:
+			"Un site vitrine prend généralement de 2 à 4 semaines. Les projets d'automatisation et sur mesure peuvent varier, mais aucun projet ne prend plus d'un mois de développement.",
+	},
+	{
+		question: "Combien coûte un projet?",
+		answer:
+			"Chaque projet est unique, après notre rencontre gratuite de 30min je vous envoie par écrit un document avec toutes les informations du projet. Si vous hésitez encore, demandez une soumission rapide et je vous réponds le plus rapidement possible.",
+	},
+	{
+		question: "L'IA est-elle 100% fiable pour des tâches simples?",
+		answer:
+			"Bien que l'IA n'est jamais 100% fiable, avec une bonne conception et des mesures de validation bien programmées cette technologie reste très fiable (95-99%). Je m'assure pour chaque projet que chaque automatisation est bien testée et qu'elle retourne des résultats fiables et concrets.",
+	},
+	{
+		question: "Comment l'IA peut me faire sauver du temps dans mon quotidien?",
+		answer:
+			"Des modèles d'intelligence artificielle légers, rapides et peu coûteux excellent dans des tâches simples comme le traitement de données.",
 	},
 ];
