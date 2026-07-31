@@ -188,7 +188,6 @@ export default function Home() {
 						</div>
 					</div>
 					<ProjectList projects={projects} />
-					<ProjectList projects={projects} />
 				</section>
 
 				{/* ===== SERVICES ===== */}
