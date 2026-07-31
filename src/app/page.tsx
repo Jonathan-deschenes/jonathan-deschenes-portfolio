@@ -302,7 +302,7 @@ export default function Home() {
 						<div>
 							<div className='eyebrow mb-4 sm:mb-6'>À PROPOS</div>
 							<h2 className='font-bold text-h2-sm leading-[1.15] tracking-[-.02em] mb-5 sm:mb-[30px]'>
-								Jeune étudiant passionné par l'informatique.
+								Jeune étudiant passionné par l&apos;informatique.
 							</h2>
 							<p className='text-body-lg leading-[1.68] text-[#aab0bb] mb-5 sm:mb-[22px]'>
 								Je suis Jonathan Deschênes, étudiant en Techniques de
