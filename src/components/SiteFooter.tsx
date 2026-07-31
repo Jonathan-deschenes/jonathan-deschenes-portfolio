@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 export default function SiteFooter() {
 	return (
 		<footer className='bg-navy-deep text-white'>
-			<div className='container-x py-8 sm:pt-[72px] sm:pb-10'>
+			<div className='container-x py-8 sm:pt-[60px] sm:pb-6'>
 				<div className='grid gap-8 sm:gap-10 pb-10 sm:pb-14 grid-cols-1 min-[900px]:grid-cols-[1.4fr_1fr_1fr_1fr]'>
 					<div>
 						<div className='flex items-center gap-3 mb-[22px]'>
@@ -19,8 +19,7 @@ export default function SiteFooter() {
 							</span>
 						</div>
 						<p className='text-body-sm leading-[1.6] text-[#7e8694] max-w-[300px]'>
-							Sites web, automatisation et IA pour les cabinets comptables et
-							tenue de livres — sans la lourdeur d&apos;une agence.
+							Sites web, automatisation et IA pour les PME du Québec.
 						</p>
 					</div>
 					<FooterCol title='SERVICES'>

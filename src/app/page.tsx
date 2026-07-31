@@ -21,6 +21,7 @@ import { site } from "@/lib/site";
 import Image from "next/image";
 import { ArrowDownRight, Check } from "lucide-react";
 import ProjectList from "@/components/ProjectsList";
+import StatCounter from "@/components/StatCounter";
 
 export default function Home() {
 	const projects = getAllProjects();
@@ -125,12 +126,14 @@ export default function Home() {
 				{/* ===== STATS + PROBLEMS (navy) ===== */}
 				<section className='bg-navy text-white'>
 					<div className='container-x py-12 sm:py-[70px] border-b border-white/[.07] flex items-center justify-center gap-6 sm:gap-[30px] flex-wrap'>
-						<div className='font-bold text-display leading-[.9] text-brand tracking-[-.03em]'>
-							20+
-						</div>
+						<StatCounter
+							value={13}
+							suffix='+'
+							className='font-bold text-display leading-[.9] text-brand tracking-[-.03em]'
+						/>
 						<p className='text-body-lg leading-[1.5] text-[#cfd3da] max-w-[330px]'>
-							organisations accompagnées dans leur présence web et leurs
-							automatisations.
+							organisations accompagnées dans leur présence web et dans
+							l&apos;optimisation de leurs processus.
 						</p>
 					</div>
 
@@ -140,12 +143,10 @@ export default function Home() {
 					>
 						<div className='max-w-[1080px] mx-auto'>
 							<div className='max-w-[760px] mb-10 sm:mb-14'>
-								<div className='eyebrow mb-4 sm:mb-[22px]'>
-									CE QUI VOUS RALENTIT
-								</div>
+								<div className='eyebrow mb-4 sm:mb-[22px]'>LE PROBlÈME</div>
 								<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em]'>
-									Les cabinets comptables me contactent dès l&apos;apparition
-									d&apos;un de ces premiers signes de ralentissement.
+									Voici quelques problèmes qui peuvent vous freiner dans votre
+									quotidien.
 								</h2>
 							</div>
 							<div className='mx-auto grid gap-4 sm:gap-[22px] grid-cols-1 min-[720px]:grid-cols-2'>
@@ -298,12 +299,9 @@ export default function Home() {
 							/>
 						</div>
 						<div>
-							<div className='eyebrow mb-4 sm:mb-6'>
-								QUI RÉALISE VOTRE PROJET
-							</div>
+							<div className='eyebrow mb-4 sm:mb-6'>À PROPOS</div>
 							<h2 className='font-bold text-h2-sm leading-[1.15] tracking-[-.02em] mb-5 sm:mb-[30px]'>
-								Vous parlez directement à la personne qui conçoit et livre votre
-								projet.
+								Jeune étudiant passionné par l'informatique.
 							</h2>
 							<p className='text-body-lg leading-[1.68] text-[#aab0bb] mb-5 sm:mb-[22px]'>
 								Je suis Jonathan Deschênes, étudiant en Techniques de
@@ -314,9 +312,9 @@ export default function Home() {
 							</p>
 							<p className='text-body-lg leading-[1.68] text-[#aab0bb] mb-7 sm:mb-[34px]'>
 								Être étudiant, c&apos;est maîtriser les technologies les plus
-								récentes à des tarifs accessibles, avec un contact direct et une
-								imputabilité totale. Votre projet ne sera jamais confié à
-								quelqu&apos;un d&apos;autre.
+								récentes à des tarifs accessibles. Je me démarque constamment
+								dans ma façon de travailler avec de nouveaux projets
+								d&apos;envergure.
 							</p>
 							<ModalLink modal='booking' className='btn-primary'>
 								Réserver une rencontre <ArrowRight />
@@ -331,9 +329,9 @@ export default function Home() {
 					className='container-x pt-14 pb-16 sm:pt-[104px] sm:pb-[110px] scroll-mt-20'
 				>
 					<div className='max-w-[840px] mx-auto mb-10 sm:mb-16 text-center'>
-						<div className='eyebrow mb-4 sm:mb-5'>QUESTIONS FRÉQUENTES</div>
+						<div className='eyebrow mb-4 sm:mb-5'>FAQ</div>
 						<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em]'>
-							Ce que vous voudrez savoir avant d&apos;appeler
+							Les questions fréquemment posées pendant une rencontre.
 						</h2>
 					</div>
 					<Faq items={faqs} />
