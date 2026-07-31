@@ -17,7 +17,6 @@ export const problems: Problem[] = [
 			"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z|M14 2v6h6|M8 13h8M8 17h8M8 9h2",
 	},
 	{
-<<<<<<< HEAD
 		title: "Tâches répétitives",
 		desc: "Classement, saisie de données, accueil de nouveaux clients, etc. Bref, des processus manuels qui peuvent être rapidement automatisés.",
 		iconPath: "M12 8v4l3 2|c-circle-9",
@@ -25,20 +24,6 @@ export const problems: Problem[] = [
 	{
 		title: "Prises de rendez-vous et rappels d'échéanciers",
 		desc: "Laissez les clients prendre des rendez-vous eux-mêmes. De plus, des rappels automatisés changent la donne et optimisent votre temps.",
-=======
-		title: "Tâches répétitives qui grignotent du temps facturable",
-		desc: "Classement, saisie de données, accueil de nouveaux clients, etc. Bref, des processus manuels qui vous coûtent des heures chaque semaine.",
-		iconPath: "M12 8v4l3 2|c-circle-9",
-	},
-	{
-		title: "Site web vieillissant",
-		desc: "Un site qui donne une mauvaise première impression ou qui n'amène pas de nouveaux clients. Votre image en ligne mérite mieux.",
-		iconPath: "M3 3h18v18H3z|M9 3v18M3 9h6",
-	},
-	{
-		title: "Rappels d'échéances fiscales gérés à la main",
-		desc: "Courriels écrits un à un, risque d'oubli, image peu professionnelle. Des rappels automatisés changent la donne et optimisent votre temps.",
->>>>>>> origin/production
 		iconPath: "M3 4h18v18H3z|M16 2v4M8 2v4M3 10h18",
 	},
 ];
@@ -114,19 +99,6 @@ export type Faq = { question: string; answer: string };
 
 export const faqs: Faq[] = [
 	{
-<<<<<<< HEAD
-=======
-		question: "Qu'est-ce que l'automatisation peut faire pour mon cabinet?",
-		answer:
-			"Collecte de documents, accueil de nouveaux clients, rappels d'échéances, saisie de données, traitement de documents par IA, donc des heures récupérées chaque semaine, sans intervention manuelle.",
-	},
-	{
-		question: "Combien coûte votre projet?",
-		answer:
-			"Chaque projet est unique. Après notre rencontre de 30 minutes, vous recevez une proposition écrite avec une portée, un prix et un échéancier fixes, sans aucune surprise en cours de route.",
-	},
-	{
->>>>>>> origin/production
 		question: "Travaillez-vous à distance?",
 		answer:
 			"Oui, je travaille avec des entreprises partout au Québec. En personne, en rencontre en ligne, en courriel, aucun déplacement de votre part est requis.",
