@@ -185,8 +185,15 @@ export default function Home() {
 							<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em] mb-4 sm:mb-[26px]'>
 								Mes réalisations coups de coeur.
 							</h2>
+					<div className='max-w-[1080px] mx-auto mb-10 flex justify-between'>
+						<div>
+							<div className='eyebrow mb-4 sm:mb-[22px]'>CAS D&apos;ÉTUDES</div>
+							<h2 className='font-bold text-h2 leading-[1.15] tracking-[-.02em] mb-4 sm:mb-[26px]'>
+								Mes réalisations coups de coeur.
+							</h2>
 						</div>
 					</div>
+					<ProjectList projects={projects} />
 					<ProjectList projects={projects} />
 				</section>
 
