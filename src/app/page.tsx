@@ -308,7 +308,7 @@ export default function Home() {
 								l&apos;informatique avec l&apos;intention de poursuivre au
 								baccalauréat en génie logiciel. Avec déjà plus de 3 ans en tant
 								que travailleur autonome, je me concentre dès maintenant sur
-								l&apos;optimisation des cabinets comptables.
+								l&apos;optimisation des PME du Québec.
 							</p>
 							<p className='text-body-lg leading-[1.68] text-[#aab0bb] mb-7 sm:mb-[34px]'>
 								Être étudiant, c&apos;est maîtriser les technologies les plus
@@ -382,7 +382,7 @@ export default function Home() {
 						email: site.email,
 						sameAs: [site.socials.linkedin],
 						knowsAbout: [
-							"Site web pour cabinet comptable",
+							"Site web pour pme",
 							"Automatisation des processus",
 							"Intégration de l'IA",
 							"Développement Next.js",

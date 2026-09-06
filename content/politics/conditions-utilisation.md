@@ -23,7 +23,7 @@ En consultant ou en utilisant le Site, l'utilisateur reconnaît avoir lu, compri
 
 ## 3. Objet du Site
 
-Le Site présente les services numériques offerts aux cabinets comptables : conception web, développement d'applications, automatisation de tâches et intégration de l'intelligence artificielle. Il permet notamment de consulter le portfolio et les études de cas, de prendre connaissance des services offerts, de réserver une rencontre gratuite ou de soumettre une demande via les formulaires prévus à cet effet.
+Le Site présente les services numériques offerts aux PME du Quebec : conception web, développement d'applications, automatisation de tâches et intégration de l'intelligence artificielle. Il permet notamment de consulter le portfolio et les études de cas, de prendre connaissance des services offerts, de réserver une rencontre gratuite ou de soumettre une demande via les formulaires prévus à cet effet.
 
 Le contenu du Site est fourni à titre informatif et ne constitue pas une offre contractuelle ferme. Toute relation de service (mandat) fait l'objet d'une proposition et d'une entente écrite distincte entre l'Exploitant et le client.
 

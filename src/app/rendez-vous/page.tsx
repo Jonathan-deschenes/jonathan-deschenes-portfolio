@@ -10,7 +10,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
 	title: "Réserver une rencontre gratuite de 30 minutes",
 	description:
-		"Réservez une rencontre virtuelle gratuite de 30 minutes pour discuter de votre projet — site web, automatisation ou intégration de l'IA pour votre cabinet comptable.",
+		"Réservez une rencontre virtuelle gratuite de 30 minutes pour discuter de votre projet — site web, automatisation ou intégration de l'IA pour votre PME.",
 	alternates: { canonical: "/rendez-vous" },
 };
 

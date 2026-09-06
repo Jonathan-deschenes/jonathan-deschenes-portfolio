@@ -16,7 +16,7 @@ Elle ne remplace pas les engagements de confidentialité distincts convenus avec
 
 ## Qui est responsable ?
 
-Le Site est exploité par **Jonathan Deschênes**, travailleur autonome offrant des services de conception web, de développement d'applications, d'automatisation et d'intégration de l'intelligence artificielle aux cabinets comptables, établi au Québec.
+Le Site est exploité par **Jonathan Deschênes**, travailleur autonome offrant des services de conception web, de développement d'applications, d'automatisation et d'intégration de l'intelligence artificielle aux PME, établi au Québec.
 
 Conformément à la Loi 25, **Jonathan Deschênes agit à titre de responsable de la protection des renseignements personnels** pour cette entreprise. Vous pouvez le joindre en tout temps à [info@jodeschenes.com](mailto:info@jodeschenes.com) pour toute question relative à vos renseignements personnels.
 
@@ -53,7 +53,7 @@ Les renseignements transmis par les formulaires du Site le sont sur la base de v
 ## Durée de conservation
 
 - **Demande non suivie d'un mandat** (prospect, soumission sans suite) : les renseignements sont conservés au maximum **24 mois** suivant le dernier échange, puis supprimés ou anonymisés.
-- **Client sous mandat** : les renseignements liés à la réalisation et à la facturation du mandat sont conservés pendant la durée nécessaire à l'exécution du contrat, puis pour la période exigée par les obligations légales applicables (notamment fiscales et comptables), généralement jusqu'à **6 ans** après la fin de la relation d'affaires.
+- **Client sous mandat** : les renseignements liés à la réalisation et à la facturation du mandat sont conservés pendant la durée nécessaire à l'exécution du contrat, puis pour la période exigée par les obligations légales applicables, généralement jusqu'à **6 ans** après la fin de la relation d'affaires.
 - Vous pouvez en tout temps demander la suppression anticipée de vos renseignements, sous réserve des obligations légales de conservation applicables (voir section « Vos droits »).
 
 ## Transferts et communication à des tiers
