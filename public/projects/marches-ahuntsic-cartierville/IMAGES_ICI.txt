@@ -1,7 +1,0 @@
-Placez vos images dans ce dossier :
-  logo.avif   — logo affiché sur la carte d'accueil
-  desktop.png — capture plein écran affichée en haut de la page de cas d'étude
-  feature-1.png, shot-2.png, shot-3.png — images utilisées par l'exemple dans le corps du .mdx (à renommer/ajuster librement)
-
-Après avoir ajouté les images, lancez :
-  npm run project:compress -- --slug marches-ahuntsic-cartierville

@@ -6,7 +6,7 @@ import { ImagePlaceholder } from "./Icons";
 import { useEffect, useRef, useState } from "react";
 
 // Nombre projet par défaut
-const PREVIEW_COUNT = 3;
+const PREVIEW_COUNT = 6;
 const ACCORDION_ROOT_MARGIN = "-45% 0px -45% 0px";
 
 export default function ProjectList({

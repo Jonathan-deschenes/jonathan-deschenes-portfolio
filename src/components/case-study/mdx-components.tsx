@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Quote } from "lucide-react";
+import { ArrowRight, Quote } from "lucide-react";
 import type { MDXComponents } from "mdx/types";
 import { ImagePlaceholder } from "../Icons";
 import PreviewableImage from "./PreviewableImage";
@@ -7,21 +7,31 @@ import PreviewableImage from "./PreviewableImage";
 function About({
 	title,
 	children,
+	cta,
 }: {
 	title: string;
 	children: React.ReactNode;
+	cta: string;
 }) {
 	return (
 		<section className='md:pt-10 md:pb-4'>
 			<div className='lg:flex justify-between'>
 				<div className='eyebrow mb-4 sm:mb-[22px]'>À PROPOS</div>
-				<div className='max-w-3xl'>
+				<div className='max-w-3xl mb-7 sm:mb-[38px]'>
 					<h2 className='font-bold text-h2-sm leading-[1.15] tracking-[-.02em] mb-5 sm:mb-[30px]'>
 						{title}
 					</h2>
-					<div className='text-body-lg text-muted mb-7 sm:mb-[38px]'>
-						{children}
-					</div>
+					<div className='text-body-lg text-muted'>{children}</div>
+					{cta && (
+						<a
+							href={cta.startsWith("http") ? cta : `https://${cta}`}
+							target='_blank'
+							rel='noopener noreferrer'
+							className='btn-primary inline-flex items-center gap-2 mt-5 sm:mt-6'
+						>
+							Projets vedettes <ArrowRight />
+						</a>
+					)}
 				</div>
 			</div>
 		</section>
@@ -31,12 +41,14 @@ function About({
 function Feature({
 	title,
 	image,
+	video,
 	imageSide = "right",
 	mobile = false,
 	children,
 }: {
 	title: string;
 	image?: string;
+	video?: string;
 	imageSide?: "left" | "right";
 	mobile?: boolean;
 	children: React.ReactNode;
@@ -88,6 +100,16 @@ function Feature({
 						/>
 					</div>
 				</div>
+			) : video ? (
+				<video
+					autoPlay
+					muted
+					loop
+					playsInline
+					className='max-h-160 justify-self-center'
+				>
+					<source src={video} type='video/mp4' />
+				</video>
 			) : (
 				<div
 					className='bg-[#e3e3de] border-[1.5px] border-dashed border-[#c4c4bd] rounded-[14px] min-h-[200px] sm:min-h-[320px] flex flex-col items-center justify-center text-center text-[#7c7c74] p-4'
