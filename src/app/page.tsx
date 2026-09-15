@@ -90,7 +90,7 @@ export default function Home() {
 							</div>
 
 							<Image
-								src='/about-me.png'
+								src='/about-me-hero.png'
 								alt={`Capture à propos de moi Jonathan Deschênes`}
 								width={1536}
 								height={2048}
@@ -289,7 +289,7 @@ export default function Home() {
 								))}
 							</div>
 							<Image
-								src='/about-me.png'
+								src='/about-me-section.png'
 								alt={`Capture à propos de moi Jonathan Deschênes`}
 								width={1600}
 								height={900}
